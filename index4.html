@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karthik Raja | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* --- Page Load Transition --- */
+        #page-loader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.6s ease-out;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #page-loader.is-visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        #page-loader.is-hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            transition-delay: 0.3s; 
+        }
+        
+        #page-loader.is-hidden h1 {
+            transition: opacity 0.3s ease-out;
+            opacity: 0;
+        }
+
+        #page-loader h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 500;
+            transition: opacity 0.3s ease-in;
+            opacity: 0; 
+            position: relative;
+            z-index: 5; /* Below greetings loader */
+        }
+        
+        #greetings-loader {
+            position: absolute;
+            inset: 0;
+            background-color: #000000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: opacity 0.5s ease-out;
+            opacity: 1; /* Start visible */
+        }
+
+        .greeting {
+            position: absolute;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 500;
+            color: white;
+            opacity: 0;
+            animation: fadeInOut 0.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(10px); }
+            25% { opacity: 1; transform: translateY(0); }
+            75% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+
+        .greeting:nth-child(1) { animation-delay: 0s; }
+        .greeting:nth-child(2) { animation-delay: 0.5s; }
+        .greeting:nth-child(3) { animation-delay: 1.0s; } /* FIX: Added 's' */
+        .greeting:nth-child(4) { animation-delay: 1.5s; }
+        .greeting:nth-child(5) { animation-delay: 2.0s; }
+        .greeting:nth-child(6) { animation-delay: 2.5s; } 
+        .greeting:nth-child(7) { animation-delay: 3.0s; } 
+        .greeting:nth-child(8) { animation-delay: 3.5s; } /* Total ~4.0s */
+        .greeting:nth-child(9) { animation-delay: 4.0s; }
+
+        .page-content {
+            opacity: 1;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .page-content.hidden {
+            opacity: 0;
+            display: none;
+        }
+        
+        /* --- Scroll Reveal Animations --- */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition-delay: 0.1s;
+        }
+        
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Marquee --- */
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            white-space: nowrap;
+            box-sizing: border-box;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 40s linear infinite;
+        }
+        .marquee-content h1 {
+            display: inline-block;
+            padding-right: 2rem; /* Spacing between repeated text */
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Animate to 50% since content is duplicated */
+        }
+
+        /* --- Custom styles inspired by the site --- */
+        .hero-name {
+            font-size: clamp(4rem, 15vw, 12rem); /* Responsive font size */
+            font-weight: 700;
+            line-height: 0.9;
+            letter-spacing: -0.05em;
+        }
+        
+        .hero-heading {
+            font-size: clamp(2.5rem, 6vw, 5rem); /* Responsive font size */
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        
+        .section-heading {
+            font-size: clamp(2rem, 5vw, 4rem); /* Responsive font size */
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .footer-heading {
+            font-size: clamp(3rem, 10vw, 8rem); /* Responsive font size */
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -0.04em;
+        }
+        
+        /* Nav Link */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after,
+        .nav-link.is-active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .nav-link.is-active {
+            font-weight: 700;
+        }
+
+        /* Home - Available Worldwide */
+        .available-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem; /* space-x-3 */
+            background-color: #1C1D20; /* Real site's dark color */
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500;
+        }
+        .available-badge-icon {
+            width: 1.25rem; /* h-5 w-5 */
+            height: 1.25rem;
+            background-color: #9A9DA8; /* gray-400 */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .available-badge-icon svg {
+            width: 0.75rem; /* h-3 w-3 */
+            height: 0.75rem;
+            color: white;
+        }
+        
+        /* Home - About Me Button */
+        .about-me-button {
+            width: 180px;
+            height: 180px;
+            background-color: #455ce9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+        .about-me-button:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Home - Recent Work */
+        .recent-work-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .recent-work-item:hover {
+            color: #6b7280; /* text-gray-500 */
+        }
+        .recent-work-item:hover .recent-work-title::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .recent-work-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        .recent-work-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #6b7280;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        .recent-work-role {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #4b5563; /* text-gray-600 */
+        }
+        
+        /* Home - More Work Button */
+        .more-work-button {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background-color: #f0f0f0;
+            color: #000;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .more-work-button:hover {
+            background-color: #2a42d5;
+            color: white;
+        }
+
+        /* Work - Filter Buttons */
+        .work-filter {
+            display: inline-block;
+            padding: 0.6rem 1.75rem;
+            background-color: #f0f0f0;
+            color: #000;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+        .work-filter.is-active,
+        .work-filter:hover {
+            background-color: #2a42d5;
+            color: white;
+        }
+        
+        /* Work - Project Grid */
+        .project-card {
+            display: block;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            background-color: #e0e0e0;
+        }
+        .project-card img {
+            transition: transform 0.4s ease;
+        }
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Work - Archive Button */
+        .archive-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 160px;
+            height: 160px;
+            background-color: #111827; /* gray-900 */
+            color: white;
+            border: 2px solid #374151; /* gray-700 */
+            border-radius: 50%;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .archive-button:hover {
+            background-color: #455ce9;
+            border-color: #455ce9;
+            transform: scale(1.05);
+        }
+
+
+        .service-card {
+            background-color: #f0f0f0;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            background-color: #e0e0e0;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            background-color: #2a42d5; /* Blue color from site */
+            color: white;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .cta-button-wrapper:hover .cta-button {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .cta-button-wrapper {
+            background-color: #455ce9; /* Lighter blue */
+            border-radius: 9999px;
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
+            width: 12.5rem; /* 200px */
+            height: 12.5rem; /* 200px */
+        }
+        
+        .cta-button-wrapper-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cta-button-text {
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s ease-in-out;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-button-wrapper:hover .cta-button-text {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .cta-button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Mobile Menu */
+        .menu-overlay {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu-overlay.is-open {
+            transform: translateX(0);
+        }
+
+        .menu-content {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out 0.1s;
+        }
+        
+        .menu-overlay.is-open .menu-content {
+            transform: translateX(0);
+        }
+
+        /* Parallax container */
+        .parallax-wrapper {
+            overflow: hidden;
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+        }
+
+        #hero-image {
+            will-change: transform; /* Performance hint */
+        }
+        
+        /* Contact Form */
+        .form-input {
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #4b5563; /* text-gray-600 */
+            color: white;
+            padding: 0.75rem 0;
+            width: 100%;
+            transition: border-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+        }
+        .form-input::placeholder {
+            color: #6b7280; /* text-gray-500 */
+        }
+        .form-input:focus {
+            outline: none;
+            border-bottom-color: white;
+        }
+        .form-label {
+            color: #9ca3af; /* text-gray-400 */
+            font-size: 1rem;
+        }
+        .submit-btn {
+            background-color: #2a42d5;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #455ce9;
+        }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div id="greetings-loader">
+            <span class="greeting">Hello</span>
+            <span class="greeting">Vanakkam</span>
+            <span class="greeting">Namaste</span>
+            <span class="greeting">Namaskāram</span><!-- Malayalam/Telugu -->
+            <span class="greeting">Namaskāra</span> <!-- Kannada -->
+            <span class="greeting">Namaskarandi</span> <!-- Telugu/Malayalam -->
+            <span class="greeting">Bonjour</span>
+            <span class="greeting">Hola</span>
+            <span class="greeting">Privet</span>
+            
+            
+            
+        </div>
+        <h1 id="loader-text">• Home</h1>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Name -->
+                <a href="#" class="font-bold text-lg nav-link" data-page="home">&copy; Karthik Raja</a>
+
+                <!-- Desktop Nav -->
+                <nav id="desktop-nav" class="hidden md:flex space-x-8">
+                    <a href="#" class="font-medium text-gray-500 hover:text-black nav-link is-active" data-page="home">Home</a>
+                    <a href="#" class="font-medium text-gray-500 hover:text-black nav-link" data-page="work">Work</a>
+                    <a href="#" class="font-medium text-gray-500 hover:text-black nav-link" data-page="about">Journey</a>
+                    <a href="#" class="font-medium text-gray-500 hover:text-black nav-link" data-page="contact">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="menu-open-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Open menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay" class="menu-overlay fixed inset-0 z-[100] bg-black/60 md:hidden">
+        <div id="menu-content" class="menu-content fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-lg p-6">
+            <div class="flex justify-end mb-8">
+                <button id="menu-close-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Close menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <nav id="mobile-nav" class="flex flex-col space-y-6">
+                <a href="#" class="text-2xl font-bold text-black nav-link" data-page="home">Home</a>
+                <a href="#" class="text-2xl font-medium text-gray-500 hover:text-black nav-link" data-page="work">Work</a>
+                <a href="#" class="text-2xl font-medium text-gray-500 hover:text-black nav-link" data-page="about">Journey</a>
+                <a href="#" class="text-2xl font-medium text-gray-500 hover:text-black nav-link" data-page="contact">Contact</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- === HOME PAGE === -->
+        <div id="page-home" class="page-content">
+            <!-- Home Hero -->
+            <section class="min-h-screen relative flex flex-col justify-between pt-24 md:pt-32 pb-8 md:pb-16 bg-black">
+                <!-- Background Image -->
+                <div class="absolute inset-0 z-0 overflow-hidden">
+                    <img src="KarthikDP.jpg"
+                         alt="Dave Elossais Portrait"
+                         class="w-full h-full object-cover object-center opacity-70"
+                         onerror="this.src='https://placehold.co/1920x1080/333333/555555?text=Hero+Image'">
+                </div>
+                
+                <!-- Top content -->
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-start">
+                    <!-- Top-left text (from real site) -->
+                    <div class="text-white text-sm font-medium reveal-on-scroll">
+                        <!-- The real site has "© Dave El-Ossaïs" here, but we already have it in the nav logo. -->
+                    </div>
+                    <!-- Available Badge (top right) -->
+                    <div class="available-badge reveal-on-scroll">
+                        <div class="available-badge-icon">
+                            <!-- Globe icon -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                              <path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6z" />
+                              <path fill-rule="evenodd" d="M16.667 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM5.083 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM15.228 15.228a.75.75 0 01.028 1.06l-1.06 1.06a.75.75 0 11-1.088-1.032l1.06-1.06a.75.75 0 011.06.028zM6.889 6.889a.75.75 0 01.028 1.06l-1.06 1.06a.75.75 0 11-1.088-1.032l1.06-1.06a.75.75 0 011.06.028zM15.256 4.744a.75.75 0 011.06-.028l1.06 1.06a.75.75 0 11-1.032 1.088l-1.06-1.06a.75.75 0 01-.028-1.06zM6.917 13.083a.75.75 0 011.06-.028l1.06 1.06a.75.75 0 11-1.032 1.088l-1.06-1.06a.75.75 0 01-.028-1.06z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <span>Available Worldwide</span>
+                    </div>
+                </div>
+
+                <!-- Middle content (relative to hero section) -->
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex items-center">
+                    <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <!-- Empty spacer to push text to the right -->
+                        </div>
+                        <div class="relative">
+                            <h2 class="text-3xl md:text-5xl font-semibold text-white reveal-on-scroll">
+                                Developer<br>Security Researcher
+                            </h2>
+                            <!-- Arrow icon from real site -->
+                            <svg class="w-8 h-8 text-white absolute -top-4 -left-12 md:-left-16 reveal-on-scroll" style="transition-delay: 0.1s;" viewBox="0 0 200 200" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M180 94.1H43l52.1-45-7.7-8.9-67.3 58.1 67.1 61 7.9-8.7L46 106.1h134v-12z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Marquee -->
+                <div class="relative w-full marquee-wrapper text-white reveal-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="marquee-content">
+                        <!-- Repeat the content to ensure seamless loop -->
+                        <h1 class="hero-name">
+                            <span>Karthik —</span>
+                            <span>Hackson—</span>
+                            <span>Karthik —</span>
+                            <span>Noskcahdat —</span>
+                        </h1>
+                        <h1 class="hero-name" aria-hidden="true">
+                            <span>Karthik —</span>
+                            <span>Hackson —</span>
+                            <span>Karthik —</span>
+                            <span>noskcahdat —</span>
+                        </h1>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Home Intro -->
+            <section class="py-16 md:py-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-32 items-center">
+                    <div class="reveal-on-scroll">
+                        <h2 class="section-heading text-black">
+                            Developing digital experiences with a focus on security and performance.
+                        </h2>
+                    </div>
+                    <div class="flex flex-col items-start gap-8">
+                        <p class="text-lg text-gray-700 leading-relaxed reveal-on-scroll">
+                            The combination of my passion for design, code & interaction positions me in a unique place in the cyber security world.
+                        </p>
+                        <a href="#" class="about-me-button nav-link reveal-on-scroll" data-page="about" style="transition-delay: 0.1s;">
+                            About me
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Home Recent Work -->
+            <section class="py-16 md:py-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider reveal-on-scroll">Recent Work</h3>
+                    <div class="mt-8 border-t border-gray-200">
+                        <a href="#" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+                            <h4 class="recent-work-title">Ai-cooked</h4>
+                            <span class="recent-work-role">MCPs and Claude</span>
+                        </a>
+                        <a href="#" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+                            <h4 class="recent-work-title">noskcah Voice Assistant</h4>
+                            <span class="recent-work-role">Ai & Agents</span>
+                        </a>
+                        <a href="#" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+                            <h4 class="recent-work-title">Phisher.io</h4>
+                            <span class="recent-work-role">Security Engineering</span>
+                        </a>
+                        <a href="#" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+                            <h4 class="recent-work-title">Ai-cooked</h4>
+                            <span class="recent-work-role">RAG & Python</span>
+                        </a>
+                    </div>
+                    <div class="text-center mt-12 reveal-on-scroll">
+                        <a href="#" class="more-work-button nav-link" data-page="work">More Work</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Home Gallery -->
+            <section class="py-16 md:py-24 bg-gray-50">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="reveal-on-scroll">
+                            <img src="https://static.wixstatic.com/media/11062b_e8771669914d4b8a949e06893dfd43a0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Beach%20Sand.jpg" 
+                                 alt="Beach Sand" 
+                                 class="w-full h-full object-cover rounded-lg shadow-md"
+                                 onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=Beach+Sand'">
+                        </div>
+                        <div class="reveal-on-scroll" style="transition-delay: 0.1s;">
+                            <img src="https://static.wixstatic.com/media/d8318a_15d72b7b47784eedb0e42d402c551a3e~mv2.webp/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Guardian%20Dave%201.webp" 
+                                 alt="Guardian Dave 1" 
+                                 class="w-full h-full object-cover rounded-lg shadow-md"
+                                 onerror="this.src='https://placehold.co/600x600/d0d0d0/a0a0a0?text=Guardian+Dave'">
+                        </div>
+                        <div class="reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <img src="https://static.wixstatic.com/media/d8318a_3f044a30e8494c018b1f386652b4c75e~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/LED%20mockup%20copy.jpg" 
+                                 alt="LED mockup" 
+                                 class="w-full h-full object-cover rounded-lg shadow-md"
+                                 onerror="this.src='https://placehold.co/600x400/c0c0c0/a0a0a0?text=LED+Mockup'">
+                        </div>
+                        <div class="reveal-on-scroll">
+                            <img src="https://static.wixstatic.com/media/d8318a_d1ad7fbc35e24565b5b8e38c48cfb510~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Magazine-Mockup-Presentation-vol9%20copy.jpg" 
+                                 alt="Magazine Mockup" 
+                                 class="w-full h-full object-cover rounded-lg shadow-md"
+                                 onerror="this.src='https://placehold.co/600x400/b0b0b0/a0a0a0?text=Magazine+Mockup'">
+                        </div>
+                        <div class="reveal-on-scroll" style="transition-delay: 0.1s;">
+                            <img src="https://static.wixstatic.com/media/d8318a_ed270132ae4b4fa990f928716d52a379~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Free%20Large%20Canvas%20Posters%20Mockup%20copy.jpg" 
+                                 alt="Canvas Posters Mockup" 
+                                 class="w-full h-full object-cover rounded-lg shadow-md"
+                                 onerror="this.src='https://placehold.co/600x400/a0a0a0/707070?text=Canvas+Mockup'">
+                        </div>
+                        <div class="reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <img src="https://static.wixstatic.com/media/11062b_e8771669914d4b8a949e06893dfd43a0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Beach%20Sand.jpg" 
+                                 alt="Beach Sand" 
+                                 class="w-full h-full object-cover rounded-lg shadow-md"
+                                 onerror="this.src='https://placehold.co/600x400/909090/606060?text=Beach+Sand'">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- === WORK PAGE === -->
+        <div id="page-work" class="page-content hidden">
+            <section class="pt-32 pb-16 md:pt-48 md:pb-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <!-- Hero -->
+                    <div class="max-w-4xl reveal-on-scroll">
+                        <h1 class="hero-heading text-black">
+                            Creating next level digital products.
+                        </h1>
+                    </div>
+                    <!-- Filters -->
+                    <div class="mt-12 flex gap-4 reveal-on-scroll">
+                         <button id="work-filter-web" class="work-filter is-active" data-filter="web">Web Design</button>
+                         <button id="work-filter-graphic" class="work-filter" data-filter="graphic">Graphic Design</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Web Design Grid -->
+            <section id="work-grid-web" class="work-grid pb-16 md:pb-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+                        <!-- Project 1 -->
+                        <a href="https://github.com/noSkcaHdat/Phisher.io" class="project-card reveal-on-scroll">
+                            <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                                <img src="Ai-cooked_Github.jpg" 
+                                     onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=Guardian+Group'" 
+                                     alt="Phisher.io" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-2xl font-bold">Phisher.io</h3>
+                                    <span class="text-sm font-medium text-gray-500">Security Engineering</span>
+                                </div>
+                                <p class="text-base text-gray-600 mt-2">Phishing Detection</p>
+                            </div>
+                            
+                        </a>
+                        <!-- Project 2 (Placeholder) - REMOVED -->
+                    </div>
+                </div>
+            </section>
+            
+            
+            <!-- Graphic Design Grid -->
+            <section id="work-grid-graphic" class="work-grid hidden pb-16 md:pb-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+                        <!-- Project 1 -->
+                        <a href="#" class="project-card reveal-on-scroll">
+                            <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                                <img src="https://static.wixstatic.com/media/d8318a_7323ce1a1e10485eb088e5055023fec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/front-view-family-celebrating-birthday-together%20copy.jpg" 
+                                     onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=AOV'" 
+                                     alt="AOV" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-2xl font-bold">AOV</h3>
+                                    <span class="text-sm font-medium text-gray-500">2025</span>
+                                </div>
+                                <p class="text-base text-gray-600 mt-2">Branding & Graphic Design</p>
+                            </div>
+                        </a>
+                        <!-- Project 2 -->
+                        <a href="#" class="project-card reveal-on-scroll">
+                            <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                                <img src="https://static.wixstatic.com/media/d8318a_5276490fa24c44d4a272139625b8a733~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-5.jpg" 
+                                     onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=MCB+Bank'" 
+                                     alt="MCB Bank" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-2xl font-bold">MCB Bank</h3>
+                                    <span class="text-sm font-medium text-gray-500">2025</span>
+                                </div>
+                                <p class="text-base text-gray-600 mt-2">Graphic Design</p>
+                            </div>
+                        </a>
+                        <!-- Project 3 -->
+                        <a href="#" class="project-card reveal-on-scroll">
+                            <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                                <img src="https://static.wixstatic.com/media/d8318a_50ce4c119ec94ea2a9c892b2fd0ddb13~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-1.jpg" 
+                                     onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=Kòrsou+ta+Move'" 
+                                     alt="Kòrsou ta Move" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-2xl font-bold">Kòrsou ta Move</h3>
+                                    <span class="text-sm font-medium text-gray-500">2025</span>
+                                </div>
+                                <p class="text-base text-gray-600 mt-2">Branding & Graphic Design</p>
+                            </div>
+                        </a>
+                        <!-- Project 4 -->
+                        <a href="#" class="project-card reveal-on-scroll">
+                            <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                                <img src="https://static.wixstatic.com/media/55d98a_3287270d83ef4efabfdd1f52d0dc6ec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/wolfgang-hasselmann-1ICIhK-ElJs-unsplash-edited.jpg" 
+                                     onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=Assuria+Insurance'" 
+                                     alt="Assuria Insurance" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-2xl font-bold">Assuria Insurance</h3>
+                                    <span class="text-sm font-medium text-gray-500">2025</span>
+                                </div>
+                                <p class="text-base text-gray-600 mt-2">Graphic Design</p>
+                            </div>
+                        </a>
+                        <!-- Project 5 -->
+                        <a href="#" class="project-card reveal-on-scroll">
+                            <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                                <img src="https://static.wixstatic.com/media/d8318a_1da865e0a9f24f3a99914121117e3cbf~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-3.jpg" 
+                                     onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=Centrale+Bank'" 
+                                     alt="Centrale Bank" 
+                                     class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-center">
+                                    <h3 class="text-2xl font-bold">Centrale Bank</h3>
+                                    <span class="text-sm font-medium text-gray-500">2025</span>
+                                </div>
+                                <p class="text-base text-gray-600 mt-2">Graphic Design</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Archive Button -->
+            <section class="py-16 md:py-24 text-center">
+                <a href="#" class="archive-button reveal-on-scroll">
+                    Archive
+                </a>
+            </section>
+        </div>
+
+        <!-- === ABOUT PAGE === -->
+        <div id="page-about" class="page-content hidden">
+            <!-- About Hero -->
+            <section class="pt-32 pb-16 md:pt-48 md:pb-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl">
+                        <h1 class="hero-heading text-black reveal-on-scroll">
+                            Helping MSME's thrive in the digital world
+                        </h1>
+                    </div>
+                    <div class="mt-12 border-t border-gray-900/20 pt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div class="reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                I help companies from all over the world with tailor-made creative solutions. With each project, I push my work to new horizons, always putting quality first.
+                            </p>
+                            <p class="mt-6 text-lg text-gray-700 leading-relaxed">
+                                In addition to threat intelligence I provide training for startups, businesses, and creative teams, helping them grow their visual identity and communication skills.
+                            </p>
+                        </div>
+                        <div class="w-full reveal-on-scroll parallax-wrapper" style="transition-delay: 0.3s;">
+                            <img id="hero-image" src="https://static.wixstatic.com/media/d8318a_fbcd0e44e3934a1caef5c98868fc9662~mv2.jpg/v1/fill/w_600,h_880,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Stage%20dave%20copyxx.jpg" 
+                                 alt="Dave Elossais on stage" 
+                                 class="w-full h-auto object-cover"
+                                 onerror="this.src='https://placehold.co/600x750/e0e0e0/a0a0a0?text=Dave+Elossais'">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Services -->
+            <section class="py-16 md:py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 class="section-heading text-black mb-12 reveal-on-scroll">I can help you with ...</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Service 1: Design -->
+                        <div class="service-card p-8 rounded-lg reveal-on-scroll">
+                            <span class="text-gray-500 font-medium">01</span>
+                            <div class="w-full h-px bg-gray-400 my-4"></div>
+                            <h3 class="text-3xl font-bold text-black mb-4">Design</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                With a strong background in website design, I create digital experiences that are both visually engaging and easy to use.
+                            </p>
+                        </div>
+                        <!-- Service 2: Development -->
+                        <div class="service-card p-8 rounded-lg reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <span class="text-gray-500 font-medium">02</span>
+                            <div class="w-full h-px bg-gray-400 my-4"></div>
+                            <h3 class="text-3xl font-bold text-black mb-4">Development</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                I craft scalable, high-performance websites that perfectly align with each design. Building with Wix Studio.
+                            </p>
+                        </div>
+                        <!-- Service 3: The full package -->
+                        <div class="service-card p-8 rounded-lg reveal-on-scroll" style="transition-delay: 0.3s;">
+                            <span class="text-gray-500 font-medium">03</span>
+                            <div class="w-full h-px bg-gray-400 my-4"></div>
+                            <h3 class="text-3xl font-bold text-black mb-4">The full package</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                From concept to launch, I deliver complete results that blend creativity with technical precision. My eye for design and hands-on development expertise allow me to build standout, high-quality projects.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Partner -->
+            <section class="py-16 md:py-24 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+                        <div class="w-full reveal-on-scroll">
+                            <img src="GenCysImage.jpg" 
+                                 alt="Portrait of Dave Elossais" 
+                                 class="w-full h-auto object-cover rounded-lg shadow-md"
+                                 onerror="this.src='https://placehold.co/600x700/e0e0e0/a0a0a0?text=Wix+Studio+Partner'">
+                        </div>
+                        <div class="self-center reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <h2 class="section-heading text-black mb-6">
+                                UST Gencys-CTF 2025 - Top Finisher
+                            </h2>
+                            <p class="text-lg text-gray-700 leading-relaxed">
+                                I am a proud to get a chance to be a part of UST Gencys-CTF 2025 as a top finisher. This experience has further fueled my passion for cybersecurity and reinforced my commitment to excellence in this field.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- === CONTACT PAGE === -->
+        <div id="page-contact" class="page-content hidden">
+            <section class="bg-[#1C1D20] text-white pt-32 pb-16 md:pt-48 md:pb-24">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="max-w-4xl">
+                        <h1 class="hero-heading reveal-on-scroll">
+                            Let's start a project together
+                        </h1>
+                    </div>
+                    <div class="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-16">
+                        <!-- Form -->
+                        <form action="#" method="POST" class="space-y-10 reveal-on-scroll">
+                            <div>
+                                <label for="name" class="form-label">What's your name?</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label for="email" class="form-label">What's your email?*</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@doe.com" required>
+                            </div>
+                            <div>
+                                <label for="organization" class="form-label">What's the name of your organization?</label>
+                                <input type="text" id="organization" name="organization" class="form-input" placeholder="John & Doe ®">
+                            </div>
+                            <div>
+                                <label for="services" class="form-label">What services are you looking for?</label>
+                                <input type="text" id="services" name="services" class="form-input" placeholder="Web Design, Web Development ...">
+                            </div>
+                            <div>
+                                <label for="message" class="form-label">Your message</label>
+                                <textarea id="message" name="message" rows="4" class="form-input" placeholder="Can you help me with ... *"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="submit-btn">Submit</button>
+                            </div>
+                        </form>
+                        
+                        <!-- Contact Details -->
+                        <div class="reveal-on-scroll" style="transition-delay: 0.2s;">
+                            <div class="mb-12">
+                                <h3 class="text-sm text-gray-400 uppercase tracking-wider mb-4">Contact Details</h3>
+                                <p class="text-lg font-medium">noskcahdat@gmail.com</p>
+                                <p class="text-lg font-medium">+31 6 84969148</p>
+                            </div>
+                            <div>
+                                <h3 class="text-sm text-gray-400 uppercase tracking-wider mb-4">Business Details</h3>
+                                <p class="text-lg font-medium">Guy Builds </p>
+                                <p class="text-lg font-medium">KvK: 143716</p>
+                                <p class="text-lg font-medium">VAT: NL854034056B01</p>
+                                <p class="text-lg font-medium">Location: The Netherlands</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1C1D20] text-white pt-32 pb-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- CTA -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <div class="w-full md:w-3/4">
+                    <h2 class="footer-heading reveal-on-scroll">Let's work</h2>
+                    <h2 class="footer-heading reveal-on-scroll" style="transition-delay: 0.15s;">together</h2>
+                </div>
+                <div class="mt-8 md:mt-0 reveal-on-scroll" style="transition-delay: 0.3s;">
+                    <a href="#" class="cta-button-wrapper nav-link" data-page="contact" aria-label="Get in touch">
+                        <div class="cta-button-wrapper-inner">
+                            <span class="cta-button-text">Get in touch</span>
+                            <div class="cta-button">
+                                Get in touch
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <hr class="border-white/20 my-16 md:my-24 reveal-on-scroll">
+
+            <!-- Bottom Footer -->
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 reveal-on-scroll">
+                <!-- Social & Contact -->
+                <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-400 uppercase">Social</span>
+                        <a href="#" class="text-base font-medium hover:text-gray-300">Instagram</a>
+                        <a href="#" class="text-base font-medium hover:text-gray-300">LinkedIn</a>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <span class="text-sm text-gray-400 uppercase">Contact</span>
+                        <a href="mailto:noskcahdat@gmail.com" class="text-base font-medium hover:text-gray-300">noskcahdat@gmail.com</a>
+                        <a href="tel:+59995160960" class="text-base font-medium hover:text-gray-300">+5999 5160960</a>
+                    </div>
+                </div>
+                
+                <!-- Version & Time -->
+                <div class="flex flex-col md:flex-row gap-8 md:gap-16 text-left md:text-right">
+                    <div>
+                        <span class="text-sm text-gray-400 uppercase block">Version</span>
+                        <span class="text-base font-medium">2025 &copy; Edition</span>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400 uppercase block">Local time</span>
+                        <span id="local-time" class="text-base font-medium">00:00:00 AM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-16 text-center md:text-left reveal-on-scroll">
+                <p class="text-sm text-gray-500">&copy; Karthik Raja</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loader = document.getElementById('page-loader');
+            const loaderText = document.getElementById('loader-text');
+            const greetingsLoader = document.getElementById('greetings-loader');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page-content');
+            const desktopNav = document.getElementById('desktop-nav');
+            const mobileNav = document.getElementById('mobile-nav');
+
+            // --- Work Page Filters ---
+            const workFilterButtons = document.querySelectorAll('.work-filter');
+            const workGrids = document.querySelectorAll('.work-grid');
+            const workFilterWebBtn = document.getElementById('work-filter-web');
+            const workFilterGraphicBtn = document.getElementById('work-filter-graphic');
+            const workGridWeb = document.getElementById('work-grid-web');
+            const workGridGraphic = document.getElementById('work-grid-graphic');
+
+            let currentObserver; // To store the active IntersectionObserver
+
+            // --- Page Loader ---
+            function showLoader(text) {
+                // This is for navigation, so we don't need greetings
+                if (greetingsLoader) {
+                    greetingsLoader.style.display = 'none'; // Hide greetings
+                }
+                loaderText.style.opacity = '1'; // Show nav text
+                loaderText.textContent = `• ${text}`;
+                loader.classList.add('is-visible');
+                loader.classList.remove('is-hidden');
+            }
+
+            function hideLoader() {
+                loader.classList.add('is-hidden');
+                loader.classList.remove('is-visible');
+            }
+
+           // --- Initial Page Load ---
+            // Total greetings animation is 4.5s
+            setTimeout(() => {
+                // Fade out greetings loader
+                if (greetingsLoader) {
+                    greetingsLoader.style.opacity = '0';
+                }
+                // Fade in • Home
+                if (loaderText) {
+                    loaderText.style.opacity = '1';
+                }
+                
+                // Wait for fades to finish, then slide main loader up
+                setTimeout(() => {
+                    hideLoader(); // This will now animate the visible loader UP
+                    initScrollReveal(document.getElementById('page-home')); 
+                    updateNavActiveState('home');
+                }, 500); // Wait 0.5s for text to fade in
+
+            }, 4500); // 4.5 seconds for all greetings
+            
+            // --- Scroll Reveal ---
+            function initScrollReveal(pageElement) {
+                if (currentObserver) {
+                    currentObserver.disconnect(); // Disconnect previous observer
+                }
+
+                const revealElements = pageElement.querySelectorAll('.reveal-on-scroll');
+                
+                // Reset elements that were already visible
+                revealElements.forEach(el => el.classList.remove('is-visible'));
+
+                currentObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            currentObserver.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1
+                });
+
+                revealElements.forEach(el => {
+                    currentObserver.observe(el);
+                });
+            }
+            
+            // --- Work Page Filter Logic ---
+            function showWorkCategory(category) {
+                console.debug('showWorkCategory called with', category);
+                if (!workGridWeb || !workGridGraphic) {
+                    console.warn('Work grids missing', { workGridWeb, workGridGraphic });
+                    return; // Ensure elements exist
+                }
+
+                workGrids.forEach(grid => {
+                    grid.classList.add('hidden');
+                    console.debug('Hiding grid', grid.id);
+                });
+                workFilterButtons.forEach(btn => {
+                    btn.classList.remove('is-active');
+                    console.debug('Deactivating filter button', btn.id);
+                });
+
+                if (category === 'web') {
+                    console.debug('Showing web grid');
+                    workGridWeb.classList.remove('hidden');
+                    if(workFilterWebBtn) workFilterWebBtn.classList.add('is-active');
+                    initScrollReveal(workGridWeb);
+                } else if (category === 'graphic') {
+                    console.debug('Showing graphic grid');
+                    workGridGraphic.classList.remove('hidden');
+                    if(workFilterGraphicBtn) workFilterGraphicBtn.classList.add('is-active');
+                    initScrollReveal(workGridGraphic);
+                } else {
+                    console.debug('Unknown category, defaulting to web');
+                    workGridWeb.classList.remove('hidden');
+                    if(workFilterWebBtn) workFilterWebBtn.classList.add('is-active');
+                    initScrollReveal(workGridWeb);
+                }
+            }
+
+            workFilterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    showWorkCategory(btn.dataset.filter);
+                });
+            });
+
+            // --- Routing ---
+            function navigateTo(pageId) {
+                console.debug('navigateTo called with pageId:', pageId);
+                const targetPage = document.getElementById(`page-${pageId}`);
+                if (!targetPage) return;
+
+                const pageTitle = pageId.charAt(0).toUpperCase() + pageId.slice(1);
+                showLoader(pageTitle);
+
+                // Update nav active states
+                updateNavActiveState(pageId);
+                
+                // Hide all pages
+                pages.forEach(p => p.classList.add('hidden'));
+
+                setTimeout(() => {
+                    // Show target page
+                    targetPage.classList.remove('hidden');
+                    window.scrollTo(0, 0);
+                    
+                    // Update document title
+                    document.title = `${pageTitle} | Karthik Raja`;
+                    
+                    // Re-initialize scroll animations for the new page
+                    initScrollReveal(targetPage);
+                    
+                    // Set default state for Work page
+                    if (pageId === 'work') {
+                        showWorkCategory('web');
+                    }
+
+                    // Hide loader
+                    setTimeout(hideLoader, 100);
+                }, 800); // Match loader transition duration
+            }
+
+            // Support direct linking to a page via hash, e.g. index4.html#work
+            // (Useful for debugging / deep linking)
+            if (location.hash) {
+                const pageFromHash = location.hash.replace('#', '').trim();
+                if (pageFromHash) {
+                    // Delay slightly so the loader/greetings initialization completes
+                    setTimeout(() => {
+                        if (document.getElementById(`page-${pageFromHash}`)) {
+                            navigateTo(pageFromHash);
+                        }
+                    }, 100); // small delay
+                }
+            }
+
+            function updateNavActiveState(pageId) {
+                [desktopNav, mobileNav].forEach(nav => {
+                    if (nav) {
+                        nav.querySelectorAll('.nav-link').forEach(link => {
+                            if (link.dataset.page === pageId) {
+                                link.classList.add('is-active');
+                                if (nav.id === 'mobile-nav') link.classList.add('font-bold', 'text-black');
+                            } else {
+                                link.classList.remove('is-active');
+                                if (nav.id === 'mobile-nav') link.classList.remove('font-bold', 'text-black');
+                            }
+                        });
+                    }
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const pageId = link.dataset.page;
+                    navigateTo(pageId);
+                    closeMenu(); // Close mobile menu if open
+                });
+            });
+
+            // --- Local Time Script ---
+            const timeEl = document.getElementById('local-time');
+            function updateTime() {
+                if (timeEl) {
+                    const now = new Date();
+                    // Using options to ensure format matches the site (e.g., 6:12:04 AM)
+                    timeEl.textContent = now.toLocaleTimeString('en-US', { 
+                        hour: 'numeric', 
+                        minute: '2-digit', 
+                        second: '2-digit', 
+                        hour12: true 
+                    });
+                }
+            }
+            setInterval(updateTime, 1000);
+            updateTime();
+
+            // --- Mobile Menu Script ---
+            const openBtn = document.getElementById('menu-open-btn');
+            const closeBtn = document.getElementById('menu-close-btn');
+            const overlay = document.getElementById('menu-overlay');
+
+            function openMenu() {
+                if(overlay) overlay.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                if(overlay) overlay.classList.remove('is-open');
+                document.body.style.overflow = '';
+            }
+
+            if(openBtn) openBtn.addEventListener('click', openMenu);
+            if(closeBtn) closeBtn.addEventListener('click', closeMenu);
+            if(overlay) overlay.addEventListener('click', function(e) {
+                if (e.target === overlay) {
+                    closeMenu();
+                }
+            });
+
+            // --- Parallax Effect ---
+            const parallaxImage = document.getElementById('hero-image');
+            if (parallaxImage) {
+                let ticking = false;
+
+                function updateParallax() {
+                    const scrollY = window.scrollY;
+                    const maxOffset = parallaxImage.parentElement.clientHeight - parallaxImage.clientHeight;
+                    // Ensure offset is only applied when scrolling down, and not exceeding image bounds
+                    const offset = Math.min(0, Math.max(maxOffset, scrollY * -0.2)); 
+                    
+                    parallaxImage.style.transform = `translateY(${offset}px)`;
+                    ticking = false;
+                }
+
+                window.addEventListener('scroll', () => {
+                    if (!ticking) {
+                        window.requestAnimationFrame(updateParallax);
+                        ticking = true;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
