@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Karthik Raja | Portfolio</title>
+  <meta name="description" content="Karthik Raja — Developer & Security Researcher building fast, secure digital products. Phisher.io, AI agents, RAG systems, and more." />
+  <link rel="canonical" href="https://your-domain.example/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Karthik Raja | Developer & Security Researcher" />
+  <meta property="og:description" content="Building fast, secure digital products. Explore work, journey, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example/" />
+  <meta property="og:image" content="https://your-domain.example/og-cover.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Karthik Raja | Developer & Security Researcher" />
+  <meta name="twitter:description" content="Building fast, secure digital products." />
+  <meta name="twitter:image" content="https://your-domain.example/og-cover.jpg" />
+
+  <!-- Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Favicon (optional) -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- JSON-LD Person -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Karthik Raja",
+    "jobTitle":"Developer & Security Researcher",
+    "url":"https://your-domain.example/",
+    "email":"mailto:noskcahdat@gmail.com",
+    "sameAs":[
+      "https://www.linkedin.com/in/your-handle",
+      "https://github.com/noSkcaHdat"
+    ]
+  }
+  </script>
+
+  <style>
+    :root { --bg:#9ca3affff; --fg:#000; --brand:#455ce9; --brand-2:#2a42d5; --ink-2:#1C1D20; }
+    html,body{ height:100%; }
+    body { font-family: 'Inter', sans-serif; background:var(--bg); color:var(--fg); }
+
+    /* Page Loader */
+    #page-loader { position:fixed; inset:0; z-index:10000; background:#000; color:#9ca3af; display:flex; align-items:center; justify-content:center; transition: transform .8s cubic-bezier(0.76,0,0.24,1), opacity .6s ease-out; transform:translateY(0); opacity:1; }
+    #page-loader.is-visible { transform:translateY(0); opacity:1; }
+    #page-loader.is-hidden { transform:translateY(-100%); opacity:0; transition-delay:.3s; }
+    #page-loader.h1 { font-size:clamp(2rem,5vw,3rem); font-weight:500; transition:opacity .3s ease-in; opacity:0; position:relative; z-index:5; }
+    #greetings-loader { position:absolute; inset:0; background:#000; display:flex; align-items:center; justify-content:center; z-index:10; transition:opacity .5s ease-out; opacity:1; }
+    .greeting { position:absolute; font-size:clamp(2rem,5vw,3rem); font-weight:500; color:#9ca3af; opacity:0; animation:fadeInOut .5s ease-in-out forwards; }
+    @keyframes fadeInOut { 0%{opacity:0; transform:translateY(10px);} 25%{opacity:1; transform:translateY(0);} 75%{opacity:1; transform:translateY(0);} 100%{opacity:0; transform:translateY(-10px);} }
+
+    .page-content { opacity:1; transition:opacity .4s ease-in-out; }
+    .page-content.hidden { opacity:0; display:none; }
+
+    /* Scroll reveal */
+    .reveal-on-scroll { opacity:0; transform:translateY(30px); transition: opacity .8s cubic-bezier(0.165,0.84,0.44,1), transform .8s cubic-bezier(0.165,0.84,0.44,1); transition-delay:.1s; }
+    .reveal-on-scroll.is-visible { opacity:1; transform:translateY(0); }
+
+    /* Marquee */
+    .marquee-wrapper{ overflow:hidden; width:100%; white-space:nowrap; box-sizing:border-box; cursor:pointer; }
+    .marquee-content{ display:inline-block; animation:marquee 40s linear infinite; animation-play-state: running; }
+    .marquee-content.paused{ animation-play-state: paused; }
+    .marquee-content h1{ display:inline-block; padding-right:2rem; }
+    @keyframes marquee { 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} } { 0%{ transform:translateX(0);} 100%{ transform:translateX(-50%);} }
+
+    /* Typography scales */
+    .hero-name{ font-size:clamp(2rem,7vw,6rem);color:#9ca3af; font-weight:700; line-height:.9; letter-spacing:-.05em; }
+    .hero-heading{ font-size:clamp(2.5rem,6vw,5rem); font-weight:700; line-height:1.1; }
+    .section-heading{ font-size:clamp(2rem,5vw,4rem); font-weight:700; line-height:1.2; }
+    .footer-heading{ font-size:clamp(3rem,10vw,8rem); font-weight:400; line-height:1; letter-spacing:-.04em; }
+
+    /* Nav link underline */
+    .nav-link{ position:relative; }
+    .nav-link::after{ content:""; position:absolute; bottom:-4px; left:0; width:100%; height:2px; background:#000; transform:scaleX(0); transform-origin:bottom right; transition: transform .25s ease-out; }
+    .nav-link:hover::after, .nav-link.is-active::after{ transform:scaleX(1); transform-origin:bottom left; }
+    .nav-link.is-active{ font-weight:700; }
+
+    /* Badges & buttons */
+    .available-badge{ display:inline-flex; align-items:center; gap:.75rem; background:var(--ink-2); color:#9ca3af; padding:.75rem 1.25rem; border-radius:9999px; font-size:.875rem; font-weight:500; }
+    .available-badge-icon{ width:1.25rem; height:1.25rem; background:#9A9DA8; border-radius:50%; display:flex; align-items:center; justify-content:center; }
+
+    .about-me-button{ width:180px; height:180px; background:var(--brand); border-radius:50%; display:flex; align-items:center; justify-content:center; color:#9ca3af; font-weight:500; font-size:1.1rem; transition: transform .3s ease; }
+    .about-me-button:hover{ transform:scale(1.1); }
+
+    .recent-work-item{ display:flex; justify-content:space-between; align-items:center; padding:2rem 0; border-bottom:1px solid #e5e7eb; cursor:pointer; transition: color .3s ease; }
+    .recent-work-item:hover{ color:#6b7280; }
+    .recent-work-title{ font-size:clamp(2rem,5vw,3.5rem); font-weight:700; position:relative; display:inline-block; }
+    .recent-work-title::after{ content:""; position:absolute; bottom:0; left:0; width:100%; height:3px; background:#6b7280; transform:scaleX(0); transform-origin:bottom right; transition: transform .3s ease-out; }
+    .recent-work-item:hover .recent-work-title::after{ transform:scaleX(1); transform-origin:bottom left; }
+
+    .more-work-button{ display:inline-block; padding:.75rem 2rem; background:#f0f0f0; color:#000; border-radius:9999px; font-weight:500; transition:all .3s ease; }
+    .more-work-button:hover{ background:var(--brand-2); color:#9ca3af; }
+
+    .work-filter{ display:inline-block; padding:.6rem 1.75rem; background:#f0f0f0; color:#000; border-radius:9999px; font-weight:500; transition:all .3s ease; font-size:1rem; }
+    .work-filter.is-active, .work-filter:hover{ background:var(--brand-2); color:#9ca3af; }
+
+    .project-card{ display:block; border-radius:.5rem; overflow:hidden; background:#f0f0f0; transition:all .3s ease; }
+    .project-card:hover{ background:#e0e0e0; }
+    .project-card img{ transition: transform .4s ease; }
+    .project-card:hover img{ transform:scale(1.05); }
+
+    .archive-button{ display:inline-flex; align-items:center; justify-content:center; width:160px; height:160px; background:#111827; color:#9ca3af; border:2px solid #374151; border-radius:50%; font-weight:500; font-size:1.1rem; transition:all .3s ease; }
+    .archive-button:hover{ background:var(--brand); border-color:var(--brand); transform:scale(1.05); }
+
+    .service-card{ background:#f0f0f0; transition:all .3s ease; }
+    .service-card:hover{ background:#e0e0e0; }
+
+    .cta-button-wrapper{ background:var(--brand); border-radius:9999px; overflow:hidden; position:relative; display:inline-block; width:12.5rem; height:12.5rem; }
+    .cta-button-wrapper-inner{ display:flex; align-items:center; justify-content:center; width:100%; height:100%; }
+    .cta-button-text{ color:#9ca3af; font-size:1rem; font-weight:500; transition:all .2s ease-in-out; opacity:1; transform:translateY(0); }
+    .cta-button{ position:absolute; top:0; left:0; width:100%; height:100%; display:inline-flex; align-items:center; justify-content:center; padding:1rem 2rem; background:var(--brand-2); color:#9ca3af; border-radius:9999px; font-weight:500; transition: all .2s ease-in-out; transform: translateY(100%); opacity:0; }
+    .cta-button-wrapper:hover .cta-button{ transform:translateY(0); opacity:1; }
+    .cta-button-wrapper:hover .cta-button-text{ transform:translateY(-100%); opacity:0; }
+
+    /* Mobile menu */
+    .menu-overlay{ transform:translateX(100%); transition:transform .3s ease-in-out; }
+    .menu-overlay.is-open{ transform:translateX(0); }
+    .menu-content{ transform:translateX(100%); transition:transform .3s ease-in-out .1s; }
+    .menu-overlay.is-open .menu-content{ transform:translateX(0); }
+
+    /* Parallax */
+    .parallax-wrapper{ overflow:hidden; border-radius:.5rem; box-shadow:0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1); }
+    #hero-image{ will-change:transform; }
+
+    /* Contact form */
+    .form-input{ background:transparent; border:none; border-bottom:1px solid #4b5563; color:#9ca3af; padding:.75rem 0; width:100%; transition:border-color .3s ease; font-family:'Inter', sans-serif; font-size:1rem; }
+    .form-input::placeholder{ color:#9ca3af; }
+    .form-input:focus{ outline:2px solid var(--brand); outline-offset:2px; border-bottom-color:transparent; }
+    .form-label{ color:#9ca3af; font-size:1rem; }
+    .submit-btn{ background:var(--brand-2); color:#9ca3af; padding:.75rem 2rem; border-radius:9999px; font-weight:500; transition:background-color .3s ease; cursor:pointer; }
+    .submit-btn:hover{ background:var(--brand); }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      #greetings-loader { display: none !important; }
+      #page-loader { transition: none !important; transform: translateY(-100%) !important; opacity: 0 !important; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:bg-black focus:text-white focus:px-3 focus:py-2 focus:rounded">Skip to content</a>
+
+  <!-- Page Loader -->
+  <div id="page-loader" aria-live="polite" aria-busy="true">
+<div id="greetings-loader" aria-hidden="true">
+  <span class="greeting">Hello</span>
+  <span class="greeting">வணக்கம்</span>         <!-- Tamil: Vanakkam -->
+  <span class="greeting">नमस्ते</span>           <!-- Hindi: Namaste -->
+  <span class="greeting">నమస్కారం</span>         <!-- Telugu: Namaskāram -->
+  <span class="greeting">ನಮಸ್ಕಾರ</span>         <!-- Kannada: Namaskāra -->
+  <span class="greeting">നമസ്കാരം</span>         <!-- Malayalam: Namaskāram -->
+  <span class="greeting">Bonjour</span>           <!-- French -->
+  <span class="greeting">Hola</span>              <!-- Spanish -->
+  <span class="greeting">Привет</span>            <!-- Russian: Privet -->             <!-- Italian -->
+  <span class="greeting">你好</span>              <!-- Chinese: Ni hao -->
+  <span class="greeting">Kumusta</span>           <!-- Filipino -->
+</div>
+
+    <h1 id="loader-text">• Home</h1>
+  </div>
+
+  <!-- Header -->
+  <header role="banner" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo/Name -->
+        <a href="#home" class="font-bold text-lg nav-link" data-page="home">&copy; Karthik Raja</a>
+
+        <!-- Desktop Nav -->
+        <nav id="desktop-nav" class="hidden md:flex space-x-8" aria-label="Primary">
+          <a href="#home" class="font-medium text-gray-500 hover:text-black nav-link is-active" data-page="home" aria-current="page">Home</a>
+          <a href="#work" class="font-medium text-gray-500 hover:text-black nav-link" data-page="work">Work</a>
+          <a href="#about" class="font-medium text-gray-500 hover:text-black nav-link" data-page="about">Journey</a>
+          <a href="#contact" class="font-medium text-gray-500 hover:text-black nav-link" data-page="contact">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-open-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Open menu" aria-expanded="false" aria-controls="menu-content">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="menu-overlay" class="menu-overlay fixed inset-0 z-[100] bg-black/60 md:hidden" hidden>
+    <div id="menu-content" class="menu-content fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-lg p-6">
+      <div class="flex justify-end mb-8">
+        <button id="menu-close-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+      </div>
+      <nav id="mobile-nav" class="flex flex-col space-y-6" aria-label="Primary mobile">
+        <a href="#home" class="text-2xl font-bold text-black nav-link" data-page="home">Home</a>
+        <a href="#work" class="text-2xl font-medium text-gray-500 hover:text-black nav-link" data-page="work">Work</a>
+        <a href="#about" class="text-2xl font-medium text-gray-500 hover:text-black nav-link" data-page="about">Journey</a>
+        <a href="#contact" class="text-2xl font-medium text-gray-500 hover:text-black nav-link" data-page="contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main" role="main">
+
+    <!-- === HOME PAGE === -->
+    <div id="page-home" class="page-content">
+      <!-- Home Hero -->
+      <section class="min-h-screen relative flex flex-col justify-between pt-24 md:pt-32 pb-8 md:pb-16 bg-black">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+          <img src="KarthikDP.jpg" alt="Portrait of Karthik Raja" class="w-full h-full object-cover object-center opacity-70" fetchpriority="high" decoding="async" width="1920" height="1080" srcset="KarthikDP-640.jpg 640w, KarthikDP-1024.jpg 1024w, KarthikDP.jpg 1920w" sizes="100vw" onerror="this.src='https://placehold.co/1920x1080/333333/555555?text=Hero+Image'" />
+        </div>
+
+        <!-- Top content -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-between items-start">
+          <div class="text-white text-sm font-medium reveal-on-scroll"></div>
+          <div class="available-badge reveal-on-scroll">
+            <div class="available-badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4"><path d="M10 2a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 2zM10 15a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 0110 15zM10 7a3 3 0 100 6 3 3 0 000-6z"/><path fill-rule="evenodd" d="M16.667 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM5.083 10a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5a.75.75 0 01.75.75zM15.228 15.228a.75.75 0 01.028 1.06l-1.06 1.06a.75.75 0 11-1.088-1.032l-1.06-1.06a.75.75 0 011.06.028zM6.889 6.889a.75.75 0 01.028 1.06l-1.06 1.06a.75.75 0 11-1.088-1.032l1.06-1.06a.75.75 0 011.06.028zM15.256 4.744a.75.75 0 011.06-.028l1.06 1.06a.75.75 0 11-1.032 1.088l-1.06-1.06a.75.75 0 01-.028-1.06zM6.917 13.083a.75.75 0 011.06-.028l1.06 1.06a.75.75 0 11-1.032 1.088l-1.06-1.06a.75.75 0 01-.028-1.06z" clip-rule="evenodd"/></svg>
+            </div>
+            <span>Available Worldwide</span>
+          </div>
+        </div>
+
+        <!-- Middle content -->
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex items-center">
+          <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div></div>
+            <div class="relative">
+              <h2 class="text-3xl md:text-5xl font-semibold text-white reveal-on-scroll">Developer<br/>Security Researcher</h2>
+              <svg class="w-8 h-8 text-white absolute -top-4 -left-12 md:-left-16 reveal-on-scroll" style="transition-delay:.1s;" viewBox="0 0 200 200" fill="currentColor" xmlns=""><path d="M180 94.1H43l52.1-45-7.7-8.9-67.3 58.1 67.1 61 7.9-8.7L46 106.1h134v-12z"></path></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Marquee -->
+        <div class="relative w-full marquee-wrapper text-white reveal-on-scroll" style="transition-delay:.2s;">
+          <div class="marquee-content">
+            <h1 class="hero-name"><span>Karthik —</span><span>Hackson —</span><span>Karthik —</span><span>Noskcahdat —</span></h1>
+            <h1 class="hero-name" aria-hidden="true"><span>Karthik —</span><span>Hackson —</span><span>Karthik —</span><span>Noskcahdat —</span></h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Home Intro -->
+      <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-32 items-center">
+          <div class="reveal-on-scroll">
+            <h2 class="section-heading text-black">Developing digital experiences with a focus on security and performance.</h2>
+          </div>
+          <div class="flex flex-col items-start gap-8">
+            <p class="text-lg text-gray-700 leading-relaxed reveal-on-scroll">The combination of my passion for design, code & interaction positions me in a unique place in the cyber security world.</p>
+            <a href="#about" class="about-me-button nav-link reveal-on-scroll" data-page="about" style="transition-delay:.1s;">About me</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Home Recent Work -->
+      <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider reveal-on-scroll">Recent Work</h3>
+          <div class="mt-8 border-t border-gray-200">
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">Phisher.io</h4>
+              <span class="recent-work-role">Security Engineering</span>
+            </a>
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">noskcah Voice Assistant</h4>
+              <span class="recent-work-role">AI & Agents</span>
+            </a>
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">AI-cooked</h4>
+              <span class="recent-work-role">MCPs & Claude</span>
+            </a>
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">RAG Pipeline</h4>
+              <span class="recent-work-role">RAG & Python</span>
+            </a>
+          </div>
+          <div class="text-center mt-12 reveal-on-scroll">
+            <a href="#work" class="more-work-button nav-link" data-page="work">More Work</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Home Gallery -->
+      <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="reveal-on-scroll"><img src="https://static.wixstatic.com/media/11062b_e8771669914d4b8a949e06893dfd43a0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Beach%20Sand.jpg" alt="Beach Sand" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async" width="600" height="400" onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=Beach+Sand'"/></div>
+            <div class="reveal-on-scroll" style="transition-delay:.1s;"><img src="https://static.wixstatic.com/media/d8318a_15d72b7b47784eedb0e42d402c551a3e~mv2.webp/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Guardian%20Dave%201.webp" alt="Guardian Dave 1" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async" width="600" height="600" onerror="this.src='https://placehold.co/600x600/d0d0d0/a0a0a0?text=Guardian+Dave'"/></div>
+            <div class="reveal-on-scroll" style="transition-delay:.2s;"><img src="https://static.wixstatic.com/media/d8318a_3f044a30e8494c018b1f386652b4c75e~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/LED%20mockup%20copy.jpg" alt="LED mockup" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async" width="600" height="400" onerror="this.src='https://placehold.co/600x400/c0c0c0/a0a0a0?text=LED+Mockup'"/></div>
+            <div class="reveal-on-scroll"><img src="https://static.wixstatic.com/media/d8318a_d1ad7fbc35e24565b5b8e38c48cfb510~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Magazine-Mockup-Presentation-vol9%20copy.jpg" alt="Magazine Mockup" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async" width="600" height="400" onerror="this.src='https://placehold.co/600x400/b0b0b0/a0a0a0?text=Magazine+Mockup'"/></div>
+            <div class="reveal-on-scroll" style="transition-delay:.1s;"><img src="https://static.wixstatic.com/media/d8318a_ed270132ae4b4fa990f928716d52a379~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Free%20Large%20Canvas%20Posters%20Mockup%20copy.jpg" alt="Canvas Posters Mockup" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async" width="600" height="400" onerror="this.src='https://placehold.co/600x400/a0a0a0/707070?text=Canvas+Mockup'"/></div>
+            <div class="reveal-on-scroll" style="transition-delay:.2s;"><img src="https://static.wixstatic.com/media/11062b_e8771669914d4b8a949e06893dfd43a0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Beach%20Sand.jpg" alt="Beach Sand" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async" width="600" height="400" onerror="this.src='https://placehold.co/600x400/909090/606060?text=Beach+Sand'"/></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- === WORK PAGE === -->
+    <div id="page-work" class="page-content hidden">
+      <section class="pt-32 pb-16 md:pt-48 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl reveal-on-scroll">
+            <h1 class="hero-heading text-black">Creating next level digital products.</h1>
+          </div>
+          <!-- Filters -->
+          <div class="mt-12 flex gap-4 reveal-on-scroll">
+            <button class="work-filter is-active" data-filter="all" id="work-filter-all">All</button>
+            <button class="work-filter" data-filter="web" id="work-filter-web">Web Design</button>
+            <button class="work-filter" data-filter="graphic" id="work-filter-graphic">Graphic Design</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Web Design Grid -->
+      <section id="work-grid-web" class="work-grid pb-16 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            <!-- Project: Phisher.io -->
+            <a href="https://github.com/noSkcaHdat/Phisher.io" class="project-card reveal-on-scroll" target="_blank" rel="noreferrer noopener">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="Phisherio-GithubImage.png" alt="Phisher.io" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">Phisher.io</h3>
+                  <span class="text-sm font-medium text-gray-500">Security Engineering</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Phishing Detection</p>
+              </div>
+            </a>
+
+            <!-- Project: RAG Pipeline -->
+            <a href="https://github.com/noSkcaHdat/ai-cooked" target="_blank" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="Ai-cooked_Github.jpg" alt="RAG Pipeline" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">RAG Pipeline</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2"> Retrieval-Augmented Generation stack.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Graphic Design Grid -->
+      <section id="work-grid-graphic" class="work-grid pb-16 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            <!-- Project 1 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="https://static.wixstatic.com/media/d8318a_7323ce1a1e10485eb088e5055023fec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/front-view-family-celebrating-birthday-together%20copy.jpg" alt="AOV" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">AOV</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Branding & Graphic Design</p>
+              </div>
+            </a>
+            <!-- Project 2 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="https://static.wixstatic.com/media/d8318a_5276490fa24c44d4a272139625b8a733~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-5.jpg" alt="MCB Bank" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">MCB Bank</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Graphic Design</p>
+              </div>
+            </a>
+            <!-- Project 3 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="https://static.wixstatic.com/media/d8318a_50ce4c119ec94ea2a9c892b2fd0ddb13~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-1.jpg" alt="Kòrsou ta Move" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">Kòrsou ta Move</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Branding & Graphic Design</p>
+              </div>
+            </a>
+            <!-- Project 4 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="https://static.wixstatic.com/media/55d98a_3287270d83ef4efabfdd1f52d0dc6ec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/wolfgang-hasselmann-1ICIhK-ElJs-unsplash-edited.jpg" alt="Assuria Insurance" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">Assuria Insurance</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Archive Button -->
+      <section class="py-16 md:py-24 text-center">
+        <a href="#" class="archive-button reveal-on-scroll">Archive</a>
+      </section>
+    </div>
+
+    <!-- === ABOUT PAGE === -->
+    <div id="page-about" class="page-content hidden">
+      <section class="pt-32 pb-16 md:pt-48 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl">
+            <h1 class="hero-heading text-black reveal-on-scroll">Helping MSME's thrive in the digital world</h1>
+          </div>
+          <div class="mt-12 border-t border-gray-900/20 pt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="reveal-on-scroll" style="transition-delay:.2s;">
+              <p class="text-lg text-gray-700 leading-relaxed">I help companies from all over the world with tailor-made creative solutions. With each project, I push my work to new horizons, always putting quality first.</p>
+              <p class="mt-6 text-lg text-gray-700 leading-relaxed">In addition to threat intelligence I provide training for startups, businesses, and creative teams, helping them grow their visual identity and communication skills.</p>
+            </div>
+            <div class="w-full reveal-on-scroll parallax-wrapper" style="transition-delay:.3s;">
+              <img id="hero-image" src="https://static.wixstatic.com/media/d8318a_fbcd0e44e3934a1caef5c98868fc9662~mv2.jpg/v1/fill/w_600,h_880,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Stage%20dave%20copyxx.jpg" alt="On stage" class="w-full h-auto object-cover" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x750/e0e0e0/a0a0a0?text=Stage'" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="section-heading text-black mb-12 reveal-on-scroll">I can help you with ...</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-card p-8 rounded-lg reveal-on-scroll"><span class="text-gray-500 font-medium">01</span><div class="w-full h-px bg-gray-400 my-4"></div><h3 class="text-3xl font-bold text-black mb-4">Design</h3><p class="text-gray-700 leading-relaxed">With a strong background in website design, I create digital experiences that are both visually engaging and easy to use.</p></div>
+            <div class="service-card p-8 rounded-lg reveal-on-scroll" style="transition-delay:.2s;"><span class="text-gray-500 font-medium">02</span><div class="w-full h-px bg-gray-400 my-4"></div><h3 class="text-3xl font-bold text-black mb-4">Development</h3><p class="text-gray-700 leading-relaxed">I craft scalable, high-performance websites that perfectly align with each design.</p></div>
+            <div class="service-card p-8 rounded-lg reveal-on-scroll" style="transition-delay:.3s;"><span class="text-gray-500 font-medium">03</span><div class="w-full h-px bg-gray-400 my-4"></div><h3 class="text-3xl font-bold text-black mb-4">The full package</h3><p class="text-gray-700 leading-relaxed">From concept to launch, I deliver complete results that blend creativity with technical precision.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div class="w-full reveal-on-scroll">
+              <img src="GenCysImage.jpg" alt="UST Gencys-CTF" class="w-full h-auto object-cover rounded-lg shadow-md" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x700/e0e0e0/a0a0a0?text=CTF'" />
+            </div>
+            <div class="self-center reveal-on-scroll" style="transition-delay:.2s;">
+              <h2 class="section-heading text-black mb-6">UST Gencys-CTF 2025 - Top Finisher</h2>
+              <p class="text-lg text-gray-700 leading-relaxed">Proud to be a top finisher at UST Gencys-CTF 2025. This experience fuels my cybersecurity passion and commitment to excellence.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- === CONTACT PAGE === -->
+    <div id="page-contact" class="page-content hidden">
+      <section class="bg-[#1C1D20] text-white pt-32 pb-16 md:pt-48 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl">
+            <h1 class="hero-heading reveal-on-scroll">Let's start a project together</h1>
+          </div>
+          <div class="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <!-- Form -->
+            <form action="#" method="POST" class="space-y-10 reveal-on-scroll" onsubmit="event.preventDefault(); alert('Thanks! I will reply soon.');">
+              <div><label for="name" class="form-label">What's your name?</label><input type="text" id="name" name="name" class="form-input" placeholder="John Doe" /></div>
+              <div><label for="email" class="form-label">What's your email?*</label><input type="email" id="email" name="email" class="form-input" placeholder="john@doe.com" required /></div>
+              <div><label for="organization" class="form-label">What's the name of your organization?</label><input type="text" id="organization" name="organization" class="form-input" placeholder="John & Doe ®" /></div>
+              <div><label for="services" class="form-label">What services are you looking for?</label><input type="text" id="services" name="services" class="form-input" placeholder="Web Design, Web Development ..." /></div>
+              <div><label for="message" class="form-label">Your message</label><textarea id="message" name="message" rows="4" class="form-input" placeholder="Can you help me with ... *"></textarea></div>
+              <div><button type="submit" class="submit-btn">Submit</button></div>
+            </form>
+
+            <!-- Contact Details -->
+            <div class="reveal-on-scroll" style="transition-delay:.2s;">
+              <div class="mb-12">
+                <h3 class="text-sm text-gray-400 uppercase tracking-wider mb-4">Contact Details</h3>
+                <p class="text-lg font-medium"><a href="mailto:noskcahdat@gmail.com" class="hover:underline">noskcahdat@gmail.com</a></p>
+                <p class="text-lg font-medium"><a href="tel:+919999999999" class="hover:underline">+91 99999 99999</a></p>
+              </div>
+              <div>
+                <h3 class="text-sm text-gray-400 uppercase tracking-wider mb-4">Location</h3>
+                <p class="text-lg font-medium">Chennai, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="bg-[#1C1D20] text-white pt-32 pb-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div class="w-full md:w-3/4">
+          <h2 class="footer-heading reveal-on-scroll">Let's work</h2>
+          <h2 class="footer-heading reveal-on-scroll" style="transition-delay:.15s;">together</h2>
+        </div>
+        <div class="mt-8 md:mt-0 reveal-on-scroll" style="transition-delay:.3s;">
+          <a href="#contact" class="cta-button-wrapper nav-link" data-page="contact" aria-label="Get in touch">
+            <div class="cta-button-wrapper-inner">
+              <span class="cta-button-text">Get in touch</span>
+              <div class="cta-button">Get in touch</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <hr class="border-white/20 my-16 md:my-24 reveal-on-scroll" />
+
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 reveal-on-scroll">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+          <div class="flex flex-col gap-2">
+            <span class="text-sm text-gray-400 uppercase">Social</span>
+            <a href="#" class="text-base font-medium hover:text-gray-300">Instagram</a>
+            <a href="https://github.com/noSkcaHdat" target="_blank" rel="noreferrer noopener" class="text-base font-medium hover:text-gray-300">GitHub</a>
+            <a href="#" class="text-base font-medium hover:text-gray-300">LinkedIn</a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-sm text-gray-400 uppercase">Contact</span>
+            <a href="mailto:noskcahdat@gmail.com" class="text-base font-medium hover:text-gray-300">noskcahdat@gmail.com</a>
+            <a href="tel:+919999999999" class="text-base font-medium hover:text-gray-300">+91 99999 99999</a>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8 md:gap-16 text-left md:text-right">
+          <div>
+            <span class="text-sm text-gray-400 uppercase block">Version</span>
+            <span class="text-base font-medium">2025 &copy; Edition</span>
+          </div>
+          <div>
+            <span class="text-sm text-gray-400 uppercase block">Local time</span>
+            <span id="local-time" class="text-base font-medium">00:00:00 AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center md:text-left reveal-on-scroll">
+        <p class="text-sm text-gray-500">&copy; Karthik Raja</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const loader = document.getElementById('page-loader');
+    const loaderText = document.getElementById('loader-text');
+    const greetingsLoader = document.getElementById('greetings-loader');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const pages = document.querySelectorAll('.page-content');
+    const desktopNav = document.getElementById('desktop-nav');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    // Work filters
+    const workFilterButtons = document.querySelectorAll('.work-filter');
+    const workGridWeb = document.getElementById('work-grid-web');
+    const workGridGraphic = document.getElementById('work-grid-graphic');
+
+    function showLoader(text){ if(greetingsLoader) greetingsLoader.style.display='none'; loaderText.style.opacity='1'; loaderText.textContent = `• ${text}`; loader.classList.add('is-visible'); loader.classList.remove('is-hidden'); }
+    function hideLoader(){ loader.classList.add('is-hidden'); loader.classList.remove('is-visible'); }
+
+    // Initial page load: greetings should fully play before hiding loader
+// 0.3s stagger per greeting + 0.5s animation per greeting (overlapping) ≈ finishes in ~5–6s total.
+const greetingNodes = document.querySelectorAll('#greetings-loader .greeting');
+// Assign staggered delays dynamically (no need for nth-child CSS)
+greetingNodes.forEach((el, i) => { el.style.animationDelay = `${i * 0.35}s`; });
+
+(function initLoaderWithGreetings(){
+  const stepMs = 400;       // 0.4s per step
+  const animMs = 550;       // 0.5s animation duration (from CSS)
+  const count  = greetingNodes.length || 0;
+
+  // Total = delay of last greeting + its own anim + a small buffer
+  const totalMs = (Math.max(0, count - 1) * stepMs) + animMs + 200;
+
+  setTimeout(() => {
+    if (greetingsLoader) greetingsLoader.style.opacity = '0';
+    if (loaderText)      loaderText.style.opacity = '1';
+
+    setTimeout(() => {
+      hideLoader();
+      const home = document.getElementById('page-home');
+      if (home) { initScrollReveal(home); }
+      if (typeof updateNavActiveState === 'function') updateNavActiveState('home');
+    }, 400);
+  }, totalMs);
+})();
+
+
+    // === Scroll Reveal (fresh observer per init) ===
+    function initScrollReveal(containerEl){
+      const root = containerEl || document;
+      const revealEls = root.querySelectorAll('.reveal-on-scroll');
+      revealEls.forEach(el => el.classList.remove('is-visible'));
+      const obs = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      revealEls.forEach(el => obs.observe(el));
+    }
+
+    // === Work Filters ===
+    function showWorkCategory(category){
+      [workGridWeb, workGridGraphic].forEach(g => g && g.classList.add('hidden'));
+      workFilterButtons.forEach(btn => btn.classList.remove('is-active'));
+      if(category === 'web'){
+        workGridWeb.classList.remove('hidden');
+        document.getElementById('work-filter-web')?.classList.add('is-active');
+      } else if(category === 'graphic'){
+        workGridGraphic.classList.remove('hidden');
+        document.getElementById('work-filter-graphic')?.classList.add('is-active');
+      } else { // all
+        workGridWeb.classList.remove('hidden');
+        workGridGraphic.classList.remove('hidden');
+        document.getElementById('work-filter-all')?.classList.add('is-active');
+      }
+    }
+
+    workFilterButtons.forEach(btn => btn.addEventListener('click', () => {
+      showWorkCategory(btn.dataset.filter);
+      initScrollReveal(document.getElementById('page-work'));
+    }));
+
+    // === Routing ===
+    function navigateTo(pageId){
+      const targetPage = document.getElementById(`page-${pageId}`);
+      if(!targetPage) return;
+      const pageTitle = pageId.charAt(0).toUpperCase() + pageId.slice(1);
+      showLoader(pageTitle);
+      updateNavActiveState(pageId);
+      pages.forEach(p => p.classList.add('hidden'));
+      setTimeout(() => {
+        targetPage.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        document.title = `${pageTitle} | Karthik Raja`;
+        history.pushState({ pageId }, pageTitle, `#${pageId}`);
+        if(pageId === 'work') { showWorkCategory('all'); }
+        initScrollReveal(targetPage);
+        setTimeout(hideLoader, 100);
+      }, 800);
+    }
+
+    function updateNavActiveState(pageId){
+      [desktopNav, mobileNav].forEach(nav => {
+        if(!nav) return;
+        nav.querySelectorAll('.nav-link').forEach(link => {
+          const active = link.dataset.page === pageId;
+          link.classList.toggle('is-active', active);
+          if(nav.id === 'mobile-nav'){ link.classList.toggle('font-bold', active); link.classList.toggle('text-black', active); }
+          if(active) link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
+        });
+      });
+    }
+
+    navLinks.forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); navigateTo(link.dataset.page); closeMenu(); }));
+
+    // Support direct linking via hash
+    if(location.hash){ const pageFromHash = location.hash.replace('#','').trim(); if(document.getElementById(`page-${pageFromHash}`)){ setTimeout(() => navigateTo(pageFromHash), 100); } }
+
+    window.addEventListener('popstate', () => {
+      const hash = (location.hash || '#home').replace('#','');
+      const id = document.getElementById(`page-${hash}`) ? hash : 'home';
+      pages.forEach(p => p.classList.add('hidden'));
+      const pageEl = document.getElementById(`page-${id}`);
+      pageEl.classList.remove('hidden');
+      updateNavActiveState(id);
+      if(id === 'work') { showWorkCategory('all'); }
+      initScrollReveal(pageEl);
+    });
+
+    // Local time
+    const timeEl = document.getElementById('local-time');
+    function updateTime(){ if(timeEl){ const now = new Date(); timeEl.textContent = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true }); } }
+    setInterval(updateTime, 1000); updateTime();
+
+    // Mobile menu
+    const openBtn = document.getElementById('menu-open-btn');
+    const closeBtn = document.getElementById('menu-close-btn');
+    const overlay = document.getElementById('menu-overlay');
+    function openMenu(){ if(overlay){ overlay.classList.add('is-open'); overlay.hidden=false; } document.body.style.overflow='hidden'; openBtn?.setAttribute('aria-expanded','true'); }
+    function closeMenu(){ if(overlay){ overlay.classList.remove('is-open'); overlay.hidden=true; } document.body.style.overflow=''; openBtn?.setAttribute('aria-expanded','false'); }
+    openBtn?.addEventListener('click', openMenu);
+    closeBtn?.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', (e) => { if(e.target === overlay) closeMenu(); });
+
+    // CLICK TO PAUSE / RESUME MARQUEE
+    const marqueeWrapper = document.querySelector('.marquee-wrapper');
+    const marqueeContent = document.querySelector('.marquee-content');
+    if(marqueeWrapper && marqueeContent){
+      marqueeWrapper.addEventListener('click', () => {
+        marqueeContent.classList.toggle('paused');
+      });
+    }
+
+    // Parallax (lightweight)
+    const parallaxImage = document.getElementById('hero-image');
+    if(parallaxImage){ let ticking=false; function updateParallax(){ const scrollY = window.scrollY; const maxOffset = parallaxImage.parentElement.clientHeight - parallaxImage.clientHeight; const offset = Math.min(0, Math.max(maxOffset, scrollY * -0.2)); parallaxImage.style.transform = `translateY(${offset}px)`; ticking=false; } window.addEventListener('scroll', () => { if(!ticking){ window.requestAnimationFrame(updateParallax); ticking=true; } }); }
+  });
+  </script>
+</body>
+</html>
