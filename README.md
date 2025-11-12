@@ -1,16 +1,11 @@
-# Noskcah Portfolio
+Portfolio with detailed explanation about
 
-A concept portfolio inspired by immersive, animation-forward freelance design sites. The landing
-experience greets visitors in multiple languages before revealing the main content.
+- My journey
 
-## Getting started
+- Skills
 
-Open `index.html` in your browser (double-click the file or start a local HTTP server) to explore the
-prototype.
+- Projects
 
-### Development tips
-- `styles/main.css` contains the layout, typography, and animation system.
-- `scripts/main.js` powers the multilingual greeting overlay, smooth scrolling, and section reveal
-  animations.
+- Experience
 
-Feel free to remix the copy, palette, and layout to match your voice.
+use index7.html for latest version
