@@ -1,0 +1,62 @@
+[
+  {
+    "id": "phisher-io",
+    "title": "Phisher.io",
+    "category": "web",
+    "role": "Security Engineering",
+    "description": "Phishing Detection",
+    "image": "Phisherio-GithubImage.png",
+    "link": "https://github.com/noSkcaHdat/Phisher.io",
+    "year": "2025"
+  },
+  {
+    "id": "rag-pipeline",
+    "title": "RAG Pipeline",
+    "category": "web",
+    "role": "RAG & Python",
+    "description": "Retrieval-Augmented Generation stack.",
+    "image": "Ai-cooked_Github.jpg",
+    "link": "https://github.com/noSkcaHdat/ai-cooked",
+    "year": "2025"
+  },
+  {
+    "id": "aov",
+    "title": "AOV",
+    "category": "graphic",
+    "role": "Branding & Graphic Design",
+    "description": "Branding & Graphic Design",
+    "image": "https://static.wixstatic.com/media/d8318a_7323ce1a1e10485eb088e5055023fec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/front-view-family-celebrating-birthday-together%20copy.jpg",
+    "link": "#",
+    "year": "2025"
+  },
+  {
+    "id": "mcb-bank",
+    "title": "MCB Bank",
+    "category": "graphic",
+    "role": "Graphic Design",
+    "description": "Graphic Design",
+    "image": "https://static.wixstatic.com/media/d8318a_5276490fa24c44d4a272139625b8a733~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-5.jpg",
+    "link": "#",
+    "year": "2025"
+  },
+  {
+    "id": "korsou-ta-move",
+    "title": "Kòrsou ta Move",
+    "category": "graphic",
+    "role": "Branding & Graphic Design",
+    "description": "Branding & Graphic Design",
+    "image": "https://static.wixstatic.com/media/d8318a_50ce4c119ec94ea2a9c892b2fd0ddb13~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-1.jpg",
+    "link": "#",
+    "year": "2025"
+  },
+  {
+    "id": "assuria-insurance",
+    "title": "Assuria Insurance",
+    "category": "graphic",
+    "role": "Graphic Design",
+    "description": "Graphic Design",
+    "image": "https://static.wixstatic.com/media/55d98a_3287270d83ef4efabfdd1f52d0dc6ec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/wolfgang-hasselmann-1ICIhK-ElJs-unsplash-edited.jpg",
+    "link": "#",
+    "year": "2025"
+  }
+]

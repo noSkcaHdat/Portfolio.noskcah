@@ -1,208 +1,529 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noskcah Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  <body>
-    <div id="intro-overlay" class="intro-overlay">
-      <div class="intro-copy">
-        <span class="intro-label">greetings</span>
-        <h1 class="intro-greeting">Hello</h1>
-        <p class="intro-meta">Welcome to the portfolio of Noskcah</p>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Karthik Raja | Portfolio</title>
+  <meta name="description"
+    content="Karthik Raja - Developer & Security Researcher. Creating next-level digital products with expertise in web development, AI, and cybersecurity.">
+  <meta name="keywords"
+    content="Karthik Raja, Developer, Security Researcher, Web Development, AI, Cybersecurity, Portfolio">
+  <meta name="author" content="Karthik Raja">
+  <meta property="og:title" content="Karthik Raja | Developer & Security Researcher">
+  <meta property="og:description"
+    content="Creating next-level digital products with expertise in web development, AI, and cybersecurity.">
+  <meta property="og:type" content="website">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body class="cursor-none">
+  <!-- Custom Cursor -->
+  <div id="custom-cursor"
+    class="fixed w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference hidden md:block"
+    style="top: 0; left: 0;"></div>
+
+  <!-- Noise Overlay -->
+  <div id="noise-overlay" class="fixed inset-0 z-[9998] pointer-events-none opacity-[0.03]"></div>
+
+  <!-- Header -->
+  <header role="banner" class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo/Name -->
+        <a href="#home" class="font-bold text-lg nav-link" data-page="home">&copy; Karthik Raja</a>
+
+        <!-- Desktop Nav -->
+        <nav id="desktop-nav" class="hidden md:flex space-x-8" aria-label="Primary">
+          <a href="#home" class="font-medium text-gray-500 hover:text-black nav-link is-active" data-page="home"
+            aria-current="page">Home</a>
+          <a href="#work" class="font-medium text-gray-500 hover:text-black nav-link" data-page="work">Work</a>
+          <a href="#about" class="font-medium text-gray-500 hover:text-black nav-link" data-page="about">Journey</a>
+          <a href="#contact" class="font-medium text-gray-500 hover:text-black nav-link" data-page="contact">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-open-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Open menu"
+            aria-expanded="false" aria-controls="menu-content">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
+  </header>
 
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="brand" href="#hero">@ Noskcah</a>
-        <nav class="primary-nav" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <button class="availability" type="button">
-          <span class="availability-ring"></span>
-          <span>Available Worldwide</span>
+  <!-- Mobile Menu Overlay -->
+  <div id="menu-overlay" class="menu-overlay fixed inset-0 z-[100] bg-black/60 md:hidden" hidden>
+    <div id="menu-content" class="menu-content fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-lg p-6">
+      <div class="flex justify-end mb-8">
+        <button id="menu-close-btn" class="p-2 rounded-md hover:bg-gray-100" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
         </button>
       </div>
-    </header>
+      <nav id="mobile-nav" class="flex flex-col space-y-6" aria-label="Primary mobile">
+        <a href="#home" class="text-2xl font-bold text-black nav-link" data-page="home">Home</a>
+        <a href="#work" class="text-2xl font-medium text-gray-500 hover:text-black nav-link" data-page="work">Work</a>
+        <a href="#about" class="text-2xl font-medium text-gray-500 hover:text-black nav-link"
+          data-page="about">Journey</a>
+        <a href="#contact" class="text-2xl font-medium text-gray-500 hover:text-black nav-link"
+          data-page="contact">Contact</a>
+      </nav>
+    </div>
+  </div>
 
-    <main>
-      <section id="hero" class="hero section" data-animate>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">Freelance Multimedia Designer</p>
-            <h1>
-              Noskcah<br />
-              Creates Future-Ready <span class="accent">Digital Stories</span>
-            </h1>
-            <p class="lede">
-              I craft immersive digital experiences that feel alive—from dynamic
-              microsites to cinematic brand storytelling.
-            </p>
-            <div class="hero-actions">
-              <a class="btn primary" href="#contact">Start a Project</a>
-              <a class="btn ghost" href="#work">View Latest Work</a>
+  <!-- Main Content -->
+  <main id="main" role="main">
+
+    <!-- === HOME PAGE === -->
+    <div id="page-home" class="page-content">
+      <!-- Home Hero -->
+      <section class="min-h-screen relative flex flex-col justify-between pt-24 md:pt-32 pb-8 md:pb-16 bg-black">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 overflow-hidden">
+          <img src="KarthikDP.jpg" alt="Portrait of Karthik Raja"
+            class="w-full h-full object-cover object-center opacity-70" fetchpriority="high" decoding="async"
+            width="1920" height="1080" srcset="KarthikNewDp.png 640w, KarthikDP.jpg 1920w" sizes="100vw"
+            onerror="this.src='https://placehold.co/1920x1080/333333/555555?text=Hero+Image'" />
+        </div>
+
+        <!-- subtle grey film to match the reference vibe -->
+        <div class="absolute inset-0 z-[1] bg-[#9ca3af]/70 mix-blend-multiply pointer-events-none"></div>
+
+        <!-- LEFT floating Availability widget (desktop) -->
+        <div class="availability-widget" aria-label="Availability">
+          <div class="availability-globe" aria-hidden="true">
+            <!-- globe icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none"
+              stroke="currentColor" stroke-width="1.5">
+              <path d="M12 21c4.97 0 9-4.03 9-9s-4.03-9-9-9-9 4.03-9 9 4.03 9 9 9Z" />
+              <path
+                d="M3 12h18M12 3c2.5 2.6 3.75 5.3 3.75 9S14.5 18.4 12 21M12 3c-2.5 2.6-3.75 5.3-3.75 9S9.5 18.4 12 21" />
+            </svg>
+          </div>
+          <div class="availability-pill">
+            <div class="availability-label">
+              Available <span class="availability-sub">Worldwide</span>
             </div>
           </div>
-          <div class="hero-media">
-            <div class="hero-frame">
-              <div class="floating-tag">Interactive</div>
-              <div class="portrait" role="img" aria-label="Futuristic abstract portrait"></div>
+        </div>
+
+        <!-- Mobile mini badge (keeps things clean on phones) -->
+        <div class="availability-badge-mobile md:hidden">
+          <span class="dot" aria-hidden="true"></span>
+          Available
+        </div>
+
+
+        <!-- Middle content -->
+        <div class="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex items-center">
+          <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div></div>
+            <div class="relative">
+              <h2 class="text-3xl md:text-5xl font-semibold text-white reveal-on-scroll">
+                Developer<br />Security Researcher
+              </h2>
+              <svg class="w-8 h-8 text-white absolute -top-4 -left-12 md:-left-16 reveal-on-scroll"
+                style="transition-delay:.1s;" viewBox="0 0 200 200" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M180 94.1H43l52.1-45-7.7-8.9-67.3 58.1 67.1 61 7.9-8.7L46 106.1h134v-12z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Marquee (unchanged; still rotates/scrolls) -->
+        <div class="relative z-[2] w-full marquee-wrapper text-white reveal-on-scroll" style="transition-delay:.2s;">
+          <div class="marquee-content">
+            <h1 class="hero-name"><span>Karthik —</span><span>Hackson —</span><span>Karthik —</span><span>Noskcahdat
+                —</span></h1>
+            <h1 class="hero-name" aria-hidden="true"><span>Karthik —</span><span>Hackson —</span><span>Karthik
+                —</span><span>Noskcahdat —</span></h1>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Home Recent Work -->
+      <section class="py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 class="text-sm font-medium text-gray-500 uppercase tracking-wider reveal-on-scroll">Recent Work</h3>
+          <div class="mt-8 border-t border-gray-200">
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">Phisher.io</h4>
+              <span class="recent-work-role">Security Engineering</span>
+            </a>
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">noskcah Voice Assistant</h4>
+              <span class="recent-work-role">AI & Agents</span>
+            </a>
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">AI-cooked</h4>
+              <span class="recent-work-role">MCPs & Claude</span>
+            </a>
+            <a href="#work" class="recent-work-item reveal-on-scroll nav-link" data-page="work">
+              <h4 class="recent-work-title">RAG Pipeline</h4>
+              <span class="recent-work-role">RAG & Python</span>
+            </a>
+          </div>
+          <div class="text-center mt-12 reveal-on-scroll">
+            <a href="#work" class="more-work-button nav-link" data-page="work">More Work</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Home Gallery -->
+      <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="reveal-on-scroll"><img
+                src="https://static.wixstatic.com/media/11062b_e8771669914d4b8a949e06893dfd43a0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Beach%20Sand.jpg"
+                alt="Beach Sand" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async"
+                width="600" height="400"
+                onerror="this.src='https://placehold.co/600x400/e0e0e0/a0a0a0?text=Beach+Sand'" /></div>
+            <div class="reveal-on-scroll" style="transition-delay:.1s;"><img
+                src="https://static.wixstatic.com/media/d8318a_15d72b7b47784eedb0e42d402c551a3e~mv2.webp/v1/fill/w_600,h_600,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Guardian%20Dave%201.webp"
+                alt="Guardian Dave 1" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy"
+                decoding="async" width="600" height="600"
+                onerror="this.src='https://placehold.co/600x600/d0d0d0/a0a0a0?text=Guardian+Dave'" /></div>
+            <div class="reveal-on-scroll" style="transition-delay:.2s;"><img
+                src="https://static.wixstatic.com/media/d8318a_3f044a30e8494c018b1f386652b4c75e~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/LED%20mockup%20copy.jpg"
+                alt="LED mockup" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async"
+                width="600" height="400"
+                onerror="this.src='https://placehold.co/600x400/c0c0c0/a0a0a0?text=LED+Mockup'" /></div>
+            <div class="reveal-on-scroll"><img
+                src="https://static.wixstatic.com/media/d8318a_d1ad7fbc35e24565b5b8e38c48cfb510~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Magazine-Mockup-Presentation-vol9%20copy.jpg"
+                alt="Magazine Mockup" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy"
+                decoding="async" width="600" height="400"
+                onerror="this.src='https://placehold.co/600x400/b0b0b0/a0a0a0?text=Magazine+Mockup'" /></div>
+            <div class="reveal-on-scroll" style="transition-delay:.1s;"><img
+                src="https://static.wixstatic.com/media/d8318a_ed270132ae4b4fa990f928716d52a379~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Free%20Large%20Canvas%20Posters%20Mockup%20copy.jpg"
+                alt="Canvas Posters Mockup" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy"
+                decoding="async" width="600" height="400"
+                onerror="this.src='https://placehold.co/600x400/a0a0a0/707070?text=Canvas+Mockup'" /></div>
+            <div class="reveal-on-scroll" style="transition-delay:.2s;"><img
+                src="https://static.wixstatic.com/media/11062b_e8771669914d4b8a949e06893dfd43a0~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Beach%20Sand.jpg"
+                alt="Beach Sand" class="w-full h-full object-cover rounded-lg shadow-md" loading="lazy" decoding="async"
+                width="600" height="400"
+                onerror="this.src='https://placehold.co/600x400/909090/606060?text=Beach+Sand'" /></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- === WORK PAGE === -->
+    <div id="page-work" class="page-content hidden">
+      <section class="pt-32 pb-16 md:pt-48 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl reveal-on-scroll">
+            <h1 class="hero-heading text-black">Creating next level digital products.</h1>
+          </div>
+          <!-- Filters -->
+          <div class="mt-12 flex gap-4 reveal-on-scroll">
+            <button class="work-filter is-active" data-filter="all" id="work-filter-all">All</button>
+            <button class="work-filter" data-filter="web" id="work-filter-web">Web Design</button>
+            <button class="work-filter" data-filter="graphic" id="work-filter-graphic">Graphic Design</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Web Design Grid -->
+      <section id="work-grid-web" class="work-grid pb-16 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            <!-- Project: Phisher.io -->
+            <a href="https://github.com/noSkcaHdat/Phisher.io" class="project-card reveal-on-scroll" target="_blank"
+              rel="noreferrer noopener">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="Phisherio-GithubImage.png" alt="Phisher.io" class="w-full h-full object-cover" loading="lazy"
+                  decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">Phisher.io</h3>
+                  <span class="text-sm font-medium text-gray-500">Security Engineering</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Phishing Detection</p>
+              </div>
+            </a>
+
+            <!-- Project: RAG Pipeline -->
+            <a href="https://github.com/noSkcaHdat/ai-cooked" target="_blank" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img src="Ai-cooked_Github.jpg" alt="RAG Pipeline" class="w-full h-full object-cover" loading="lazy"
+                  decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">RAG Pipeline</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2"> Retrieval-Augmented Generation stack.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Graphic Design Grid -->
+      <section id="work-grid-graphic" class="work-grid pb-16 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+            <!-- Project 1 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://static.wixstatic.com/media/d8318a_7323ce1a1e10485eb088e5055023fec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/front-view-family-celebrating-birthday-together%20copy.jpg"
+                  alt="AOV" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">AOV</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Branding & Graphic Design</p>
+              </div>
+            </a>
+            <!-- Project 2 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://static.wixstatic.com/media/d8318a_5276490fa24c44d4a272139625b8a733~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-5.jpg"
+                  alt="MCB Bank" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">MCB Bank</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Graphic Design</p>
+              </div>
+            </a>
+            <!-- Project 3 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://static.wixstatic.com/media/d8318a_50ce4c119ec94ea2a9c892b2fd0ddb13~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/Untitled-1.jpg"
+                  alt="Kòrsou ta Move" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">Kòrsou ta Move</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Branding & Graphic Design</p>
+              </div>
+            </a>
+            <!-- Project 4 -->
+            <a href="#" class="project-card reveal-on-scroll">
+              <div class="w-full bg-gray-200 aspect-[4/3] overflow-hidden">
+                <img
+                  src="https://static.wixstatic.com/media/55d98a_3287270d83ef4efabfdd1f52d0dc6ec2~mv2.jpg/v1/fill/w_600,h_400,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/wolfgang-hasselmann-1ICIhK-ElJs-unsplash-edited.jpg"
+                  alt="Assuria Insurance" class="w-full h-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between items-center">
+                  <h3 class="text-2xl font-bold">Assuria Insurance</h3>
+                  <span class="text-sm font-medium text-gray-500">2025</span>
+                </div>
+                <p class="text-base text-gray-600 mt-2">Graphic Design</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Archive Button -->
+      <section class="py-16 md:py-24 text-center">
+        <a href="#" class="archive-button reveal-on-scroll">Archive</a>
+      </section>
+    </div>
+
+    <!-- === ABOUT PAGE === -->
+    <div id="page-about" class="page-content hidden">
+      <section class="pt-32 pb-16 md:pt-48 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl">
+            <h1 class="hero-heading text-black reveal-on-scroll">Helping MSME's thrive in the digital world</h1>
+          </div>
+          <div class="mt-12 border-t border-gray-900/20 pt-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="reveal-on-scroll" style="transition-delay:.2s;">
+              <p class="text-lg text-gray-700 leading-relaxed">I help companies from all over the world with tailor-made
+                creative solutions. With each project, I push my work to new horizons, always putting quality first.</p>
+              <p class="mt-6 text-lg text-gray-700 leading-relaxed">In addition to threat intelligence I provide
+                training for startups, businesses, and creative teams, helping them grow their visual identity and
+                communication skills.</p>
+            </div>
+            <div class="w-full reveal-on-scroll parallax-wrapper" style="transition-delay:.3s;">
+              <img id="hero-image"
+                src="https://static.wixstatic.com/media/d8318a_fbcd0e44e3934a1caef5c98868fc9662~mv2.jpg/v1/fill/w_600,h_880,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Stage%20dave%20copyxx.jpg"
+                alt="On stage" class="w-full h-auto object-cover" loading="lazy" decoding="async"
+                onerror="this.src='https://placehold.co/600x750/e0e0e0/a0a0a0?text=Stage'" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="work" class="section work" data-animate>
-        <div class="section-heading">
-          <span class="section-label">Selected Projects</span>
-          <h2>Experience-led launches with measurable impact</h2>
-        </div>
-        <div class="work-grid">
-          <article class="work-card">
-            <div class="card-meta">
-              <span class="tag">2024</span>
-              <span class="tag">Immersive Web</span>
+      <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="section-heading text-black mb-12 reveal-on-scroll">I can help you with ...</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="service-card p-8 rounded-lg reveal-on-scroll"><span class="text-gray-500 font-medium">01</span>
+              <div class="w-full h-px bg-gray-400 my-4"></div>
+              <h3 class="text-3xl font-bold text-black mb-4">Design</h3>
+              <p class="text-gray-700 leading-relaxed">With a strong background in website design, I create digital
+                experiences that are both visually engaging and easy to use.</p>
             </div>
-            <h3>Orbit Shift Launch</h3>
-            <p>
-              A reactive storytelling hub with ambient sounds, parallax scrolls,
-              and live mission telemetry.
-            </p>
-            <a class="card-link" href="#">View Case Study</a>
-          </article>
-          <article class="work-card">
-            <div class="card-meta">
-              <span class="tag">2023</span>
-              <span class="tag">Interactive Film</span>
+            <div class="service-card p-8 rounded-lg reveal-on-scroll" style="transition-delay:.2s;"><span
+                class="text-gray-500 font-medium">02</span>
+              <div class="w-full h-px bg-gray-400 my-4"></div>
+              <h3 class="text-3xl font-bold text-black mb-4">Development</h3>
+              <p class="text-gray-700 leading-relaxed">I craft scalable, high-performance websites that perfectly align
+                with each design.</p>
             </div>
-            <h3>Spectral Voices</h3>
-            <p>
-              An interactive documentary blending choreography, voice samples,
-              and color-reactive gradients.
-            </p>
-            <a class="card-link" href="#">View Case Study</a>
-          </article>
-          <article class="work-card">
-            <div class="card-meta">
-              <span class="tag">2023</span>
-              <span class="tag">Creative Direction</span>
+            <div class="service-card p-8 rounded-lg reveal-on-scroll" style="transition-delay:.3s;"><span
+                class="text-gray-500 font-medium">03</span>
+              <div class="w-full h-px bg-gray-400 my-4"></div>
+              <h3 class="text-3xl font-bold text-black mb-4">The full package</h3>
+              <p class="text-gray-700 leading-relaxed">From concept to launch, I deliver complete results that blend
+                creativity with technical precision.</p>
             </div>
-            <h3>Atelier Nova</h3>
-            <p>
-              Portfolio redesign for a global studio featuring modular scenes and
-              algorithmic typography.
-            </p>
-            <a class="card-link" href="#">View Case Study</a>
-          </article>
-        </div>
-      </section>
-
-      <section id="about" class="section about" data-animate>
-        <div class="about-grid">
-          <div class="about-summary">
-            <span class="section-label">About</span>
-            <h2>Designing experiences that move people</h2>
-            <p>
-              I combine motion design, 3D artistry, and human-centered strategy
-              to help teams launch memorable products. Each engagement is tuned
-              for emotion, clarity, and measurable results.
-            </p>
           </div>
-          <ul class="about-credentials">
-            <li>
-              <strong>12+ Years</strong>
-              Multi-disciplinary design leadership across agencies and in-house
-              teams.
-            </li>
-            <li>
-              <strong>Global Reach</strong>
-              Collaborated remotely with teams across 9 time zones with a focus
-              on inclusive storytelling.
-            </li>
-            <li>
-              <strong>Awards</strong>
-              Webby, Awwwards, and CSS Design Awards recognitions for digital
-              innovation.
-            </li>
-          </ul>
         </div>
       </section>
 
-      <section id="services" class="section services" data-animate>
-        <div class="section-heading">
-          <span class="section-label">Core Services</span>
-          <h2>From concept to kinetic launch</h2>
-        </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>Immersive Web Design</h3>
-            <p>
-              High-impact microsites, product storytellers, and marketing
-              experiences that feel cinematic and alive.
-            </p>
-          </article>
-          <article class="service-card">
-            <h3>Motion Direction</h3>
-            <p>
-              Narrative-driven motion systems for brands, events, and cultural
-              moments that demand attention.
-            </p>
-          </article>
-          <article class="service-card">
-            <h3>Prototype Labs</h3>
-            <p>
-              Interactive prototypes, AR/VR concepts, and experimental demos to
-              test bold ideas quickly.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact" class="section contact" data-animate>
-        <div class="contact-inner">
-          <span class="section-label">Collaborate</span>
-          <h2>Let’s build the next experience</h2>
-          <p>
-            Share your vision, timeline, and ambitions. I’ll respond within one
-            business day with next steps and possible directions.
-          </p>
-          <form class="contact-form">
-            <div class="form-grid">
-              <label>
-                Name
-                <input type="text" name="name" placeholder="Your name" />
-              </label>
-              <label>
-                Email
-                <input type="email" name="email" placeholder="you@example.com" />
-              </label>
+      <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
+            <div class="w-full reveal-on-scroll">
+              <img src="GenCysImage.jpg" alt="UST Gencys-CTF" class="w-full h-auto object-cover rounded-lg shadow-md"
+                loading="lazy" decoding="async"
+                onerror="this.src='https://placehold.co/600x700/e0e0e0/a0a0a0?text=CTF'" />
             </div>
-            <label>
-              Project Details
-              <textarea name="project" rows="4" placeholder="Tell me about your idea"></textarea>
-            </label>
-            <button class="btn primary" type="submit">Send Message</button>
-          </form>
+            <div class="self-center reveal-on-scroll" style="transition-delay:.2s;">
+              <h2 class="section-heading text-black mb-6">UST Gencys-CTF 2025 - Top Finisher</h2>
+              <p class="text-lg text-gray-700 leading-relaxed">Proud to be a top finisher at UST Gencys-CTF 2025. This
+                experience fuels my cybersecurity passion and commitment to excellence.</p>
+            </div>
+          </div>
         </div>
       </section>
-    </main>
+    </div>
 
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Noskcah Studio. Crafted for bold collaborators.</p>
-    </footer>
+    <!-- === CONTACT PAGE === -->
+    <div id="page-contact" class="page-content hidden">
+      <section class="bg-[#1C1D20] text-white pt-32 pb-16 md:pt-48 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="max-w-4xl">
+            <h1 class="hero-heading reveal-on-scroll">Let's start a project together</h1>
+          </div>
+          <div class="mt-16 md:mt-24 grid grid-cols-1 md:grid-cols-2 gap-16">
+            <!-- Form -->
+            <form id="contact-form" action="#" method="POST" class="space-y-10 reveal-on-scroll">
+              <div><label for="name" class="form-label">What's your name?</label><input type="text" id="name"
+                  name="name" class="form-input" placeholder="John Doe" /></div>
+              <div><label for="email" class="form-label">What's your email?*</label><input type="email" id="email"
+                  name="email" class="form-input" placeholder="john@doe.com" required /></div>
+              <div><label for="organization" class="form-label">What's the name of your organization?</label><input
+                  type="text" id="organization" name="organization" class="form-input" placeholder="John & Doe ®" />
+              </div>
+              <div><label for="services" class="form-label">What services are you looking for?</label><input type="text"
+                  id="services" name="services" class="form-input" placeholder="Web Design, Web Development ..." />
+              </div>
+              <div><label for="message" class="form-label">Your message</label><textarea id="message" name="message"
+                  rows="4" class="form-input" placeholder="Can you help me with ... *"></textarea></div>
+              <div>
+                <button type="submit" class="submit-btn">Submit</button>
+                <div id="form-status" class="hidden mt-4 text-sm"></div>
+              </div>
+            </form>
 
-    <script src="scripts/main.js"></script>
-  </body>
+            <!-- Contact Details -->
+            <div class="reveal-on-scroll" style="transition-delay:.2s;">
+              <div class="mb-12">
+                <h3 class="text-sm text-gray-400 uppercase tracking-wider mb-4">Contact Details</h3>
+                <p class="text-lg font-medium"><a href="mailto:noskcahdat@gmail.com"
+                    class="hover:underline">noskcahdat@gmail.com</a></p>
+                <p class="text-lg font-medium"><a href="tel:+919445176276" class="hover:underline">+91 94451 76276</a>
+                </p>
+              </div>
+              <div>
+                <h3 class="text-sm text-gray-400 uppercase tracking-wider mb-4">Location</h3>
+                <p class="text-lg font-medium">Chennai, India</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="bg-[#1C1D20] text-white pt-32 pb-8 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div class="w-full md:w-3/4">
+          <h2 class="footer-heading reveal-on-scroll">Let's work</h2>
+          <h2 class="footer-heading reveal-on-scroll" style="transition-delay:.15s;">together</h2>
+        </div>
+        <div class="mt-8 md:mt-0 reveal-on-scroll" style="transition-delay:.3s;">
+          <a href="#contact" class="cta-button-wrapper nav-link" data-page="contact" aria-label="Get in touch">
+            <div class="cta-button-wrapper-inner">
+              <span class="cta-button-text">Get in touch</span>
+              <div class="cta-button">Get in touch</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <hr class="border-white/20 my-16 md:my-24 reveal-on-scroll" />
+
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 reveal-on-scroll">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-16">
+          <div class="flex flex-col gap-2">
+            <span class="text-sm text-gray-400 uppercase">Social</span>
+            <a href="https://instagram.com/noskcahdat" target="_blank" rel="noreferrer noopener"
+              class="text-base font-medium hover:text-gray-300">Instagram</a>
+            <a href="https://github.com/noSkcaHdat" target="_blank" rel="noreferrer noopener"
+              class="text-base font-medium hover:text-gray-300">GitHub</a>
+            <a href="https://linkedin.com/in/noskcahdat" target="_blank" rel="noreferrer noopener"
+              class="text-base font-medium hover:text-gray-300">LinkedIn</a>
+          </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-sm text-gray-400 uppercase">Contact</span>
+            <a href="mailto:noskcahdat@gmail.com"
+              class="text-base font-medium hover:text-gray-300">noskcahdat@gmail.com</a>
+            <a href="tel:+919999999999" class="text-base font-medium hover:text-gray-300">+91 99999 99999</a>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8 md:gap-16 text-left md:text-right">
+          <div>
+            <span class="text-sm text-gray-400 uppercase block">Version</span>
+            <span class="text-base font-medium">2025 &copy; Edition</span>
+          </div>
+          <div>
+            <span class="text-sm text-gray-400 uppercase block">Local time</span>
+            <span id="local-time" class="text-base font-medium">00:00:00 AM</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 text-center md:text-left reveal-on-scroll">
+        <p class="text-sm text-gray-500">&copy; Karthik Raja</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.6/bundled/lenis.min.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+
 </html>
