@@ -14,18 +14,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showLoader(text) {
     if (!loader && !loaderText && !greetingsLoader) return;
-    if (greetingsLoader) try { greetingsLoader.style.display = 'none'; } catch(e){}
-    try { if (loaderText) { loaderText.style.opacity = '1'; loaderText.textContent = `• ${text}`; } } catch(e){}
-    try { if (loader) { loader.classList.add('is-visible'); loader.classList.remove('is-hidden'); } } catch(e){}
+    if (greetingsLoader) try { greetingsLoader.style.display = 'none'; } catch (e) { }
+    try { if (loaderText) { loaderText.style.opacity = '1'; loaderText.textContent = `• ${text}`; } } catch (e) { }
+    try { if (loader) { loader.classList.add('is-visible'); loader.classList.remove('is-hidden'); } } catch (e) { }
   }
   function hideLoader() {
     if (!loader) return;
-    try { loader.classList.add('is-hidden'); loader.classList.remove('is-visible'); } catch(e){}
+    try { loader.classList.add('is-hidden'); loader.classList.remove('is-visible'); } catch (e) { }
   }
 
   // Initial page load: greetings should fully play before hiding loader
   const greetingNodes = document.querySelectorAll('#greetings-loader .greeting');
-  if (greetingNodes && greetingNodes.length) greetingNodes.forEach((el, i) => { try{ el.style.animationDelay = `${i * 0.35}s`; }catch(e){} });
+  if (greetingNodes && greetingNodes.length) greetingNodes.forEach((el, i) => { try { el.style.animationDelay = `${i * 0.35}s`; } catch (e) { } });
 
   (function initLoaderWithGreetings() {
     try {
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setTimeout(() => {
-        if (greetingsLoader) try{ greetingsLoader.style.opacity = '0'; }catch(e){}
-        if (loaderText) try{ loaderText.style.opacity = '1'; }catch(e){}
+        if (greetingsLoader) try { greetingsLoader.style.opacity = '0'; } catch (e) { }
+        if (loaderText) try { loaderText.style.opacity = '1'; } catch (e) { }
 
         setTimeout(() => {
           hideLoader();
@@ -85,13 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const workGridWeb = document.getElementById('work-grid-web');
   const workGridGraphic = document.getElementById('work-grid-graphic');
 
-  function showWorkCategory(category){
+  function showWorkCategory(category) {
     [workGridWeb, workGridGraphic].forEach(g => g && g.classList.add('hidden'));
     workFilterButtons.forEach(btn => btn.classList.remove('is-active'));
-    if(category === 'web'){
+    if (category === 'web') {
       workGridWeb && workGridWeb.classList.remove('hidden');
       document.getElementById('work-filter-web')?.classList.add('is-active');
-    } else if(category === 'graphic'){
+    } else if (category === 'graphic') {
       workGridGraphic && workGridGraphic.classList.remove('hidden');
       document.getElementById('work-filter-graphic')?.classList.add('is-active');
     } else {
