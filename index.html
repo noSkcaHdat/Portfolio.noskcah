@@ -14,11 +14,24 @@
   <meta property="og:description"
     content="Creating next-level digital products with expertise in web development, AI, and cybersecurity.">
   <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles/main.css">
 </head>
 
 <body class="cursor-none">
+  <!-- Page Loader -->
+  <div id="page-loader" class="is-visible">
+    <div id="greetings-loader">
+      <span class="greeting">Hello</span>
+      <span class="greeting">Vanakkam</span>
+      <span class="greeting">नमस्ते</span>
+    </div>
+    <h1 id="loader-text" style="opacity:0;font-size:clamp(2rem,5vw,3rem);font-weight:500;color:#9ca3af;"></h1>
+  </div>
+
   <!-- Custom Cursor -->
   <div id="custom-cursor"
     class="fixed w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference hidden md:block"
@@ -500,7 +513,7 @@
             <span class="text-sm text-gray-400 uppercase">Contact</span>
             <a href="mailto:noskcahdat@gmail.com"
               class="text-base font-medium hover:text-gray-300">noskcahdat@gmail.com</a>
-            <a href="tel:+919999999999" class="text-base font-medium hover:text-gray-300">+91 99999 99999</a>
+            <a href="tel:+919445176276" class="text-base font-medium hover:text-gray-300">+91 94451 76276</a>
           </div>
         </div>
         <div class="flex flex-col md:flex-row gap-8 md:gap-16 text-left md:text-right">

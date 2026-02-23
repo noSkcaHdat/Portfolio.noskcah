@@ -10,6 +10,26 @@
     "year": "2025"
   },
   {
+    "id": "noskcah-voice-assistant",
+    "title": "noskcah Voice Assistant",
+    "category": "web",
+    "role": "AI & Agents",
+    "description": "AI-powered voice assistant built with Python and agent frameworks.",
+    "image": "https://placehold.co/600x400/1C1D20/9ca3af?text=noskcah+Voice+Assistant",
+    "link": "https://github.com/noSkcaHdat",
+    "year": "2025"
+  },
+  {
+    "id": "ai-cooked",
+    "title": "AI-cooked",
+    "category": "web",
+    "role": "MCPs & Claude",
+    "description": "AI-cooked recipes and MCP integrations with Claude.",
+    "image": "Ai-cooked_Github.jpg",
+    "link": "https://github.com/noSkcaHdat/ai-cooked",
+    "year": "2025"
+  },
+  {
     "id": "rag-pipeline",
     "title": "RAG Pipeline",
     "category": "web",
