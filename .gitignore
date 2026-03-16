@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Optional local leftovers
+tmp-*
+hts-cache/
+wodniack.dev/
