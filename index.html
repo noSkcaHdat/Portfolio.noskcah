@@ -88,6 +88,7 @@
 <!-- .sb-console__inner --> </div>
 <!-- .sb-console --> <nav class="sb-menu astro-5qrshpxv"> <ul class="sb__list astro-5qrshpxv"> <li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#about"> <span class="sb__text astro-5qrshpxv">About</span> </a> </li>
 <li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#work"> <span class="sb__text astro-5qrshpxv">Work</span> </a> </li>
+<li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#journey"> <span class="sb__text astro-5qrshpxv">Journey</span> </a> </li>
 <li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#contact"> <span class="sb__text astro-5qrshpxv">Contact</span> </a> </li> </ul> </nav>
 <!-- .sb-menu --> <ul class="sb-socials astro-5qrshpxv"> <li class="sb__item astro-5qrshpxv"> <a class="astro-5qrshpxv" href="https://github.com/noSkcaHdat" rel="noopener" target="_blank"> <span class="sb__icon sb__icon--codepen astro-5qrshpxv" style="--path: path('M19.3184 6.01751L10.4517 0.105976C10.3477 0.0365379 10.2254 -0.000518799 10.1002 -0.000518799C9.97513 -0.000518799 9.85282 0.0365379 9.74874 0.105976L0.882076 6.01751C0.795245 6.07529 0.724029 6.15362 0.674752 6.24555C0.625475 6.33747 0.599663 6.44014 0.599609 6.54444V12.456C0.599609 12.6675 0.706009 12.8651 0.882076 12.9829L9.74874 18.8944C9.85269 18.9636 9.97476 19.0005 10.0996 19.0005C10.2245 19.0005 10.3465 18.9636 10.4505 18.8944L19.3171 12.9829C19.404 12.9251 19.4752 12.8468 19.5245 12.7549C19.5737 12.6629 19.5996 12.5603 19.5996 12.456V6.54444C19.5996 6.44014 19.5737 6.33747 19.5245 6.24555C19.4752 6.15362 19.404 6.07529 19.3171 6.01751H19.3184ZM10.1009 11.6934L6.80881 9.49958L10.1009 7.30571L13.3929 9.49958L10.1009 11.6934ZM10.7342 6.20498V1.81598L17.8263 6.54318L14.5342 8.73704L10.7342 6.20371V6.20498ZM9.46754 6.20498L5.66754 8.73831L2.37548 6.54444L9.46754 1.81724V6.20498ZM4.52628 9.49958L1.86754 11.2716V7.72751L4.52628 9.49958ZM5.66754 10.2608L9.46754 12.7942V17.1832L2.37548 12.456L5.66754 10.2608ZM10.7342 12.7942L14.5342 10.2608L17.8263 12.4547L10.7342 17.1819V12.7942ZM15.6755 9.49958L18.3342 7.72751V11.2716L15.6755 9.49958Z');">
 </span> <span class="u-sr-only astro-5qrshpxv">Follow me on Github</span> </a> </li> <li class="sb__item astro-5qrshpxv"> <a class="astro-5qrshpxv" href="https://www.linkedin.com/in/karthikr-cybersecurity/" rel="noopener" target="_blank"> <span class="sb__icon sb__icon--linkedin astro-5qrshpxv" style="--path: path('M1.13025 14.9839H3.93671V4.6H1.13025V14.9839ZM2.53348 0.0161285C1.598 0.0161285 0.849609 0.764516 0.849609 1.7C0.849609 2.63548 1.598 3.38387 2.53348 3.38387C3.46896 3.38387 4.21735 2.63548 4.21735 1.7C4.21735 0.764516 3.46896 0.0161285 2.53348 0.0161285ZM8.70767 6.19032V4.6H5.90122V14.9839H8.70767V9.65161C8.70767 6.65806 12.5432 6.47097 12.5432 9.65161V14.9839H15.3496V8.62258C15.3496 3.57097 10.0174 3.75806 8.70767 6.19032Z');">
@@ -730,8 +731,8 @@
 /* ── Stage (right panel, carousel cards) ─────────────────────── */
 .jrn-stage{
   position:absolute;right:0;top:0;bottom:0;
-  width:52vw;display:flex;flex-direction:column;
-  justify-content:center;padding:0 6vw 0 2vw;
+  width:46vw;display:flex;flex-direction:column;
+  justify-content:center;padding:0 5vw 0 4vw;
   pointer-events:none;
 }
 .jrn-heading{
@@ -739,12 +740,6 @@
   text-transform:uppercase;color:var(--color-secondary);
   margin:0 0 1.25rem;letter-spacing:-.02em;
 }
-.jrn-counter{
-  font:400 10px/1 var(--font-family-fraktion);
-  letter-spacing:.22em;text-transform:uppercase;
-  color:var(--color-secondary);opacity:.55;margin-bottom:2rem;
-}
-
 /* Slot wrapper */
 .jrn-ms-wrap{
   position:relative;min-height:18rem;overflow:hidden;
@@ -787,15 +782,40 @@
   color:rgba(248,251,255,.52);max-width:38ch;
 }
 
-/* Progress bar */
-.jrn-progress{
-  margin-top:2.5rem;height:2px;
-  background:rgba(255,206,27,.1);border-radius:2px;overflow:hidden;
+/* ── Upcoming teaser (below portrait, last item only) ────────── */
+.jrn-teaser{
+  position:absolute;left:50%;bottom:6vh;
+  transform:translateX(-50%);
+  text-align:center;white-space:nowrap;
+  pointer-events:none;
 }
-.jrn-progress-fill{
-  height:100%;background:var(--color-secondary);
-  border-radius:2px;width:0%;transition:width .35s ease;
-  will-change:width;
+.jrn-teaser-label,
+.jrn-teaser-title{opacity:0;}
+.jrn-teaser-label{
+  display:block;
+  font:700 11px/1 var(--font-family-fraktion);
+  letter-spacing:.28em;text-transform:uppercase;
+  color:var(--color-secondary);margin-bottom:.85rem;
+}
+.jrn-teaser-title{
+  display:block;
+  font:700 clamp(2rem,3.5vw,2.75rem)/1 var(--font-family-editorial);
+  color:var(--color-white);letter-spacing:.02em;
+}
+
+@keyframes teaserLabelIn{
+  from{opacity:0;letter-spacing:.6em;}
+  to{opacity:.6;letter-spacing:.28em;}
+}
+@keyframes teaserTitleIn{
+  from{opacity:0;transform:translateY(14px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.jrn-teaser.is-visible .jrn-teaser-label{
+  animation:teaserLabelIn .55s .1s cubic-bezier(.22,1,.36,1) forwards;
+}
+.jrn-teaser.is-visible .jrn-teaser-title{
+  animation:teaserTitleIn .9s .38s cubic-bezier(.22,1,.36,1) forwards;
 }
 
 /* ── Mobile fallback ──────────────────────────────────────────── */
@@ -845,14 +865,16 @@
   <!-- Carousel stage — right side -->
   <div class="jrn-stage">
     <h2 class="jrn-heading">Journey</h2>
-    <div class="jrn-counter" id="jrnCounter">01 / 13</div>
     <div class="jrn-ms-wrap">
       <div class="jrn-ms active" id="jrnMsA"></div>
       <div class="jrn-ms idle"   id="jrnMsB"></div>
     </div>
-    <div class="jrn-progress">
-      <div class="jrn-progress-fill" id="jrnProgressFill"></div>
-    </div>
+  </div>
+
+  <!-- teaser revealed under portrait on final item -->
+  <div class="jrn-teaser" id="jrnTeaser">
+    <span class="jrn-teaser-label">Upcoming</span>
+    <span class="jrn-teaser-title">Project Aegis</span>
   </div>
 
 </div><!-- /.jrn-sticky -->
@@ -864,23 +886,23 @@
   var card     = document.getElementById('jrnCard');
   var slotA    = document.getElementById('jrnMsA');
   var slotB    = document.getElementById('jrnMsB');
-  var counter  = document.getElementById('jrnCounter');
-  var fill     = document.getElementById('jrnProgressFill');
+  var teaser   = document.getElementById('jrnTeaser');
 
   var ITEMS = [
-    {date:'2023 · AUG',     title:'The Beginning',                       desc:'First line of code. Curiosity turned obsession.'},
-    {date:'2024 · JAN',     title:'Dived into Web Security',              desc:'SQL injection, XSS, recon. The rabbit hole had no bottom.'},
+    {date:'2023 · AUG',     title:'The Beginning',                       desc:'First line of code. Curiosity turned obsession & hunger.'},
+    {date:'2024 · JAN',     title:'Dived into Security Engineering & Intelligent Automation',              desc:'Cloudsecurity, Agentic security & RPA. The rabbit hole had no bottom.'},
     {date:'2025 · MAR',     title:'Pentathon 2025 Finale',               desc:'National level cybersecurity competition finalist.'},
     {date:'2025 · APR',     title:'TryHackMe Top 1%',                    desc:'Global ranking. Among the elite on the platform.'},
     {date:'2025 · MAY',     title:'TryHackMe Wall of Fame',              desc:'Officially recognised. Name on the board.'},
     {date:'2025 · JUN–AUG', title:'Cyber Crime Internship',              desc:'Real-world threat analysis and forensic investigation.'},
     {date:'2025 · AUG',     title:'Latvia Govt. Letter of Appreciation', desc:'Secured Latvijas Banka. Recognised by a sovereign government.'},
-    {date:'2025 · AUG',     title:'UST GenCys CTF — Special Winner',     desc:'International CTF. Stood out among hundreds of teams.'},
+    {date:'2025 · AUG',     title:'UST GenCys CTF — Special Winner',     desc:'International CTF. Stood out among Top teams.'},
     {date:'2025 · DEC',     title:'Yukti CTF Finale — Top Finisher',     desc:'Consistent. Relentless. Always in the final round.'},
-    {date:'2026 · JAN',     title:'IITM ISEA ISAP CTF — Top Finisher',  desc:'IIT Madras. Top 5 teams.'},
+    {date:'2026 · JAN',     title:'IITM ISEA ISAP CTF — Top Finisher',   desc:'IIT Madras. Top 5 teams.'},
+    {date:'2026 · JAN',     title:'Crepsilon Technologies Intern',       desc:'Developing Sales Agent and Web Developer'},
     {date:'2026 · FEB',     title:'RPA Trainer — 180+ Students',         desc:'Taught automation to a generation of engineers.'},
     {date:'2026 · MAR',     title:'Dx-Edge @ CII Southern Zone Summit',  desc:'Represented at a national industry summit.'},
-    {date:'2026 · APR',     title:'UiPath Student Developer Champion',    desc:'Global recognition. Top student developer on the platform.'}
+    {date:'2026 · APR',     title:'UiPath Student Developer Champion',   desc:'Global recognition. Top student developer of UiPath.'}
   ];
   var N = ITEMS.length;
 
@@ -893,8 +915,6 @@
 
   /* Seed first item before any scroll or early-return */
   slotA.innerHTML = renderHTML(ITEMS[0]);
-  counter.textContent = '01 / ' + String(N).padStart(2,'0');
-  fill.style.width = (1/N*100).toFixed(1) + '%';
 
   /* Mobile / reduced-motion: build static list, skip scroll JS */
   if (window.matchMedia('(prefers-reduced-motion:reduce)').matches ||
@@ -917,11 +937,6 @@
   var pendingIdx   = null;
   var animating    = false;
 
-  function setHUD(idx) {
-    counter.textContent = String(idx+1).padStart(2,'0') + ' / ' + String(N).padStart(2,'0');
-    fill.style.width = ((idx+1)/N*100).toFixed(1) + '%';
-  }
-
   function swapTo(idx) {
     if (idx === curIdx) return;
     if (animating) { pendingIdx = idx; return; }
@@ -929,7 +944,6 @@
     animating  = true;
     pendingIdx = null;
     curIdx     = idx;
-    setHUD(idx);
 
     inactiveSlot.innerHTML  = renderHTML(ITEMS[idx]);
     inactiveSlot.className  = 'jrn-ms entering';
@@ -945,6 +959,7 @@
       activeSlot = inactiveSlot;
       inactiveSlot = tmp;
       animating = false;
+      teaser.classList.toggle('is-visible', curIdx === N - 1);
       if (pendingIdx !== null && pendingIdx !== curIdx) swapTo(pendingIdx);
     }
     exiting.addEventListener('animationend', done);
@@ -962,17 +977,21 @@
 
   function update(){
     var p = getP();
-    var e = eio(p);
+    var e = eio(p);    /* 0 at start → 1 at end, eased */
+    var inv = 1 - e;   /* 1 at start → 0 at end         */
 
-    /* Portrait drifts LEFT as scroll progresses */
-    var xPx = mapRange(p, 0, 1, window.innerWidth*0.12, window.innerWidth*0.22);
+    /* Portrait: starts left-angled, settles to stable position */
+    var xStart = window.innerWidth * 0.22;
+    var xEnd   = window.innerWidth * 0.16;
+    var xPx    = xStart + (xEnd - xStart) * e;
+    portrait.style.opacity   = (0.85 + 0.15 * e).toFixed(3);
     portrait.style.transform =
       'translate(calc(-50% - ' + xPx.toFixed(1) + 'px),-50%)';
 
-    /* Portrait 3D rotation — approved, do not change */
-    var rotY = -38 * e;
-    var rotX =  5 * Math.sin(p * Math.PI);
-    var sc   =  1 - 0.16 * e;
+    /* Card: starts left 3D-angled pose, rotates into straight settled front */
+    var rotY = -28 * inv;        /* -28deg → 0deg */
+    var rotX =   6 * inv;        /*   6deg → 0deg */
+    var sc   = 1.08 - 0.08 * e; /*   1.08 → 1.0  */
     card.style.transform =
       'rotateY(' + rotY.toFixed(2) + 'deg)' +
       ' rotateX(' + rotX.toFixed(2) + 'deg)' +
@@ -1286,6 +1305,29 @@
 <!-- .s__grid --> </section> <footer class="site-foot astro-75cegwoc"> <div class="site-foot__logo astro-75cegwoc"> <a class="astro-75cegwoc" href="index.html"> <svg class="astro-75cegwoc" fill="none" height="280" viewbox="0 0 280 280" width="280" xmlns="http://www.w3.org/2000/svg"> <path class="astro-75cegwoc" clip-rule="evenodd" d="M200 0L280 280H240L222 220H178L160 280H120L200 0ZM200 90L184 160H216L200 90Z" fill="#FFCE1B" fill-rule="evenodd">
 </path> <path class="astro-75cegwoc" d="M0 0v280h39.755V159.877H69.65V280h39.756V0H69.65v120.123H39.755V0H0Z" fill="#FFCE1B">
 </path> </svg> <span class="u-sr-only astro-75cegwoc">HacksonAloysis</span> </a> </div> <span class="site-foot__mark astro-75cegwoc">HacksonAloysis</span>
+<style>
+.foot-top{
+  display:flex;align-items:center;justify-content:center;
+  width:2.75rem;height:2.75rem;border-radius:50%;
+  border:1px solid rgba(255,206,27,.3);
+  background:transparent;color:var(--color-secondary);
+  cursor:pointer;margin-left:auto;flex-shrink:0;
+  transition:border-color .25s ease,background .25s ease,transform .3s cubic-bezier(.23,1,.32,1);
+}
+.foot-top:hover{
+  border-color:var(--color-secondary);
+  background:rgba(255,206,27,.08);
+  transform:translateY(-4px);
+}
+</style>
+<button class="foot-top js-foot-top" aria-label="Back to top" type="button">
+  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M9 2L2 9M9 2L16 9M9 2V16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+<script>
+document.querySelector('.js-foot-top').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
 <!-- .site-foot__logo --> </footer> </div>
 <!-- .site-wrapper --> <div class="site-intro js-intro astro-j7pv25f6" style="opacity: 1; position: fixed; top: 0; left: 0; z-index: 50; width: 100%; height: 100%; background: #08111C;"> <div class="sb-logo js-logo astro-j7pv25f6"> <div class="sb__path sb__path--v sb__path--v-1 js-logo-line-v astro-j7pv25f6">
 </div> <div class="sb__path sb__path--h sb__path--h-1 js-logo-line-h astro-j7pv25f6">
