@@ -1,0 +1,520 @@
+{
+  "meta": {
+    "title": "HacksonAloysis - Security Engineer",
+    "description": "Creative Developer with 15+ years and 140+ projects, specializing in animation-driven, high-impact websites. Partnering with designers to craft memorable UX.",
+    "site_name": "HacksonAloysis - Creative Developer",
+    "og_title": "HacksonAloysis - Creative Developer",
+    "og_description": "Creative Developer with 15+ years and 140+ projects, specializing in animation-driven, high-impact websites. Partnering with designers to craft memorable UX.",
+    "og_url": "index.html",
+    "og_image": "images/aw-creative-developer.png",
+    "twitter_image": "images/aw-creative-developer.png",
+    "apple_mobile_web_app_title": "HA Dev",
+    "theme_color": "#08111c"
+  },
+  "branding": {
+    "name": "HacksonAloysis",
+    "menu": [
+      "About",
+      "Work",
+      "Contact"
+    ],
+    "social_links": [
+      {
+        "label": "CodePen",
+        "href": "https://codepen.io/wodniack"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/karthikr-cybersecurity/"
+      }
+    ],
+    "availability": {
+      "line_1": "Coding globally from INDIA.",
+      "line_2": "Available for freelance work",
+      "cta_label": "Hire me",
+      "cta_href": "mailto:karthikraja.connect@gmail.com"
+    },
+    "qr_code": {
+      "href": "mailto:karthikraja.connect@gmail.com",
+      "title": "Contact me!",
+      "src": "images/qr-code.svg",
+      "alt": "QR Code"
+    },
+    "footer_name": "HacksonAloysis"
+  },
+  "hero": {
+    "words": [
+      "Security",
+      "Engineer"
+    ],
+    "star_image": "images/asset-star.svg"
+  },
+  "about": {
+    "title": "About",
+    "paragraphs_html": [
+      "I collaborate with agencies and designers to craft memorable user experiences, bringing their vision to life with a nice touch of animation.",
+      "I started with Dreamweaver, played with Flash and ActionScript, did\n          back-end dev from scratch, worked with all kinds of CMS, focused on\n          creative dev, worked on\u00a0140+ projects, led a team of 10 designers and\n          developers, founded <a class=\"astro-am7g2yfn\" href=\"https://waaark.com/\" rel=\"noreferrer\" target=\"_blank\">\nWaaark\n</a> and <a class=\"astro-am7g2yfn\" href=\"https://incredibles.dev/\" rel=\"noreferrer\" target=\"_blank\">\nincredibles.dev\n</a>, won a few awards, and keep on learning."
+    ],
+    "awards_title": "Awards",
+    "awards": [
+      {
+        "type": "counter",
+        "name": "awwwards",
+        "counters": [
+          "(SOTD x 16)",
+          "(Honors x 1)"
+        ]
+      },
+      {
+        "type": "counter",
+        "name": "fwa",
+        "counters": [
+          "(SOTD x 4)",
+          "(MOTD x 2)"
+        ]
+      },
+      {
+        "type": "counter",
+        "name": "cssda",
+        "counters": [
+          "(WOTD x 18)",
+          "(WOTM x 1)"
+        ]
+      },
+      {
+        "type": "text",
+        "text_html": "2025 Webby Awards Winner <br/>Best Home Page"
+      },
+      {
+        "type": "text",
+        "text_html": "Comm Arts Mag Interactive  Annual Competition Winner 2017"
+      },
+      {
+        "type": "text",
+        "text_html": "Net Mag SOTM Summer 2016"
+      },
+      {
+        "type": "text",
+        "text_html": "GSAP SOTM October 2024"
+      },
+      {
+        "type": "text",
+        "text_html": "GSAP SOTM November 2024"
+      },
+      {
+        "type": "text",
+        "text_html": "CSSDA Best Front-End <br/>Developer 2016"
+      },
+      {
+        "type": "text",
+        "text_html": "CSSDA Best Front-End <br/>Developer 2015"
+      }
+    ]
+  },
+  "work": {
+    "title": "WORK",
+    "items": [
+      {
+        "title": "Generous Branding",
+        "key": "#3vva-0000/34",
+        "href": "https://generousbranding.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/KarthikNewDp.png"
+      },
+      {
+        "title": "Hunter Farmer",
+        "key": "#dbq8-0001/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam.jpeg"
+      },
+      {
+        "title": "Generous Branding",
+        "key": "#ny2d-0002/34",
+        "href": "https://generousbranding.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam1.jpeg"
+      },
+      {
+        "title": "Nod Coding Bootcamp",
+        "key": "#87va-0003/34",
+        "href": "https://nodcoding.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam2.jpeg"
+      },
+      {
+        "title": "Rudl und Schwarm",
+        "key": "#t44q-0004/34",
+        "href": "https://www.rudlundschwarm.at/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam3.jpeg"
+      },
+      {
+        "title": "24/7 Artists",
+        "key": "#3g5d-0005/34",
+        "href": "https://247artists.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/SairamGroupPic.jpg"
+      },
+      {
+        "title": "Nod Coding Bootcamp",
+        "key": "#wksl-0006/34",
+        "href": "https://nodcoding.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/SairamGroupPic1.jpg"
+      },
+      {
+        "title": "Duten",
+        "key": "#0qh5-0007/34",
+        "href": "https://duten.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/SairamMementoKarthik(Final).jpg"
+      },
+      {
+        "title": "Vanguart",
+        "key": "#y15t-0008/34",
+        "href": "https://vanguart.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/DX-EDGE-Certificate.png"
+      },
+      {
+        "title": "Generous Branding",
+        "key": "#a24d-0009/34",
+        "href": "https://generousbranding.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/KioskPic.jpeg"
+      },
+      {
+        "title": "Nod Coding Bootcamp",
+        "key": "#1j4c-0010/34",
+        "href": "https://nodcoding.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/GrpPic2.jpeg"
+      },
+      {
+        "title": "Pantoufle Hotel",
+        "key": "#m2my-0011/34",
+        "href": "https://www.pantoufle-hotels.fr/en/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/GrpPic1.jpeg"
+      },
+      {
+        "title": "Vanguart",
+        "key": "#d6fu-0012/34",
+        "href": "https://vanguart.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ConfoPic.jpeg"
+      },
+      {
+        "title": "24/7 Artists",
+        "key": "#oqga-0013/34",
+        "href": "https://247artists.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/GrpPic.jpeg"
+      },
+      {
+        "title": "Rudl und Schwarm",
+        "key": "#sxvc-0014/34",
+        "href": "https://www.rudlundschwarm.at/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/Allcollage.jpg"
+      },
+      {
+        "title": "Vanguart",
+        "key": "#wfll-0015/34",
+        "href": "https://vanguart.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ITCMainGateSelfie.jpeg"
+      },
+      {
+        "title": "CodePen",
+        "key": "#5w0n-0016/34",
+        "href": "https://codepen.io/wodniack",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ITCFrontView.jpeg"
+      },
+      {
+        "title": "Duten",
+        "key": "#emwy-0017/34",
+        "href": "https://duten.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/MirrorPic2.jpeg"
+      },
+      {
+        "title": "24/7 Artists",
+        "key": "#cul2-0018/34",
+        "href": "https://247artists.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ConferencePic.jpeg"
+      },
+      {
+        "title": "Duten",
+        "key": "#0ngv-0019/34",
+        "href": "https://duten.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/Selfie.jpeg"
+      },
+      {
+        "title": "Vanguart",
+        "key": "#kqon-0020/34",
+        "href": "https://vanguart.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ReferalCard.jpeg"
+      },
+      {
+        "title": "24/7 Artists",
+        "key": "#frnh-0021/34",
+        "href": "https://247artists.com/",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/MirrorPic1.jpeg"
+      },
+      {
+        "title": "GenCys Image",
+        "key": "#z0bj-0022/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GenCysImage.jpg"
+      },
+      {
+        "title": "Gencyc Group Pic",
+        "key": "#s8nw-0023/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycGrpPic.jpeg"
+      },
+      {
+        "title": "Gencyc ID Pic",
+        "key": "#yhcw-0024/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycIDPic.jpeg"
+      },
+      {
+        "title": "Gencyc Pic",
+        "key": "#ppxm-0025/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycPic.jpeg"
+      },
+      {
+        "title": "Gencyc Rank Pic",
+        "key": "#ffo8-0026/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycRankPic.jpeg"
+      },
+      {
+        "title": "Gencyc Solo Pic",
+        "key": "#mxe3-0027/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSoloPic.jpeg"
+      },
+      {
+        "title": "Gencyc Solo 1",
+        "key": "#suav-0028/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo1Pic.jpeg"
+      },
+      {
+        "title": "Gencyc Solo 2",
+        "key": "#7vol-0029/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo2Pic.jpeg"
+      },
+      {
+        "title": "Gencyc Solo 3",
+        "key": "#i1er-0030/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo3Pic.jpeg"
+      },
+      {
+        "title": "Gencyc Solo 4",
+        "key": "#kive-0031/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo4Pic.jpeg"
+      },
+      {
+        "title": "Gencys Group Pic",
+        "key": "#t7cu-0032/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencysGrpPic.jpeg"
+      },
+      {
+        "title": "Gencys ID 1 Pic",
+        "key": "#508u-0033/34",
+        "href": "#",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencysID1Pic.jpeg"
+      }
+    ]
+  },
+  "gallery": {
+    "frames": [
+      {
+        "src": "_astro/art-1987.DuGYX_YQ_Zedl3o.webp",
+        "alt": "Generative art poster concept",
+        "width": "1024",
+        "height": "1024",
+        "caption_html": "Generative art poster concept"
+      },
+      {
+        "src": "_astro/art-dtyw.BwdKK6hB_Z19TwfB.webp",
+        "alt": "Generative art poster concept",
+        "width": "760",
+        "height": "1024",
+        "caption_html": "Generative art poster concept"
+      },
+      {
+        "src": "_astro/art-lines.BXTmZZe3_Z1DHEgE.webp",
+        "alt": "Generative art poster concept",
+        "width": "802",
+        "height": "1024",
+        "caption_html": "Generative art poster concept"
+      },
+      {
+        "src": "_astro/first-fwa.LsgJSoFn_1VhWNL.webp",
+        "alt": "My first FOTD on FWA (2012)",
+        "width": "768",
+        "height": "1024",
+        "caption_html": "My first FOTD on FWA (2012)"
+      },
+      {
+        "src": "_astro/gameboy.BbEYkrsC_RRGJe.webp",
+        "alt": "Young me discovering the beauty of <s>Grand Canyon</s> Tetris (1997)",
+        "width": "600",
+        "height": "600",
+        "caption_html": "Young me discovering the beauty of <s>Grand Canyon</s> Tetris (1997)"
+      },
+      {
+        "src": "_astro/remote-2005.B2CSTJrO_1R04cN.webp",
+        "alt": "Me abusing of remote work (2005)",
+        "width": "768",
+        "height": "1024",
+        "caption_html": "Me abusing of remote work (2005)"
+      },
+      {
+        "src": "_astro/roar.BvXyAVaL_1PKGBj.webp",
+        "alt": "Roaaaar!",
+        "width": "576",
+        "height": "1024",
+        "caption_html": "Roaaaar!"
+      },
+      {
+        "src": "_astro/setup-2006.Op2RjVqP_ZjqlNh.webp",
+        "alt": "Early age (2006) desk setup ",
+        "width": "640",
+        "height": "480",
+        "caption_html": "Early age (2006) desk setup"
+      },
+      {
+        "src": "_astro/setup-2016.DZszJSwz_10aiku.webp",
+        "alt": "2016 desk setup",
+        "width": "1024",
+        "height": "576",
+        "caption_html": "2016 desk setup"
+      },
+      {
+        "src": "_astro/setup-2020.DjuS52Ke_1lqvvK.webp",
+        "alt": "2020 desk setup",
+        "width": "1024",
+        "height": "576",
+        "caption_html": "2020 desk setup"
+      },
+      {
+        "src": "_astro/waaark.C5QpwSMH_Rq3S9.webp",
+        "alt": "Waaark Creative Robots",
+        "width": "1440",
+        "height": "1440",
+        "caption_html": "Waaark Creative Robots"
+      },
+      {
+        "src": "_astro/portfolio-2011.DpFoQfUQ_ZXEwJ9.webp",
+        "alt": "2011 portfolio",
+        "width": "1024",
+        "height": "768",
+        "caption_html": "2011 portfolio"
+      },
+      {
+        "src": "_astro/portfolio-2014.ClRt5L9z_Xz3cl.webp",
+        "alt": "2014 portfolio",
+        "width": "1024",
+        "height": "767",
+        "caption_html": "2014 portfolio"
+      },
+      {
+        "src": "_astro/portfolio-2017.N-r3CKDK_iyXU7.webp",
+        "alt": "2017 portfolio (never released)",
+        "width": "1024",
+        "height": "768",
+        "caption_html": "2017 portfolio (never released)"
+      },
+      {
+        "src": "_astro/portfolio-2021.D5EtPDWp_Z1AfsSn.webp",
+        "alt": "2021 portfolio",
+        "width": "1024",
+        "height": "768",
+        "caption_html": "2021 portfolio"
+      },
+      {
+        "src": "_astro/legos.Bdikeciy_Z1pUyVv.webp",
+        "alt": "Legos",
+        "width": "768",
+        "height": "1024",
+        "caption_html": "Legos"
+      }
+    ],
+    "catcher_lines": [
+      "Coding",
+      "my way",
+      "since",
+      "2023"
+    ]
+  },
+  "contact": {
+    "button_text": "GO",
+    "headline_top": "Let's",
+    "headline_bottom": "Rock",
+    "email_label": "karthikraja.connect@gmail.com",
+    "email_href": "mailto:karthikraja.connect@gmail.com"
+  }
+}
