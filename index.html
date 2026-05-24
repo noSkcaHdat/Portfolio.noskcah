@@ -823,6 +823,78 @@
   animation:teaserTitleIn .9s .38s cubic-bezier(.22,1,.36,1) forwards;
 }
 
+/* ── Shockwave unlock (final milestone) ───────────────────── */
+.jrn-sw{position:absolute;inset:0;pointer-events:none;z-index:20;}
+/* radial burst — very fast, centered on portrait */
+.jrn-sw-flash{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 62% 82% at 34vw 50%,
+    rgba(255,252,210,.97) 0%,
+    rgba(255,206,27,.44) 22%,
+    rgba(20,55,200,.1) 50%,
+    transparent 68%);
+  opacity:0;mix-blend-mode:screen;
+}
+/* ring origin — anchored at portrait centre */
+.jrn-sw-rings{position:absolute;left:34vw;top:50%;width:0;height:0;}
+.jrn-ring{
+  position:absolute;
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(0);
+  opacity:0;
+  width:22vw;height:22vw;
+}
+.jrn-ring:nth-child(1){
+  border:2px solid rgba(255,252,200,.95);
+  box-shadow:0 0 18px 5px rgba(255,220,60,.6),inset 0 0 12px 3px rgba(255,220,60,.25);
+  --rd:0s;--rdur:.85s;
+}
+.jrn-ring:nth-child(2){
+  border:1.5px solid rgba(255,206,27,.68);
+  box-shadow:0 0 10px 2px rgba(255,206,27,.38);
+  --rd:.13s;--rdur:1.1s;
+}
+.jrn-ring:nth-child(3){
+  border:1px solid rgba(140,200,255,.5);
+  box-shadow:0 0 8px 1px rgba(80,160,255,.28);
+  --rd:.28s;--rdur:1.4s;
+}
+.jrn-ring:nth-child(4){
+  border:1px solid rgba(30,90,255,.35);
+  --rd:.44s;--rdur:1.75s;
+}
+/* keyframes */
+@keyframes swFlash{
+  0%  {opacity:0;}
+  3%  {opacity:1;}
+  18% {opacity:0;}
+  100%{opacity:0;}
+}
+@keyframes ringOut{
+  0%  {transform:translate(-50%,-50%) scale(0);opacity:1;}
+  55% {opacity:.5;}
+  82% {opacity:.12;}
+  100%{transform:translate(-50%,-50%) scale(12);opacity:0;}
+}
+/* card: border pulses electric-white → settles back */
+@keyframes cardStrike{
+  0%  {box-shadow:0 0 0 1px rgba(30,90,255,.18),0 24px 70px rgba(0,0,0,.8),0 0 100px rgba(15,55,200,.25);}
+  4%  {box-shadow:0 0 0 3px rgba(255,252,200,1),0 0 55px rgba(255,220,50,1),0 0 130px rgba(255,200,30,.88),0 0 240px rgba(255,180,20,.38);}
+  18% {box-shadow:0 0 0 1px rgba(255,206,27,.5),0 22px 65px rgba(0,0,0,.7),0 0 70px rgba(255,206,27,.28);}
+  100%{box-shadow:0 0 0 1px rgba(30,90,255,.18),0 24px 70px rgba(0,0,0,.8),0 0 100px rgba(15,55,200,.25);}
+}
+/* photo: momentary overexposure like a camera flash */
+@keyframes photoStrike{
+  0%  {filter:contrast(1.07) brightness(.93);}
+  4%  {filter:contrast(.9) brightness(2.1);}
+  16% {filter:contrast(1.12) brightness(1.04);}
+  100%{filter:contrast(1.07) brightness(.93);}
+}
+.jrn-sticky.is-striking .jrn-sw-flash{animation:swFlash .75s ease-out forwards;}
+.jrn-sticky.is-striking .jrn-ring{animation:ringOut var(--rdur) var(--rd) cubic-bezier(.08,.82,.14,1) forwards;}
+.jrn-sticky.is-striking #jrnCard{animation:cardStrike 1.8s cubic-bezier(.22,1,.36,1) forwards;}
+.jrn-sticky.is-striking .jrn-photo{animation:photoStrike 1.5s cubic-bezier(.22,1,.36,1) forwards;}
+
 /* ── Mobile fallback ──────────────────────────────────────────── */
 @media(max-width:767px){
   .s-journey{height:auto;padding:5rem 0 6rem;}
@@ -882,6 +954,17 @@
     <span class="jrn-teaser-title">Project Aegis</span>
   </div>
 
+  <!-- shockwave unlock — fires once on final milestone -->
+  <div class="jrn-sw" id="jrnShockwave" aria-hidden="true">
+    <div class="jrn-sw-flash"></div>
+    <div class="jrn-sw-rings">
+      <div class="jrn-ring"></div>
+      <div class="jrn-ring"></div>
+      <div class="jrn-ring"></div>
+      <div class="jrn-ring"></div>
+    </div>
+  </div>
+
 </div><!-- /.jrn-sticky -->
 
 <script>
@@ -892,6 +975,33 @@
   var slotA    = document.getElementById('jrnMsA');
   var slotB    = document.getElementById('jrnMsB');
   var teaser   = document.getElementById('jrnTeaser');
+  var sticky   = document.getElementById('jrnSticky');
+  var strikeCooldown = false;
+  var lockUntil = 0; /* timestamp until which forward scroll is held */
+
+  /* ── Scroll lock: prevent scrolling past section during shockwave ─ */
+  window.addEventListener('wheel', function(e){
+    if(Date.now() < lockUntil && e.deltaY > 0) e.preventDefault();
+  }, {passive:false});
+  var _ty = 0;
+  window.addEventListener('touchstart', function(e){_ty = e.touches[0].clientY;}, {passive:true});
+  window.addEventListener('touchmove', function(e){
+    if(Date.now() < lockUntil && (e.touches[0].clientY - _ty) < 0) e.preventDefault();
+  }, {passive:false});
+
+  function triggerShockwave(){
+    if(strikeCooldown) return;
+    strikeCooldown = true;
+    /* hold scroll for 2.7s — shockwave (1.8s) + teaser glow-up (.9s) */
+    lockUntil = Date.now() + 2700;
+    sticky.classList.remove('is-striking');
+    void sticky.offsetWidth; /* force reflow so animation restarts cleanly */
+    sticky.classList.add('is-striking');
+    setTimeout(function(){
+      sticky.classList.remove('is-striking');
+      strikeCooldown = false;
+    }, 2200);
+  }
 
   var ITEMS = [
     {date:'2023 · AUG',     title:'The Beginning',                       desc:'First line of code. Curiosity turned obsession & hunger.'},
@@ -965,6 +1075,7 @@
       inactiveSlot = tmp;
       animating = false;
       teaser.classList.toggle('is-visible', curIdx === N - 1);
+      if(curIdx === N - 1) triggerShockwave();
       if (pendingIdx !== null && pendingIdx !== curIdx) swapTo(pendingIdx);
     }
     exiting.addEventListener('animationend', done);
