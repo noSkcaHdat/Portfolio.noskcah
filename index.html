@@ -674,19 +674,19 @@
 
 <section class="s-journey" id="journey">
 <style>
-/* ── s-journey: scroll-driven 2.5D reveal ───────────────────── */
-.s-journey{background:var(--color-primary);position:relative;height:200vh;}
+/* ── s-journey: scroll-driven cinematic carousel ─────────────── */
+.s-journey{background:var(--color-primary);position:relative;height:1200vh;}
 
 .jrn-sticky{
   position:sticky;top:0;height:100vh;overflow:hidden;
 }
 
-/* ── Portrait ─────────────────────────────────────────────── */
+/* ── Portrait (left side, drifts further left on scroll) ─────── */
 .jrn-portrait{
   position:absolute;left:50%;top:50%;
   transform:translate(-50%,-50%);
   perspective:900px;perspective-origin:50% 42%;
-  width:clamp(260px,28vw,400px);
+  width:clamp(220px,22vw,340px);
   pointer-events:none;will-change:transform;
 }
 .jrn-glow{
@@ -727,67 +727,110 @@
   background:repeating-linear-gradient(to bottom,transparent,transparent 3px,rgba(0,0,0,.055) 3px,rgba(0,0,0,.055) 4px);
 }
 
-/* ── Content ──────────────────────────────────────────────── */
-.jrn-content{
-  position:absolute;left:5vw;top:50%;
-  transform:translateY(-50%);
-  width:min(48vw,660px);
-  opacity:0;will-change:transform,opacity;overflow:hidden;
+/* ── Stage (right panel, carousel cards) ─────────────────────── */
+.jrn-stage{
+  position:absolute;right:0;top:0;bottom:0;
+  width:52vw;display:flex;flex-direction:column;
+  justify-content:center;padding:0 6vw 0 2vw;
+  pointer-events:none;
 }
 .jrn-heading{
   font:700 min(7vw,4.75rem)/1 var(--font-family-bigger);
   text-transform:uppercase;color:var(--color-secondary);
-  margin:0 0 2rem;letter-spacing:-.02em;
+  margin:0 0 1.25rem;letter-spacing:-.02em;
 }
-.jrn-item{
-  display:grid;grid-template-columns:8.5rem 1fr;grid-template-rows:auto auto;
-  column-gap:1.25rem;padding:.9rem 0;
-  border-top:1px solid rgba(255,206,27,.12);
-  opacity:0;transform:translateX(-18px);
-  transition:opacity .48s ease,transform .48s cubic-bezier(.23,1,.32,1);
-}
-.jrn-item:last-child{border-bottom:1px solid rgba(255,206,27,.12);}
-.jrn-item.is-active{opacity:1;transform:translateX(0);}
-.jrn-date{
-  grid-column:1;grid-row:1/3;align-self:start;padding-top:.15rem;
-  font:700 9px/1.4 var(--font-family-fraktion);
-  letter-spacing:.15em;text-transform:uppercase;color:var(--color-secondary);
-}
-.jrn-title{
-  grid-column:2;grid-row:1;display:block;
-  font:700 .9rem/1.3 var(--font-family-editorial);color:var(--color-white);
-}
-.jrn-desc{
-  grid-column:2;grid-row:2;display:block;margin-top:.15rem;
-  font:200 .8rem/1.5 var(--font-family-editorial);color:rgba(248,251,255,.48);
+.jrn-counter{
+  font:400 10px/1 var(--font-family-fraktion);
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--color-secondary);opacity:.55;margin-bottom:2rem;
 }
 
-/* ── Mobile / reduced-motion: normal flow ─────────────────── */
+/* Slot wrapper */
+.jrn-ms-wrap{
+  position:relative;min-height:18rem;overflow:hidden;
+}
+/* Each A/B slot */
+.jrn-ms{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;justify-content:flex-start;
+}
+.jrn-ms.idle{opacity:0;visibility:hidden;pointer-events:none;}
+.jrn-ms.active{opacity:1;visibility:visible;}
+.jrn-ms.entering{visibility:visible;animation:jrnEnter .7s cubic-bezier(.22,1,.36,1) both;}
+.jrn-ms.exiting{visibility:visible;animation:jrnExit .5s cubic-bezier(.22,1,.36,1) both;}
+
+@keyframes jrnEnter{
+  from{opacity:0;transform:translateY(60px);filter:blur(12px);clip-path:inset(0 100% 0 0);}
+  to{opacity:1;transform:translateY(0);filter:blur(0px);clip-path:inset(0 0% 0 0);}
+}
+@keyframes jrnExit{
+  from{opacity:1;transform:translateY(0);filter:blur(0px);}
+  to{opacity:0;transform:translateY(-60px);filter:blur(12px);}
+}
+
+/* Milestone card content */
+.jrn-ms-date{
+  font:700 10px/1 var(--font-family-fraktion);
+  letter-spacing:.22em;text-transform:uppercase;
+  color:var(--color-secondary);margin-bottom:.85rem;
+}
+.jrn-ms-rule{
+  width:2.5rem;height:1px;
+  background:rgba(255,206,27,.35);margin-bottom:1.5rem;
+}
+.jrn-ms-title{
+  font:700 min(5vw,2.5rem)/1.15 var(--font-family-editorial);
+  color:var(--color-white);margin-bottom:1rem;
+}
+.jrn-ms-desc{
+  font:300 1rem/1.65 var(--font-family-editorial);
+  color:rgba(248,251,255,.52);max-width:38ch;
+}
+
+/* Progress bar */
+.jrn-progress{
+  margin-top:2.5rem;height:2px;
+  background:rgba(255,206,27,.1);border-radius:2px;overflow:hidden;
+}
+.jrn-progress-fill{
+  height:100%;background:var(--color-secondary);
+  border-radius:2px;width:0%;transition:width .35s ease;
+  will-change:width;
+}
+
+/* ── Mobile fallback ──────────────────────────────────────────── */
 @media(max-width:767px){
   .s-journey{height:auto;padding:5rem 0 6rem;}
   .jrn-sticky{position:relative;height:auto;overflow:visible;display:block;}
   .jrn-portrait{position:relative;left:auto;top:auto;transform:none;
-                 width:clamp(200px,60vw,300px);margin:0 auto 3rem;}
-  .jrn-content{position:relative;left:auto;top:auto;transform:none;
-                opacity:1;width:100%;padding:0 5vw;overflow:visible;}
-  .jrn-heading{font-size:min(15vw,3rem);margin-bottom:1.75rem;}
-  .jrn-date{font-size:8px;}
-  .jrn-item{grid-template-columns:6.5rem 1fr;opacity:1;transform:none;}
+                 width:clamp(180px,55vw,280px);margin:0 auto 2.5rem;}
+  .jrn-stage{position:relative;width:100%;padding:0 5vw;height:auto;}
+  .jrn-heading{font-size:min(15vw,3rem);margin-bottom:1rem;}
+  .jrn-counter,.jrn-progress{display:none;}
+  .jrn-ms-wrap{position:relative;min-height:auto;overflow:visible;}
+  .jrn-ms{position:relative;inset:auto;opacity:1!important;visibility:visible!important;
+           animation:none!important;margin-bottom:2.5rem;}
+  .jrn-ms.idle{display:none;}
+  .jrn-ms-title{font-size:min(7vw,1.5rem);}
 }
+/* ── Reduced-motion fallback ─────────────────────────────────── */
 @media(prefers-reduced-motion:reduce){
   .s-journey{height:auto;padding:5rem 0 6rem;}
-  .jrn-sticky{position:relative;height:auto;overflow:visible;display:block;}
+  .jrn-sticky{position:relative;height:auto;overflow:visible;}
   .jrn-portrait{position:relative;left:auto;top:auto;transform:none;
                  width:clamp(240px,28vw,380px);margin:0 auto 3rem;}
-  .jrn-content{position:relative;left:auto;top:auto;transform:none;
-                opacity:1;width:100%;padding:0 5vw;overflow:visible;}
-  .jrn-item{opacity:1;transform:none;}
+  .jrn-stage{position:relative;width:100%;padding:0 5vw;height:auto;}
+  .jrn-counter,.jrn-progress{display:none;}
+  .jrn-ms-wrap{position:relative;min-height:auto;overflow:visible;}
+  .jrn-ms{position:relative;inset:auto;opacity:1!important;visibility:visible!important;
+           animation:none!important;margin-bottom:2.5rem;}
+  .jrn-ms.idle{display:none;}
 }
 </style>
 
 <div class="jrn-sticky" id="jrnSticky">
 
-  <!-- portrait stays fixed, scroll drives its rotation + position -->
+  <!-- 2.5D portrait — scroll drives rotation + leftward drift -->
   <div class="jrn-portrait" id="jrnPortrait" aria-hidden="true">
     <div class="jrn-glow"></div>
     <div class="jrn-card" id="jrnCard">
@@ -799,91 +842,148 @@
     </div>
   </div>
 
-  <!-- content fades in from left as portrait rotates right -->
-  <div class="jrn-content" id="jrnContent">
+  <!-- Carousel stage — right side -->
+  <div class="jrn-stage">
     <h2 class="jrn-heading">Journey</h2>
-
-    <div class="jrn-item"><span class="jrn-date">2023 · AUG</span><span class="jrn-title">The Beginning</span><span class="jrn-desc">First line of code. Curiosity turned obsession.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2024 · JAN</span><span class="jrn-title">Dived into Web Security</span><span class="jrn-desc">SQL injection, XSS, recon. The rabbit hole had no bottom.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2025 · MAR</span><span class="jrn-title">Pentathon 2025 Finale</span><span class="jrn-desc">National level cybersecurity competition finalist.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2025 · APR</span><span class="jrn-title">TryHackMe Top 1%</span><span class="jrn-desc">Global ranking. Among the elite on the platform.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2025 · MAY</span><span class="jrn-title">TryHackMe Wall of Fame</span><span class="jrn-desc">Officially recognised. Name on the board.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2025 · JUN–AUG</span><span class="jrn-title">Cyber Crime Internship</span><span class="jrn-desc">Real-world threat analysis and forensic investigation.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2025 · AUG</span><span class="jrn-title">Latvia Govt. Letter of Appreciation</span><span class="jrn-desc">Secured Latvijas Banka. Recognised by a sovereign government.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2025 · AUG</span><span class="jrn-title">UST GenCys CTF — Special Winner</span><span class="jrn-desc">International CTF. Stood out among hundreds of teams.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2025 · DEC</span><span class="jrn-title">Yukti CTF Finale — Top Finisher</span><span class="jrn-desc">Consistent. Relentless. Always in the final round.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2026 · JAN</span><span class="jrn-title">IITM ISEA ISAP CTF — Top Finisher</span><span class="jrn-desc">IIT Madras. Top 5 teams.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2026 · FEB</span><span class="jrn-title">RPA Trainer — 180+ Students (UiPath)</span><span class="jrn-desc">Taught automation to a generation of engineers.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2026 · MAR</span><span class="jrn-title">Dx-Edge @ CII Southern Zone Summit</span><span class="jrn-desc">Represented at a national industry summit.</span></div>
-    <div class="jrn-item"><span class="jrn-date">2026 · APR</span><span class="jrn-title">UiPath Student Developer Champion</span><span class="jrn-desc">Global recognition. Top student developer on the platform.</span></div>
-
+    <div class="jrn-counter" id="jrnCounter">01 / 13</div>
+    <div class="jrn-ms-wrap">
+      <div class="jrn-ms active" id="jrnMsA"></div>
+      <div class="jrn-ms idle"   id="jrnMsB"></div>
+    </div>
+    <div class="jrn-progress">
+      <div class="jrn-progress-fill" id="jrnProgressFill"></div>
+    </div>
   </div>
 
 </div><!-- /.jrn-sticky -->
 
 <script>
-(function () {
+(function(){
   var section  = document.getElementById('journey');
   var portrait = document.getElementById('jrnPortrait');
   var card     = document.getElementById('jrnCard');
-  var content  = document.getElementById('jrnContent');
-  var items    = section.querySelectorAll('.jrn-item');
+  var slotA    = document.getElementById('jrnMsA');
+  var slotB    = document.getElementById('jrnMsB');
+  var counter  = document.getElementById('jrnCounter');
+  var fill     = document.getElementById('jrnProgressFill');
 
-  /* mobile / reduced-motion: reveal all items immediately, skip JS */
+  var ITEMS = [
+    {date:'2023 · AUG',     title:'The Beginning',                       desc:'First line of code. Curiosity turned obsession.'},
+    {date:'2024 · JAN',     title:'Dived into Web Security',              desc:'SQL injection, XSS, recon. The rabbit hole had no bottom.'},
+    {date:'2025 · MAR',     title:'Pentathon 2025 Finale',               desc:'National level cybersecurity competition finalist.'},
+    {date:'2025 · APR',     title:'TryHackMe Top 1%',                    desc:'Global ranking. Among the elite on the platform.'},
+    {date:'2025 · MAY',     title:'TryHackMe Wall of Fame',              desc:'Officially recognised. Name on the board.'},
+    {date:'2025 · JUN–AUG', title:'Cyber Crime Internship',              desc:'Real-world threat analysis and forensic investigation.'},
+    {date:'2025 · AUG',     title:'Latvia Govt. Letter of Appreciation', desc:'Secured Latvijas Banka. Recognised by a sovereign government.'},
+    {date:'2025 · AUG',     title:'UST GenCys CTF — Special Winner',     desc:'International CTF. Stood out among hundreds of teams.'},
+    {date:'2025 · DEC',     title:'Yukti CTF Finale — Top Finisher',     desc:'Consistent. Relentless. Always in the final round.'},
+    {date:'2026 · JAN',     title:'IITM ISEA ISAP CTF — Top Finisher',  desc:'IIT Madras. Top 5 teams.'},
+    {date:'2026 · FEB',     title:'RPA Trainer — 180+ Students',         desc:'Taught automation to a generation of engineers.'},
+    {date:'2026 · MAR',     title:'Dx-Edge @ CII Southern Zone Summit',  desc:'Represented at a national industry summit.'},
+    {date:'2026 · APR',     title:'UiPath Student Developer Champion',    desc:'Global recognition. Top student developer on the platform.'}
+  ];
+  var N = ITEMS.length;
+
+  function renderHTML(item) {
+    return '<div class="jrn-ms-date">' + item.date + '</div>' +
+           '<div class="jrn-ms-rule"></div>' +
+           '<div class="jrn-ms-title">' + item.title + '</div>' +
+           '<div class="jrn-ms-desc">'  + item.desc  + '</div>';
+  }
+
+  /* Seed first item before any scroll or early-return */
+  slotA.innerHTML = renderHTML(ITEMS[0]);
+  counter.textContent = '01 / ' + String(N).padStart(2,'0');
+  fill.style.width = (1/N*100).toFixed(1) + '%';
+
+  /* Mobile / reduced-motion: build static list, skip scroll JS */
   if (window.matchMedia('(prefers-reduced-motion:reduce)').matches ||
       window.innerWidth < 768) {
-    items.forEach(function (el) { el.classList.add('is-active'); });
+    var wrap = document.querySelector('.jrn-ms-wrap');
+    wrap.innerHTML = '';
+    ITEMS.forEach(function(it) {
+      var div = document.createElement('div');
+      div.className = 'jrn-ms active';
+      div.innerHTML = renderHTML(it);
+      wrap.appendChild(div);
+    });
     return;
   }
 
-  function clamp(v, lo, hi) { return v < lo ? lo : v > hi ? hi : v; }
-  function mapRange(v, a, b, c, d) { return c + (d - c) * clamp((v - a) / (b - a), 0, 1); }
-  function eio(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+  /* ── A/B slot swap ─────────────────────────────────────────── */
+  var activeSlot   = slotA;
+  var inactiveSlot = slotB;
+  var curIdx       = 0;
+  var pendingIdx   = null;
+  var animating    = false;
 
-  function getProgress() {
-    var rect  = section.getBoundingClientRect();
-    var total = section.offsetHeight - window.innerHeight;
-    return clamp(-rect.top / total, 0, 1);
+  function setHUD(idx) {
+    counter.textContent = String(idx+1).padStart(2,'0') + ' / ' + String(N).padStart(2,'0');
+    fill.style.width = ((idx+1)/N*100).toFixed(1) + '%';
   }
 
-  var revealed = new Set();
-  var n = items.length;
+  function swapTo(idx) {
+    if (idx === curIdx) return;
+    if (animating) { pendingIdx = idx; return; }
 
-  function update() {
-    var p = getProgress();
+    animating  = true;
+    pendingIdx = null;
+    curIdx     = idx;
+    setHUD(idx);
+
+    inactiveSlot.innerHTML  = renderHTML(ITEMS[idx]);
+    inactiveSlot.className  = 'jrn-ms entering';
+    activeSlot.className    = 'jrn-ms exiting';
+
+    var exiting = activeSlot;
+    function done(ev) {
+      if (ev.target !== exiting) return;
+      exiting.removeEventListener('animationend', done);
+      exiting.className      = 'jrn-ms idle';
+      inactiveSlot.className = 'jrn-ms active';
+      var tmp    = activeSlot;
+      activeSlot = inactiveSlot;
+      inactiveSlot = tmp;
+      animating = false;
+      if (pendingIdx !== null && pendingIdx !== curIdx) swapTo(pendingIdx);
+    }
+    exiting.addEventListener('animationend', done);
+  }
+
+  /* ── Scroll helpers ────────────────────────────────────────── */
+  function clamp(v,lo,hi){return v<lo?lo:v>hi?hi:v;}
+  function mapRange(v,a,b,c,d){return c+(d-c)*clamp((v-a)/(b-a),0,1);}
+  function eio(t){return t<.5?2*t*t:-1+(4-2*t)*t;}
+
+  function getP(){
+    var rect = section.getBoundingClientRect();
+    return clamp(-rect.top/(section.offsetHeight-window.innerHeight),0,1);
+  }
+
+  function update(){
+    var p = getP();
     var e = eio(p);
 
-    /* ── 1. portrait slides right ── */
-    var xPx = mapRange(p, 0, 0.75, 0, window.innerWidth * 0.24);
+    /* Portrait drifts LEFT as scroll progresses */
+    var xPx = mapRange(p, 0, 1, window.innerWidth*0.12, window.innerWidth*0.22);
     portrait.style.transform =
-      'translate(calc(-50% + ' + xPx.toFixed(1) + 'px), -50%)';
+      'translate(calc(-50% - ' + xPx.toFixed(1) + 'px),-50%)';
 
-    /* ── 2. portrait 3D rotation ── */
-    var rotY = (-38 * e);
-    var rotX = (5 * Math.sin(p * Math.PI));   /* peaks mid-scroll */
-    var sc   = 1 - 0.16 * e;
+    /* Portrait 3D rotation — approved, do not change */
+    var rotY = -38 * e;
+    var rotX =  5 * Math.sin(p * Math.PI);
+    var sc   =  1 - 0.16 * e;
     card.style.transform =
       'rotateY(' + rotY.toFixed(2) + 'deg)' +
       ' rotateX(' + rotX.toFixed(2) + 'deg)' +
       ' scale(' + sc.toFixed(3) + ')';
 
-    /* ── 3. content panel reveal ── */
-    var ce = eio(mapRange(p, 0.18, 0.55, 0, 1));
-    content.style.opacity   = ce.toFixed(3);
-    content.style.transform =
-      'translateY(calc(-50% + ' + (40 * (1 - ce)).toFixed(1) + 'px))';
-
-    /* ── 4. timeline stagger ── */
-    items.forEach(function (el, i) {
-      var thresh = mapRange(i, 0, n - 1, 0.36, 0.94);
-      if (p >= thresh && !revealed.has(el)) {
-        revealed.add(el);
-        el.classList.add('is-active');
-      }
-    });
+    /* Carousel index */
+    var idx = Math.min(N-1, Math.floor(p*N));
+    swapTo(idx);
   }
 
-  function tick() { update(); requestAnimationFrame(tick); }
+  function tick(){update();requestAnimationFrame(tick);}
   tick();
 })();
 </script>
