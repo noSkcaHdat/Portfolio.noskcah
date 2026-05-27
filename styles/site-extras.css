@@ -26,9 +26,6 @@
   grid-template-rows:repeat(7,calc(var(--width) / 4 / .751))!important;
 }
 
-/* ── Header: GitHub social icon size (replaces CodePen) ─────────── */
-.sb__icon--github.astro-5qrshpxv{width:20px;height:20px}
-
 /* ── Footer: back-to-top button ─────────────────────────────────── */
 .foot-top{
   display:flex;align-items:center;justify-content:center;
