@@ -1,0 +1,42 @@
+/* ── Global colour tokens (extend the Astro compiled theme) ─────── */
+:root{
+  --color-shadow:#4a3600;
+  --color-white:#fff4b8;
+}
+
+/* ── Footer overrides ───────────────────────────────────────────── */
+.site-foot.astro-75cegwoc{gap:.8rem}
+.site-foot__mark.astro-75cegwoc{
+  display:inline-block;
+  color:var(--color-secondary);
+  opacity:.68;
+  font:400 10px/1 var(--font-family-fraktion);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+@media only screen and (max-width: 767px) and (orientation: landscape),
+       only screen and (max-width: 576px){
+  .site-foot.astro-75cegwoc{gap:.5rem}
+  .site-foot__mark.astro-75cegwoc{font-size:9px;letter-spacing:.12em}
+}
+
+/* ── About: awards grid row override ────────────────────────────── */
+.s-about.astro-am7g2yfn .s__awards.astro-am7g2yfn{
+  grid-template-rows:repeat(7,calc(var(--width) / 4 / .751))!important;
+}
+
+/* ── Footer: back-to-top button ─────────────────────────────────── */
+.foot-top{
+  display:flex;align-items:center;justify-content:center;
+  width:2.75rem;height:2.75rem;border-radius:50%;
+  border:1px solid rgba(255,206,27,.3);
+  background:transparent;color:var(--color-secondary);
+  cursor:pointer;margin-left:auto;flex-shrink:0;
+  transition:border-color .25s ease,background .25s ease,transform .3s cubic-bezier(.23,1,.32,1);
+}
+.foot-top:hover{
+  border-color:var(--color-secondary);
+  background:rgba(255,206,27,.08);
+  transform:translateY(-4px);
+}

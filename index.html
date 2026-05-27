@@ -79,7 +79,8 @@
 <link href="_astro/index.MJ9FiCyD.css" rel="stylesheet"/>
 <script src="_astro/hoisted.work-images.js" type="module">
 </script>
-<style>:root{--color-shadow:#4a3600;--color-white:#fff4b8}.site-foot.astro-75cegwoc{gap:.8rem}.site-foot__mark.astro-75cegwoc{display:inline-block;color:var(--color-secondary);opacity:.68;font:400 10px/1 var(--font-family-fraktion);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}@media only screen and (max-width: 767px) and (orientation: landscape),only screen and (max-width: 576px){.site-foot.astro-75cegwoc{gap:.5rem}.site-foot__mark.astro-75cegwoc{font-size:9px;letter-spacing:.12em}}</style>
+<link href="styles/site-extras.css" rel="stylesheet"/>
+<link href="styles/journey.css" rel="stylesheet"/>
 </head> <body class="astro-j7pv25f6"> <audio aria-hidden="true" id="site-audio" loop="" preload="auto" style="display:none"> <source src="images/riseupdeadman%20copy.mp3" type="audio/mpeg"/> </audio> <div class="site-wrapper js-site-wrapper astro-j7pv25f6" style="opacity: 0;"> <header class="site-head astro-5qrshpxv" data-intersect=""> <div class="site-head__container astro-5qrshpxv"> <div class="sb-logo astro-5qrshpxv"> <a class="astro-5qrshpxv" href="index.html"> <svg class="js-logo astro-5qrshpxv" fill="none" height="280" viewbox="0 0 280 280" width="280" xmlns="http://www.w3.org/2000/svg"> <path class="astro-5qrshpxv" clip-rule="evenodd" d="M200 0L280 280H240L222 220H178L160 280H120L200 0ZM200 90L184 160H216L200 90Z" fill="#FFCE1B" fill-rule="evenodd">
 </path> <path class="astro-5qrshpxv" d="M0 0v280h39.755V159.877H69.65V280h39.756V0H69.65v120.123H39.755V0H0Z" fill="#FFCE1B">
 </path> </svg> <span class="u-sr-only astro-5qrshpxv">HacksonAloysis</span> </a> </div>
@@ -335,11 +336,7 @@
 </span> </span> <span class="a__triangle astro-rdpcjfuz">
 </span> </a-separator> </div> <div class="s__border js-border astro-7dteeuzc">
 </div> </div>
-<!-- .s-hero --> <style>
-.s-about.astro-am7g2yfn .s__awards.astro-am7g2yfn{
-  grid-template-rows:repeat(7,calc(var(--width) / 4 / .751))!important;
-}
-</style>
+<!-- .s-hero -->
 <section class="s-about astro-am7g2yfn" data-intersect="" id="about"> <div class="s__inner js-inner astro-am7g2yfn"> <div class="s__block s__block--about astro-am7g2yfn"> <h2 class="s__title astro-am7g2yfn">About</h2> <div class="s__content astro-am7g2yfn"> <p class="astro-am7g2yfn">I'm a security engineer who hunts vulnerabilities, competes in CTFs, and builds tools that make systems harder to break.</p> <p class="astro-am7g2yfn">I started with curiosity, dived into web security and network exploitation, competed in international CTF events, secured real-world systems, earned recognition from the Latvian Government, won a few awards, and keep on learning.</p> </div>
 <!-- .s__content --> </div>
 <!-- .s__block --> <div class="s__block s__block--awards astro-am7g2yfn"> <h2 class="s__title astro-am7g2yfn">Awards</h2> <ul class="s__awards astro-am7g2yfn"> <li class="s__award s__award--counter s__award--netMag2016 js-award astro-am7g2yfn"> <span class="s__award__inner astro-am7g2yfn"> <span class="s__award__name astro-am7g2yfn">TryHackMe</span> <span class="s__award__counter astro-am7g2yfn">(WOF x 1)</span>
@@ -679,251 +676,6 @@
 <!-- .s__outer --> </section>
 
 <section class="s-journey" id="journey">
-<style>
-/* ── s-journey: scroll-driven cinematic carousel ─────────────── */
-.s-journey{background:var(--color-primary);position:relative;height:1200vh;}
-
-.jrn-sticky{
-  position:sticky;top:0;height:100vh;overflow:hidden;
-}
-
-/* ── Portrait (left side, drifts further left on scroll) ─────── */
-.jrn-portrait{
-  position:absolute;left:50%;top:50%;
-  transform:translate(-50%,-50%);
-  perspective:900px;perspective-origin:50% 42%;
-  width:clamp(220px,22vw,340px);
-  pointer-events:none;will-change:transform;
-}
-.jrn-glow{
-  position:absolute;inset:-40% -25%;
-  background:radial-gradient(ellipse at 50% 55%,rgba(20,70,220,.5) 0%,rgba(20,70,220,.18) 42%,transparent 70%);
-  filter:blur(32px);pointer-events:none;
-}
-.jrn-card{
-  position:relative;width:100%;aspect-ratio:3/4;
-  border-radius:1.25rem;overflow:hidden;background:#04080f;
-  box-shadow:0 0 0 1px rgba(30,90,255,.18),0 24px 70px rgba(0,0,0,.8),0 0 100px rgba(15,55,200,.25);
-  will-change:transform;
-}
-.jrn-photo{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;object-position:center center;display:block;
-  filter:contrast(1.07) brightness(.93);
-}
-.jrn-depth-shadow{
-  position:absolute;inset:0;pointer-events:none;z-index:1;
-  background:radial-gradient(ellipse 72% 62% at 50% 36%,transparent 28%,rgba(4,8,18,.6) 100%),
-             linear-gradient(to bottom,transparent 50%,rgba(4,8,18,.9) 100%);
-}
-.jrn-grid{
-  position:absolute;inset:0;pointer-events:none;z-index:2;
-  background-image:linear-gradient(rgba(40,100,255,.055) 1px,transparent 1px),
-                   linear-gradient(90deg,rgba(40,100,255,.055) 1px,transparent 1px);
-  background-size:30px 30px;
-}
-.jrn-rim{
-  position:absolute;inset:0;pointer-events:none;z-index:3;mix-blend-mode:screen;
-  background:linear-gradient(to right,rgba(30,90,255,.15) 0%,transparent 30%),
-             linear-gradient(to left,rgba(30,90,255,.1) 0%,transparent 30%),
-             linear-gradient(to bottom,rgba(30,90,255,.08) 0%,transparent 25%);
-}
-.jrn-scanline{
-  position:absolute;inset:0;pointer-events:none;z-index:4;
-  background:repeating-linear-gradient(to bottom,transparent,transparent 3px,rgba(0,0,0,.055) 3px,rgba(0,0,0,.055) 4px);
-}
-
-/* ── Stage (right panel, carousel cards) ─────────────────────── */
-.jrn-stage{
-  position:absolute;right:0;top:0;bottom:0;
-  width:46vw;display:flex;flex-direction:column;
-  justify-content:center;padding:0 5vw 0 4vw;
-  pointer-events:none;
-}
-.jrn-heading{
-  font:700 min(7vw,4.75rem)/1 var(--font-family-bigger);
-  text-transform:uppercase;color:var(--color-secondary);
-  margin:0 0 1.25rem;letter-spacing:-.02em;
-}
-/* Slot wrapper */
-.jrn-ms-wrap{
-  position:relative;min-height:18rem;overflow:hidden;
-}
-/* Each A/B slot */
-.jrn-ms{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;justify-content:flex-start;
-}
-.jrn-ms.idle{opacity:0;visibility:hidden;pointer-events:none;}
-.jrn-ms.active{opacity:1;visibility:visible;}
-.jrn-ms.entering{visibility:visible;animation:jrnEnter .7s cubic-bezier(.22,1,.36,1) both;}
-.jrn-ms.exiting{visibility:visible;animation:jrnExit .5s cubic-bezier(.22,1,.36,1) both;}
-
-@keyframes jrnEnter{
-  from{opacity:0;transform:translateY(60px);filter:blur(12px);clip-path:inset(0 100% 0 0);}
-  to{opacity:1;transform:translateY(0);filter:blur(0px);clip-path:inset(0 0% 0 0);}
-}
-@keyframes jrnExit{
-  from{opacity:1;transform:translateY(0);filter:blur(0px);}
-  to{opacity:0;transform:translateY(-60px);filter:blur(12px);}
-}
-
-/* Milestone card content */
-.jrn-ms-date{
-  font:700 10px/1 var(--font-family-fraktion);
-  letter-spacing:.22em;text-transform:uppercase;
-  color:var(--color-secondary);margin-bottom:.85rem;
-}
-.jrn-ms-rule{
-  width:2.5rem;height:1px;
-  background:rgba(255,206,27,.35);margin-bottom:1.5rem;
-}
-.jrn-ms-title{
-  font:700 min(5vw,2.5rem)/1.15 var(--font-family-editorial);
-  color:var(--color-white);margin-bottom:1rem;
-}
-.jrn-ms-desc{
-  font:300 1rem/1.65 var(--font-family-editorial);
-  color:rgba(248,251,255,.52);max-width:38ch;
-}
-
-/* ── Upcoming teaser (below portrait, last item only) ────────── */
-.jrn-teaser{
-  position:absolute;left:50%;bottom:6vh;
-  transform:translateX(-50%);
-  text-align:center;white-space:nowrap;
-  pointer-events:none;
-}
-.jrn-teaser-label,
-.jrn-teaser-title{opacity:0;}
-.jrn-teaser-label{
-  display:block;
-  font:700 11px/1 var(--font-family-fraktion);
-  letter-spacing:.28em;text-transform:uppercase;
-  color:var(--color-secondary);margin-bottom:.85rem;
-}
-.jrn-teaser-title{
-  display:block;
-  font:700 clamp(2rem,3.5vw,2.75rem)/1 var(--font-family-editorial);
-  color:var(--color-white);letter-spacing:.02em;
-}
-
-@keyframes teaserLabelIn{
-  from{opacity:0;letter-spacing:.6em;}
-  to{opacity:.6;letter-spacing:.28em;}
-}
-@keyframes teaserTitleIn{
-  from{opacity:0;transform:translateY(14px);}
-  to{opacity:1;transform:translateY(0);}
-}
-.jrn-teaser.is-visible .jrn-teaser-label{
-  animation:teaserLabelIn .55s .1s cubic-bezier(.22,1,.36,1) forwards;
-}
-.jrn-teaser.is-visible .jrn-teaser-title{
-  animation:teaserTitleIn .9s .38s cubic-bezier(.22,1,.36,1) forwards;
-}
-
-/* ── Shockwave unlock (final milestone) ───────────────────── */
-.jrn-sw{position:absolute;inset:0;pointer-events:none;z-index:20;}
-/* radial burst — very fast, centered on portrait */
-.jrn-sw-flash{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse 62% 82% at 34vw 50%,
-    rgba(255,252,210,.97) 0%,
-    rgba(255,206,27,.44) 22%,
-    rgba(20,55,200,.1) 50%,
-    transparent 68%);
-  opacity:0;mix-blend-mode:screen;
-}
-/* ring origin — anchored at portrait centre */
-.jrn-sw-rings{position:absolute;left:34vw;top:50%;width:0;height:0;}
-.jrn-ring{
-  position:absolute;
-  border-radius:50%;
-  transform:translate(-50%,-50%) scale(0);
-  opacity:0;
-  width:22vw;height:22vw;
-}
-.jrn-ring:nth-child(1){
-  border:2px solid rgba(255,252,200,.95);
-  box-shadow:0 0 18px 5px rgba(255,220,60,.6),inset 0 0 12px 3px rgba(255,220,60,.25);
-  --rd:0s;--rdur:.85s;
-}
-.jrn-ring:nth-child(2){
-  border:1.5px solid rgba(255,206,27,.68);
-  box-shadow:0 0 10px 2px rgba(255,206,27,.38);
-  --rd:.13s;--rdur:1.1s;
-}
-.jrn-ring:nth-child(3){
-  border:1px solid rgba(140,200,255,.5);
-  box-shadow:0 0 8px 1px rgba(80,160,255,.28);
-  --rd:.28s;--rdur:1.4s;
-}
-.jrn-ring:nth-child(4){
-  border:1px solid rgba(30,90,255,.35);
-  --rd:.44s;--rdur:1.75s;
-}
-/* keyframes */
-@keyframes swFlash{
-  0%  {opacity:0;}
-  3%  {opacity:1;}
-  18% {opacity:0;}
-  100%{opacity:0;}
-}
-@keyframes ringOut{
-  0%  {transform:translate(-50%,-50%) scale(0);opacity:1;}
-  55% {opacity:.5;}
-  82% {opacity:.12;}
-  100%{transform:translate(-50%,-50%) scale(12);opacity:0;}
-}
-/* card: border pulses electric-white → settles back */
-@keyframes cardStrike{
-  0%  {box-shadow:0 0 0 1px rgba(30,90,255,.18),0 24px 70px rgba(0,0,0,.8),0 0 100px rgba(15,55,200,.25);}
-  4%  {box-shadow:0 0 0 3px rgba(255,252,200,1),0 0 55px rgba(255,220,50,1),0 0 130px rgba(255,200,30,.88),0 0 240px rgba(255,180,20,.38);}
-  18% {box-shadow:0 0 0 1px rgba(255,206,27,.5),0 22px 65px rgba(0,0,0,.7),0 0 70px rgba(255,206,27,.28);}
-  100%{box-shadow:0 0 0 1px rgba(30,90,255,.18),0 24px 70px rgba(0,0,0,.8),0 0 100px rgba(15,55,200,.25);}
-}
-/* photo: momentary overexposure like a camera flash */
-@keyframes photoStrike{
-  0%  {filter:contrast(1.07) brightness(.93);}
-  4%  {filter:contrast(.9) brightness(2.1);}
-  16% {filter:contrast(1.12) brightness(1.04);}
-  100%{filter:contrast(1.07) brightness(.93);}
-}
-.jrn-sticky.is-striking .jrn-sw-flash{animation:swFlash .75s ease-out forwards;}
-.jrn-sticky.is-striking .jrn-ring{animation:ringOut var(--rdur) var(--rd) cubic-bezier(.08,.82,.14,1) forwards;}
-.jrn-sticky.is-striking #jrnCard{animation:cardStrike 1.8s cubic-bezier(.22,1,.36,1) forwards;}
-.jrn-sticky.is-striking .jrn-photo{animation:photoStrike 1.5s cubic-bezier(.22,1,.36,1) forwards;}
-
-/* ── Mobile fallback ──────────────────────────────────────────── */
-@media(max-width:767px){
-  .s-journey{height:auto;padding:5rem 0 6rem;}
-  .jrn-sticky{position:relative;height:auto;overflow:visible;display:block;}
-  .jrn-portrait{position:relative;left:auto;top:auto;transform:none;
-                 width:clamp(180px,55vw,280px);margin:0 auto 2.5rem;}
-  .jrn-stage{position:relative;width:100%;padding:0 5vw;height:auto;}
-  .jrn-heading{font-size:min(15vw,3rem);margin-bottom:1rem;}
-  .jrn-counter,.jrn-progress{display:none;}
-  .jrn-ms-wrap{position:relative;min-height:auto;overflow:visible;}
-  .jrn-ms{position:relative;inset:auto;opacity:1!important;visibility:visible!important;
-           animation:none!important;margin-bottom:2.5rem;}
-  .jrn-ms.idle{display:none;}
-  .jrn-ms-title{font-size:min(7vw,1.5rem);}
-}
-/* ── Reduced-motion fallback ─────────────────────────────────── */
-@media(prefers-reduced-motion:reduce){
-  .s-journey{height:auto;padding:5rem 0 6rem;}
-  .jrn-sticky{position:relative;height:auto;overflow:visible;}
-  .jrn-portrait{position:relative;left:auto;top:auto;transform:none;
-                 width:clamp(240px,28vw,380px);margin:0 auto 3rem;}
-  .jrn-stage{position:relative;width:100%;padding:0 5vw;height:auto;}
-  .jrn-counter,.jrn-progress{display:none;}
-  .jrn-ms-wrap{position:relative;min-height:auto;overflow:visible;}
-  .jrn-ms{position:relative;inset:auto;opacity:1!important;visibility:visible!important;
-           animation:none!important;margin-bottom:2.5rem;}
-  .jrn-ms.idle{display:none;}
-}
-</style>
 
 <div class="jrn-sticky" id="jrnSticky">
 
@@ -967,161 +719,7 @@
 
 </div><!-- /.jrn-sticky -->
 
-<script>
-(function(){
-  var section  = document.getElementById('journey');
-  var portrait = document.getElementById('jrnPortrait');
-  var card     = document.getElementById('jrnCard');
-  var slotA    = document.getElementById('jrnMsA');
-  var slotB    = document.getElementById('jrnMsB');
-  var teaser   = document.getElementById('jrnTeaser');
-  var sticky   = document.getElementById('jrnSticky');
-  var strikeCooldown = false;
-  var lockUntil = 0; /* timestamp until which forward scroll is held */
-
-  /* ── Scroll lock: prevent scrolling past section during shockwave ─ */
-  window.addEventListener('wheel', function(e){
-    if(Date.now() < lockUntil && e.deltaY > 0) e.preventDefault();
-  }, {passive:false});
-  var _ty = 0;
-  window.addEventListener('touchstart', function(e){_ty = e.touches[0].clientY;}, {passive:true});
-  window.addEventListener('touchmove', function(e){
-    if(Date.now() < lockUntil && (e.touches[0].clientY - _ty) < 0) e.preventDefault();
-  }, {passive:false});
-
-  function triggerShockwave(){
-    if(strikeCooldown) return;
-    strikeCooldown = true;
-    /* hold scroll for 2.7s — shockwave (1.8s) + teaser glow-up (.9s) */
-    lockUntil = Date.now() + 2700;
-    sticky.classList.remove('is-striking');
-    void sticky.offsetWidth; /* force reflow so animation restarts cleanly */
-    sticky.classList.add('is-striking');
-    setTimeout(function(){
-      sticky.classList.remove('is-striking');
-      strikeCooldown = false;
-    }, 2200);
-  }
-
-  var ITEMS = [
-    {date:'2023 · AUG',     title:'The Beginning',                       desc:'First line of code. Curiosity turned obsession & hunger.'},
-    {date:'2024 · JAN',     title:'Dived into Security Engineering & Intelligent Automation',              desc:'Cloudsecurity, Agentic security & RPA. The rabbit hole had no bottom.'},
-    {date:'2025 · MAR',     title:'Pentathon 2025 Finale',               desc:'National level cybersecurity competition finalist.'},
-    {date:'2025 · APR',     title:'TryHackMe Top 1%',                    desc:'Global ranking. Among the elite on the platform.'},
-    {date:'2025 · MAY',     title:'TryHackMe Wall of Fame',              desc:'Officially recognised. Name on the board.'},
-    {date:'2025 · JUN–AUG', title:'Cyber Crime Internship',              desc:'Real-world threat analysis and forensic investigation.'},
-    {date:'2025 · AUG',     title:'Latvia Govt. Letter of Appreciation', desc:'Secured Latvijas Banka. Recognised by a sovereign government.'},
-    {date:'2025 · AUG',     title:'UST GenCys CTF — Special Winner',     desc:'International CTF. Stood out among Top teams.'},
-    {date:'2025 · DEC',     title:'Yukti CTF Finale — Top Finisher',     desc:'Consistent. Relentless. Always in the final round.'},
-    {date:'2026 · JAN',     title:'IITM ISEA ISAP CTF — Top Finisher',   desc:'IIT Madras. Top 5 teams.'},
-    {date:'2026 · JAN',     title:'Crepsilon Technologies Intern',       desc:'Developing Sales Agent and Web Developer'},
-    {date:'2026 · FEB',     title:'RPA Trainer — 180+ Students',         desc:'Taught automation to a generation of engineers.'},
-    {date:'2026 · MAR',     title:'Dx-Edge @ CII Southern Zone Summit',  desc:'Represented at a national industry summit.'},
-    {date:'2026 · APR',     title:'UiPath Student Developer Champion',   desc:'Global recognition. Top student developer of UiPath.'}
-  ];
-  var N = ITEMS.length;
-
-  function renderHTML(item) {
-    return '<div class="jrn-ms-date">' + item.date + '</div>' +
-           '<div class="jrn-ms-rule"></div>' +
-           '<div class="jrn-ms-title">' + item.title + '</div>' +
-           '<div class="jrn-ms-desc">'  + item.desc  + '</div>';
-  }
-
-  /* Seed first item before any scroll or early-return */
-  slotA.innerHTML = renderHTML(ITEMS[0]);
-
-  /* Mobile / reduced-motion: build static list, skip scroll JS */
-  if (window.matchMedia('(prefers-reduced-motion:reduce)').matches ||
-      window.innerWidth < 768) {
-    var wrap = document.querySelector('.jrn-ms-wrap');
-    wrap.innerHTML = '';
-    ITEMS.forEach(function(it) {
-      var div = document.createElement('div');
-      div.className = 'jrn-ms active';
-      div.innerHTML = renderHTML(it);
-      wrap.appendChild(div);
-    });
-    return;
-  }
-
-  /* ── A/B slot swap ─────────────────────────────────────────── */
-  var activeSlot   = slotA;
-  var inactiveSlot = slotB;
-  var curIdx       = 0;
-  var pendingIdx   = null;
-  var animating    = false;
-
-  function swapTo(idx) {
-    if (idx === curIdx) return;
-    if (animating) { pendingIdx = idx; return; }
-
-    animating  = true;
-    pendingIdx = null;
-    curIdx     = idx;
-
-    inactiveSlot.innerHTML  = renderHTML(ITEMS[idx]);
-    inactiveSlot.className  = 'jrn-ms entering';
-    activeSlot.className    = 'jrn-ms exiting';
-
-    var exiting = activeSlot;
-    function done(ev) {
-      if (ev.target !== exiting) return;
-      exiting.removeEventListener('animationend', done);
-      exiting.className      = 'jrn-ms idle';
-      inactiveSlot.className = 'jrn-ms active';
-      var tmp    = activeSlot;
-      activeSlot = inactiveSlot;
-      inactiveSlot = tmp;
-      animating = false;
-      teaser.classList.toggle('is-visible', curIdx === N - 1);
-      if(curIdx === N - 1) triggerShockwave();
-      if (pendingIdx !== null && pendingIdx !== curIdx) swapTo(pendingIdx);
-    }
-    exiting.addEventListener('animationend', done);
-  }
-
-  /* ── Scroll helpers ────────────────────────────────────────── */
-  function clamp(v,lo,hi){return v<lo?lo:v>hi?hi:v;}
-  function mapRange(v,a,b,c,d){return c+(d-c)*clamp((v-a)/(b-a),0,1);}
-  function eio(t){return t<.5?2*t*t:-1+(4-2*t)*t;}
-
-  function getP(){
-    var rect = section.getBoundingClientRect();
-    return clamp(-rect.top/(section.offsetHeight-window.innerHeight),0,1);
-  }
-
-  function update(){
-    var p = getP();
-    var e = eio(p);    /* 0 at start → 1 at end, eased */
-    var inv = 1 - e;   /* 1 at start → 0 at end         */
-
-    /* Portrait: starts left-angled, settles to stable position */
-    var xStart = window.innerWidth * 0.22;
-    var xEnd   = window.innerWidth * 0.16;
-    var xPx    = xStart + (xEnd - xStart) * e;
-    portrait.style.opacity   = (0.85 + 0.15 * e).toFixed(3);
-    portrait.style.transform =
-      'translate(calc(-50% - ' + xPx.toFixed(1) + 'px),-50%)';
-
-    /* Card: starts left 3D-angled pose, rotates into straight settled front */
-    var rotY = -28 * inv;        /* -28deg → 0deg */
-    var rotX =   6 * inv;        /*   6deg → 0deg */
-    var sc   = 1.08 - 0.08 * e; /*   1.08 → 1.0  */
-    card.style.transform =
-      'rotateY(' + rotY.toFixed(2) + 'deg)' +
-      ' rotateX(' + rotX.toFixed(2) + 'deg)' +
-      ' scale(' + sc.toFixed(3) + ')';
-
-    /* Carousel index */
-    var idx = Math.min(N-1, Math.floor(p*N));
-    swapTo(idx);
-  }
-
-  function tick(){update();requestAnimationFrame(tick);}
-  tick();
-})();
-</script>
+<script src="scripts/journey.js"></script>
 
 </section>
 
@@ -1421,29 +1019,12 @@
 <!-- .s__grid --> </section> <footer class="site-foot astro-75cegwoc"> <div class="site-foot__logo astro-75cegwoc"> <a class="astro-75cegwoc" href="index.html"> <svg class="astro-75cegwoc" fill="none" height="280" viewbox="0 0 280 280" width="280" xmlns="http://www.w3.org/2000/svg"> <path class="astro-75cegwoc" clip-rule="evenodd" d="M200 0L280 280H240L222 220H178L160 280H120L200 0ZM200 90L184 160H216L200 90Z" fill="#FFCE1B" fill-rule="evenodd">
 </path> <path class="astro-75cegwoc" d="M0 0v280h39.755V159.877H69.65V280h39.756V0H69.65v120.123H39.755V0H0Z" fill="#FFCE1B">
 </path> </svg> <span class="u-sr-only astro-75cegwoc">HacksonAloysis</span> </a> </div> <span class="site-foot__mark astro-75cegwoc">HacksonAloysis</span>
-<style>
-.foot-top{
-  display:flex;align-items:center;justify-content:center;
-  width:2.75rem;height:2.75rem;border-radius:50%;
-  border:1px solid rgba(255,206,27,.3);
-  background:transparent;color:var(--color-secondary);
-  cursor:pointer;margin-left:auto;flex-shrink:0;
-  transition:border-color .25s ease,background .25s ease,transform .3s cubic-bezier(.23,1,.32,1);
-}
-.foot-top:hover{
-  border-color:var(--color-secondary);
-  background:rgba(255,206,27,.08);
-  transform:translateY(-4px);
-}
-</style>
 <button class="foot-top js-foot-top" aria-label="Back to top" type="button">
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M9 2L2 9M9 2L16 9M9 2V16" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 </button>
-<script>
-document.querySelector('.js-foot-top').addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-</script>
+<script src="scripts/foot-top.js"></script>
 <!-- .site-foot__logo --> </footer> </div>
 <!-- .site-wrapper --> <div class="site-intro js-intro astro-j7pv25f6" style="opacity: 1; position: fixed; top: 0; left: 0; z-index: 50; width: 100%; height: 100%; background: #08111C;"> <div class="sb-logo js-logo astro-j7pv25f6"> <div class="sb__path sb__path--v sb__path--v-1 js-logo-line-v astro-j7pv25f6">
 </div> <div class="sb__path sb__path--h sb__path--h-1 js-logo-line-h astro-j7pv25f6">
@@ -1462,33 +1043,7 @@ document.querySelector('.js-foot-top').addEventListener('click',function(){windo
 </div> <div class="site-contrast-mask js-contrast-mask astro-j7pv25f6">
 </div> <div class="site-scrollbar astro-yxqriywh"> <div class="site-scrollbar__track astro-yxqriywh">
 </div> <div class="site-scrollbar__thumb js-thumb astro-yxqriywh">
-</div> </div> <script>
-(function () {
-  const audio = document.getElementById("site-audio");
-  if (!audio) return;
-
-  const attemptPlayback = () => audio.play().catch(() => {});
-  const unlockPlayback = () => {
-    attemptPlayback();
-    window.removeEventListener("pointerdown", unlockPlayback);
-    window.removeEventListener("touchstart", unlockPlayback);
-    window.removeEventListener("keydown", unlockPlayback);
-  };
-
-  audio.loop = true;
-  attemptPlayback();
-
-  window.addEventListener("pointerdown", unlockPlayback, { once: true, passive: true });
-  window.addEventListener("touchstart", unlockPlayback, { once: true, passive: true });
-  window.addEventListener("keydown", unlockPlayback, { once: true });
-
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && audio.paused) {
-      attemptPlayback();
-    }
-  });
-})();
-</script>
+</div> </div> <script src="scripts/audio.js"></script>
 
 
 </body>
