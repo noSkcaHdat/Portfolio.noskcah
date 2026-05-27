@@ -37,7 +37,7 @@
     "qr_code": {
       "href": "mailto:karthikraja.connect@gmail.com",
       "title": "Contact me!",
-      "src": "images/qr-code.svg",
+      "src": "images/direct_to_mail_QR.png",
       "alt": "QR Code"
     },
     "footer_name": "HacksonAloysis"
