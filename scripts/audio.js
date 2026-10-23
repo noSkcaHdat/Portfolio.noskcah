@@ -1,25 +1,43 @@
 (function () {
   const audio = document.getElementById("site-audio");
-  if (!audio) return;
+  const toggle = document.getElementById("audio-toggle");
+  if (!audio || !toggle) return;
 
-  const attemptPlayback = () => audio.play().catch(() => {});
-  const unlockPlayback = () => {
-    attemptPlayback();
-    window.removeEventListener("pointerdown", unlockPlayback);
-    window.removeEventListener("touchstart", unlockPlayback);
-    window.removeEventListener("keydown", unlockPlayback);
+  const label = toggle.querySelector(".foot-audio__label");
+  let soundEnabled = false;
+
+  const renderState = () => {
+    const isPlaying = soundEnabled && !audio.paused && !audio.muted;
+    toggle.classList.toggle("is-playing", isPlaying);
+    toggle.setAttribute("aria-pressed", String(isPlaying));
+    toggle.setAttribute("aria-label", isPlaying ? "Mute soundtrack" : "Play soundtrack");
+    if (label) label.textContent = isPlaying ? "Sound on" : "Sound off";
   };
 
   audio.loop = true;
-  attemptPlayback();
+  audio.preload = "none";
+  audio.muted = true;
 
-  window.addEventListener("pointerdown", unlockPlayback, { once: true, passive: true });
-  window.addEventListener("touchstart", unlockPlayback, { once: true, passive: true });
-  window.addEventListener("keydown", unlockPlayback, { once: true });
-
-  document.addEventListener("visibilitychange", () => {
-    if (!document.hidden && audio.paused) {
-      attemptPlayback();
+  toggle.addEventListener("click", async () => {
+    if (soundEnabled && !audio.paused && !audio.muted) {
+      soundEnabled = false;
+      audio.muted = true;
+      renderState();
+      return;
     }
+
+    soundEnabled = true;
+    audio.muted = false;
+    try {
+      await audio.play();
+    } catch {
+      soundEnabled = false;
+      audio.muted = true;
+    }
+    renderState();
   });
+
+  audio.addEventListener("play", renderState);
+  audio.addEventListener("pause", renderState);
+  renderState();
 })();
