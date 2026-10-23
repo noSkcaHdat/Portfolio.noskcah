@@ -492,27 +492,78 @@
 </span> </span> <span class="a__triangle astro-rdpcjfuz">
 </span> </a-separator> <section class="s-projects" id="work" aria-labelledby="projects-title">
   <div class="prj-wrap">
-    <header class="prj-head">
-      <p class="prj-head__meta">
+    <header class="prj-cover">
+      <p class="prj-cover__meta">
         <span>Selected Work</span>
-        <span>04 Files</span>
-        <span>2025â€”2026</span>
+        <span>04 Reports</span>
+        <span>2025—2026</span>
       </p>
-      <h2 class="prj-head__title" id="projects-title">Work</h2>
-      <p class="prj-head__intro">Four systems built to <em>detect</em>, <em>explain</em>, and <em>defend</em>. Each file is a problem, an approach, and a result.</p>
+      <div class="prj-cover__main">
+        <div class="prj-cover__lead">
+          <h2 class="prj-cover__title" id="projects-title">Work</h2>
+          <p class="prj-cover__intro">Four systems built to <em>detect</em>, <em>explain</em>, and <em>defend</em>. Each report is a problem, an approach, and a result.</p>
+        </div>
+        <nav class="prj-index" aria-label="Case files">
+          <div class="prj-index__head">
+            <p class="prj-index__label">Contents</p>
+            <p class="prj-index__count">04 Reports</p>
+          </div>
+          <ol class="prj-index__list">
+            <li>
+              <a class="prj-index__item" href="#file-byovd">
+                <span class="prj-index__no">01</span>
+                <span class="prj-index__name">BYOVD</span>
+                <span class="prj-index__meta">Kernel · Research / 2025</span>
+              </a>
+            </li>
+            <li>
+              <a class="prj-index__item" href="#file-myonsite">
+                <span class="prj-index__no">02</span>
+                <span class="prj-index__name">My Onsite</span>
+                <span class="prj-index__meta">Detection · Healthcare / 2026</span>
+              </a>
+            </li>
+            <li>
+              <a class="prj-index__item" href="#file-aljazira">
+                <span class="prj-index__no">03</span>
+                <span class="prj-index__name">Al Jazira</span>
+                <span class="prj-index__meta">Applied AI · Bilingual / 2026</span>
+              </a>
+            </li>
+            <li>
+              <a class="prj-index__item" href="#file-letter">
+                <span class="prj-index__no">04</span>
+                <span class="prj-index__name">The Letter</span>
+                <span class="prj-index__meta">Disclosure · CERT.LV / 2025</span>
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="prj-cover__rule" aria-hidden="true"><span></span></div>
     </header>
 
     <div class="prj-list">
 
-      <!-- CASE 01 â€” BYOVD -->
-      <article class="prj" id="file-byovd" aria-labelledby="file-byovd-title">
-        <div class="prj__rail" aria-hidden="true">
-          <span class="prj__num">01</span>
-          <span class="prj__year">2025</span>
-        </div>
-        <figure class="prj__visual">
-          <span class="prj__badge">Research</span>
-          <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
+      <!-- CASE 01 — BYOVD -->
+      <article class="prj prj--byovd" id="file-byovd" aria-labelledby="file-byovd-title">
+        <span class="prj__tab" aria-hidden="true"><b>01</b><span>2025</span></span>
+        <header class="prj__head">
+          <div class="prj__head-main">
+            <p class="prj__kicker">Kernel · Detection · Research</p>
+            <h3 class="prj__title" id="file-byovd-title">BYOVD</h3>
+            <p class="prj__sub">Self-protecting driver attestation.</p>
+          </div>
+          <div class="prj__head-side">
+            <span class="prj__status">Research</span>
+            <span class="prj__file">Case 01 / 04 · 2025</span>
+          </div>
+        </header>
+        <div class="prj__body">
+          <figure class="prj__visual">
+            <div class="prj__plate">
+              <span class="prj__plate-no" aria-hidden="true">01</span>
+              <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
             <defs>
               <pattern id="prj-grid-1" width="40" height="40" patternUnits="userSpaceOnUse">
                 <path d="M40 0H0V40" fill="none" stroke="rgba(255,206,27,.07)" stroke-width="1"/>
@@ -592,13 +643,12 @@
               <text class="prj-stamp-tx" x="655" y="237" text-anchor="middle">KNOWN BAD</text>
             </g>
           </svg>
-          <figcaption class="prj__figcap"><span>Fig. 01</span><span>Ring 0 / Ring 3 attestation path</span></figcaption>
-        </figure>
-        <div class="prj__meta">
-          <p class="prj__kicker">Kernel Â· Detection Â· Research</p>
-          <h3 class="prj__title" id="file-byovd-title">BYOVD</h3>
-          <p class="prj__sub">Self-protecting driver attestation.</p>
-          <dl class="prj__facts">
+            </div>
+            <figcaption class="prj__figcap"><span>Plate 01</span><span>Ring 0 / Ring 3 attestation path</span></figcaption>
+          </figure>
+          <div class="prj__meta">
+            <div class="prj__notes-head"><span>Case notes</span><span>01 / 04</span></div>
+            <dl class="prj__facts">
             <div class="prj__fact">
               <dt>Problem</dt>
               <dd>Attackers load signed vulnerable drivers to reach Ring 0 and blind the EDR watching them.</dd>
@@ -612,21 +662,36 @@
               <dd>Sub-millisecond load telemetry; a known-bad driver flagged on the dashboard; Task Manager, <code>taskkill /F</code>, and Process Explorer all denied. Documented in a co-authored IEEE-format paper.</dd>
             </div>
           </dl>
+          <div class="prj__metric">
+            <span class="prj__metric-no">3/3</span>
+            <span class="prj__metric-label">Termination paths denied</span>
+          </div>
           <ul class="prj__stack" aria-label="Stack">
             <li>C</li><li>WDM</li><li>Minifilter</li><li>C# / .NET</li><li>SHA-256</li><li>LOLDrivers</li>
           </ul>
+          </div>
         </div>
       </article>
 
-      <!-- CASE 02 â€” MY ONSITE -->
-      <article class="prj" id="file-myonsite" aria-labelledby="file-myonsite-title">
-        <div class="prj__rail" aria-hidden="true">
-          <span class="prj__num">02</span>
-          <span class="prj__year">2026</span>
-        </div>
-        <figure class="prj__visual">
-          <span class="prj__badge">System</span>
-          <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
+      <!-- CASE 02 — MY ONSITE -->
+      <article class="prj prj--myonsite" id="file-myonsite" aria-labelledby="file-myonsite-title">
+        <span class="prj__tab" aria-hidden="true"><b>02</b><span>2026</span></span>
+        <header class="prj__head">
+          <div class="prj__head-main">
+            <p class="prj__kicker">Detection · Backend · Healthcare</p>
+            <h3 class="prj__title" id="file-myonsite-title">My Onsite</h3>
+            <p class="prj__sub">One incident, one answer.</p>
+          </div>
+          <div class="prj__head-side">
+            <span class="prj__status">System</span>
+            <span class="prj__file">Case 02 / 04 · 2026</span>
+          </div>
+        </header>
+        <div class="prj__body">
+          <figure class="prj__visual">
+            <div class="prj__plate">
+              <span class="prj__plate-no" aria-hidden="true">02</span>
+              <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
             <defs>
               <pattern id="prj-grid-2" width="40" height="40" patternUnits="userSpaceOnUse">
                 <path d="M40 0H0V40" fill="none" stroke="rgba(255,206,27,.07)" stroke-width="1"/>
@@ -689,47 +754,61 @@
             <path class="prj-line prj-line--dim" d="M40 380H760"/>
             <g class="prj-fade" style="--d:.55s">
               <text class="prj-label" x="40" y="420">THREATFORGE / SAME THESIS</text>
-              <text class="prj-sub" x="40" y="442">FRAUD + SANCTIONS Â· CREDIBILITY Â· EXPLAINABLE RISK</text>
-              <text class="prj-sub" x="40" y="464">70 REQUESTS Â· 0 ERRORS Â· ~38 MS MEDIAN</text>
+              <text class="prj-sub" x="40" y="442">FRAUD + SANCTIONS · CREDIBILITY · EXPLAINABLE RISK</text>
+              <text class="prj-sub" x="40" y="464">70 REQUESTS · 0 ERRORS · ~38 MS MEDIAN</text>
               <rect class="prj-stamp" x="600" y="404" width="160" height="22"/>
               <text class="prj-stamp-tx" x="680" y="419" text-anchor="middle">SANCTIONS = ESCALATE</text>
             </g>
           </svg>
-          <figcaption class="prj__figcap"><span>Fig. 02</span><span>Four sources, one decision</span></figcaption>
-        </figure>
-        <div class="prj__meta">
-          <p class="prj__kicker">Detection Â· Backend Â· Healthcare</p>
-          <h3 class="prj__title" id="file-myonsite-title">My Onsite</h3>
-          <p class="prj__sub">One incident, one answer.</p>
-          <dl class="prj__facts">
+            </div>
+            <figcaption class="prj__figcap"><span>Plate 02</span><span>Four sources, one decision</span></figcaption>
+          </figure>
+          <div class="prj__meta">
+            <div class="prj__notes-head"><span>Case notes</span><span>02 / 04</span></div>
+            <dl class="prj__facts">
             <div class="prj__fact">
               <dt>Problem</dt>
               <dd>Four EDR platforms describe the same endpoint differently. Analysts get conflicting alerts and no way to replay the call.</dd>
             </div>
             <div class="prj__fact">
               <dt>Approach</dt>
-              <dd>Deterministic FastAPI + MySQL reconciliation: 10-minute windows, four ordered rules, append-only decision revisions, and a public audit trace. ThreatForge applies the same thesis to fraud and sanctions signals â€” credibility, fusion, explainable risk.</dd>
+              <dd>Deterministic FastAPI + MySQL reconciliation: 10-minute windows, four ordered rules, append-only decision revisions, and a public audit trace. ThreatForge applies the same thesis to fraud and sanctions signals — credibility, fusion, explainable risk.</dd>
             </div>
             <div class="prj__fact">
               <dt>Result</dt>
               <dd>One explainable decision per conflict, replayed from the same event set. Five EDR fixtures pass; the fraud engine held 70 requests at zero errors, ~38 ms median against a 2 s budget.</dd>
             </div>
           </dl>
+          <div class="prj__metric">
+            <span class="prj__metric-no">70/0</span>
+            <span class="prj__metric-label">Requests / errors</span>
+          </div>
           <ul class="prj__stack" aria-label="Stack">
             <li>Python</li><li>FastAPI</li><li>MySQL 8</li><li>REST</li><li>JSONL audit</li>
           </ul>
+          </div>
         </div>
       </article>
 
-      <!-- CASE 03 â€” AL JAZIRA -->
-      <article class="prj" id="file-aljazira" aria-labelledby="file-aljazira-title">
-        <div class="prj__rail" aria-hidden="true">
-          <span class="prj__num">03</span>
-          <span class="prj__year">2026</span>
-        </div>
-        <figure class="prj__visual">
-          <span class="prj__badge">POC</span>
-          <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
+      <!-- CASE 03 — AL JAZIRA -->
+      <article class="prj prj--aljazira" id="file-aljazira" aria-labelledby="file-aljazira-title">
+        <span class="prj__tab" aria-hidden="true"><b>03</b><span>2026</span></span>
+        <header class="prj__head">
+          <div class="prj__head-main">
+            <p class="prj__kicker">Applied AI · Product · Bilingual</p>
+            <h3 class="prj__title" id="file-aljazira-title">Al Jazira</h3>
+            <p class="prj__sub">A bank assistant with a firewall.</p>
+          </div>
+          <div class="prj__head-side">
+            <span class="prj__status">POC</span>
+            <span class="prj__file">Case 03 / 04 · 2026</span>
+          </div>
+        </header>
+        <div class="prj__body">
+          <figure class="prj__visual">
+            <div class="prj__plate">
+              <span class="prj__plate-no" aria-hidden="true">03</span>
+              <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
             <defs>
               <pattern id="prj-grid-3" width="40" height="40" patternUnits="userSpaceOnUse">
                 <path d="M40 0H0V40" fill="none" stroke="rgba(255,206,27,.07)" stroke-width="1"/>
@@ -804,13 +883,12 @@
               <text class="prj-sub" x="40" y="484">PROVIDER-SWAPPABLE: GROQ / QWEN / GROK / OLLAMA.</text>
             </g>
           </svg>
-          <figcaption class="prj__figcap"><span>Fig. 03</span><span>Redaction before inference</span></figcaption>
-        </figure>
-        <div class="prj__meta">
-          <p class="prj__kicker">Applied AI Â· Product Â· Bilingual</p>
-          <h3 class="prj__title" id="file-aljazira-title">Al Jazira</h3>
-          <p class="prj__sub">A bank assistant with a firewall.</p>
-          <dl class="prj__facts">
+            </div>
+            <figcaption class="prj__figcap"><span>Plate 03</span><span>Redaction before inference</span></figcaption>
+          </figure>
+          <div class="prj__meta">
+            <div class="prj__notes-head"><span>Case notes</span><span>03 / 04</span></div>
+            <dl class="prj__facts">
             <div class="prj__fact">
               <dt>Problem</dt>
               <dd>A bilingual bank assistant has to answer in English and Arabic, stay inside banking, and never let a card number reach the model.</dd>
@@ -824,21 +902,36 @@
               <dd>Tender-ready POC with EN/AR RTL parity. Sensitive data is stripped before any LLM call; the demo database only ever holds masked numbers.</dd>
             </div>
           </dl>
+          <div class="prj__metric">
+            <span class="prj__metric-no">7</span>
+            <span class="prj__metric-label">Tools, one audit</span>
+          </div>
           <ul class="prj__stack" aria-label="Stack">
             <li>Python</li><li>FastAPI</li><li>LangChain</li><li>SQLite</li><li>BM25</li><li>RTL</li>
           </ul>
+          </div>
         </div>
       </article>
 
-      <!-- CASE 04 â€” THE LETTER -->
-      <article class="prj" id="file-letter" aria-labelledby="file-letter-title">
-        <div class="prj__rail" aria-hidden="true">
-          <span class="prj__num">04</span>
-          <span class="prj__year">2025</span>
-        </div>
-        <figure class="prj__visual">
-          <span class="prj__badge">Disclosure</span>
-          <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
+      <!-- CASE 04 — THE LETTER -->
+      <article class="prj prj--letter" id="file-letter" aria-labelledby="file-letter-title">
+        <span class="prj__tab" aria-hidden="true"><b>04</b><span>2025</span></span>
+        <header class="prj__head">
+          <div class="prj__head-main">
+            <p class="prj__kicker">Responsible disclosure · 2025</p>
+            <h3 class="prj__title" id="file-letter-title">The Letter</h3>
+            <p class="prj__sub">A disclosure, a fix, a letter.</p>
+          </div>
+          <div class="prj__head-side">
+            <span class="prj__status">Disclosure</span>
+            <span class="prj__file">Case 04 / 04 · 2025</span>
+          </div>
+        </header>
+        <div class="prj__body">
+          <figure class="prj__visual">
+            <div class="prj__plate">
+              <span class="prj__plate-no" aria-hidden="true">04</span>
+              <svg class="prj-svg" viewBox="0 0 800 600" aria-hidden="true" focusable="false">
             <defs>
               <pattern id="prj-grid-4" width="40" height="40" patternUnits="userSpaceOnUse">
                 <path d="M40 0H0V40" fill="none" stroke="rgba(255,206,27,.07)" stroke-width="1"/>
@@ -881,13 +974,12 @@
               </g>
             </g>
           </svg>
-          <figcaption class="prj__figcap"><span>Fig. 04</span><span>Letter of Appreciation â€” redacted</span></figcaption>
-        </figure>
-        <div class="prj__meta">
-          <p class="prj__kicker">Responsible disclosure Â· 2025</p>
-          <h3 class="prj__title" id="file-letter-title">The Letter</h3>
-          <p class="prj__sub">A disclosure, a fix, a letter.</p>
-          <dl class="prj__facts">
+            </div>
+            <figcaption class="prj__figcap"><span>Plate 04</span><span>Letter of Appreciation — redacted</span></figcaption>
+          </figure>
+          <div class="prj__meta">
+            <div class="prj__notes-head"><span>Case notes</span><span>04 / 04</span></div>
+            <dl class="prj__facts">
             <div class="prj__fact">
               <dt>Problem</dt>
               <dd>A vulnerability at a Latvian financial institution.</dd>
@@ -901,22 +993,30 @@
               <dd>Letter of Appreciation from the Latvian Government, 2025. The vulnerability vector is withheld under responsible disclosure.</dd>
             </div>
           </dl>
+          <div class="prj__metric">
+            <span class="prj__metric-no">2025</span>
+            <span class="prj__metric-label">Coordinated disclosure</span>
+          </div>
           <ul class="prj__stack" aria-label="Stack">
             <li>Web security</li><li>Coordinated disclosure</li><li>CERT.LV</li>
           </ul>
+          </div>
         </div>
       </article>
 
     </div>
 
     <div class="prj-archive">
-      <div>
-        <p class="prj-archive__eyebrow">Archive / 34 Frames</p>
-        <p class="prj-archive__title">Field Notes</p>
-      </div>
-      <div>
-        <p class="prj-archive__copy">CTFs, conferences, certificates, and the rooms in between.</p>
-        <a class="prj-archive__link" href="#field-notes">Open the file <span aria-hidden="true">â†“</span></a>
+      <span class="prj-archive__tab" aria-hidden="true">Archive / 34 Frames</span>
+      <div class="prj-archive__main">
+        <div class="prj-archive__lead">
+          <p class="prj-archive__eyebrow">Beyond the reports</p>
+          <p class="prj-archive__title">Field Notes</p>
+        </div>
+        <div class="prj-archive__side">
+          <p class="prj-archive__copy">CTFs, conferences, certificates, and the rooms in between.</p>
+          <a class="prj-archive__link" href="#field-notes">Open the archive <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
     </div>
   </div>
@@ -1114,42 +1214,79 @@
 
 <div class="jrn-sticky" id="jrnSticky">
 
-  <!-- 2.5D portrait â€” scroll drives rotation + leftward drift -->
-  <div class="jrn-portrait" id="jrnPortrait" aria-hidden="true">
-    <div class="jrn-glow"></div>
-    <div class="jrn-card" id="jrnCard">
-      <img src="images/Karthik3D-Reference.png" alt="Karthik Raja" class="jrn-photo" />
-      <div class="jrn-depth-shadow"></div>
-      <div class="jrn-grid"></div>
-      <div class="jrn-rim"></div>
-      <div class="jrn-scanline"></div>
-    </div>
+  <!-- chronicle backdrop -->
+  <div class="jrn-bg" aria-hidden="true">
+    <span class="jrn-bg__grid"></span>
+    <span class="jrn-bg__scan"></span>
+    <span class="jrn-bg__glow"></span>
   </div>
 
-  <!-- Carousel stage â€” right side -->
-  <div class="jrn-stage">
-    <h2 class="jrn-heading">Journey</h2>
-    <div class="jrn-ms-wrap">
-      <div class="jrn-ms active" id="jrnMsA"></div>
-      <div class="jrn-ms idle"   id="jrnMsB"></div>
-    </div>
-  </div>
+  <!-- margin annotations -->
+  <div class="jrn-side" aria-hidden="true">Chronicle &middot; 2023 &mdash; 2026</div>
+  <div class="jrn-year" id="jrnYear" aria-hidden="true">2023</div>
 
-  <!-- teaser revealed under portrait on final item -->
-  <div class="jrn-teaser" id="jrnTeaser">
-    <span class="jrn-teaser-label">Upcoming</span>
-    <span class="jrn-teaser-title">Project Aegis</span>
-  </div>
+  <div class="jrn-inner">
 
-  <!-- shockwave unlock â€” fires once on final milestone -->
-  <div class="jrn-sw" id="jrnShockwave" aria-hidden="true">
-    <div class="jrn-sw-flash"></div>
-    <div class="jrn-sw-rings">
-      <div class="jrn-ring"></div>
-      <div class="jrn-ring"></div>
-      <div class="jrn-ring"></div>
-      <div class="jrn-ring"></div>
+    <!-- header -->
+    <div class="jrn-head">
+      <h2 class="jrn-head__title">Journey</h2>
+      <p class="jrn-head__meta">
+        <span class="jrn-head__live" aria-hidden="true"></span>
+        <span>Chronicle</span>
+        <span class="jrn-head__sep" aria-hidden="true">/</span>
+        <span>14 entries</span>
+        <span class="jrn-head__sep" aria-hidden="true">/</span>
+        <span>2023 &mdash; 2026</span>
+      </p>
+      <p class="jrn-head__bin" id="jrnBin" aria-hidden="true">01001010 01101111 01110101 01110010 01101110 01100101 01111001</p>
     </div>
+
+    <!-- timeline rail + dossier -->
+    <div class="jrn-body">
+
+      <div class="jrn-rail" id="jrnRail" aria-hidden="true">
+        <span class="jrn-rail__line"></span>
+        <span class="jrn-rail__fill" id="jrnRailFill"></span>
+        <span class="jrn-rail__head" id="jrnRailHead"></span>
+      </div>
+
+      <div class="jrn-panel" id="jrnPanel">
+        <span class="jrn-panel__scan" aria-hidden="true"></span>
+
+        <div class="jrn-panel__bar">
+          <span class="jrn-panel__entry" id="jrnEntry">Entry 01 / 14</span>
+          <span class="jrn-panel__log" id="jrnLog">log:0x01</span>
+        </div>
+
+        <div class="jrn-panel__body">
+          <div class="jrn-slot is-active" id="jrnMsA" aria-hidden="true"></div>
+          <div class="jrn-slot" id="jrnMsB" aria-hidden="true"></div>
+        </div>
+
+        <div class="jrn-panel__foot">
+          <span class="jrn-hint">Scroll to advance</span>
+          <span class="jrn-teaser" id="jrnTeaser">
+            <span class="jrn-teaser__label">Upcoming</span>
+            <span class="jrn-teaser__title">Project Aegis</span>
+          </span>
+          <span class="jrn-foot__hatch" aria-hidden="true"></span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- progress HUD -->
+    <div class="jrn-hud">
+      <div class="jrn-ruler" aria-hidden="true">
+        <span class="jrn-ruler__fill" id="jrnFill"></span>
+        <span class="jrn-ruler__mark" id="jrnMark"></span>
+      </div>
+      <p class="jrn-count">
+        <span class="jrn-count__now" id="jrnCount">01</span>
+        <span class="jrn-count__total">/ 14</span>
+      </p>
+    </div>
+
   </div>
 
 </div><!-- /.jrn-sticky -->
