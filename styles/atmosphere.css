@@ -1,0 +1,83 @@
+/* ============================================================
+   Atmosphere — film grain, vignette, heat response, embers
+   Every layer is pointer-events:none and disabled for
+   reduced-motion users.
+   ============================================================ */
+
+.atmo-grain,
+.atmo-vignette,
+.atmo-heat{position:fixed;pointer-events:none}
+
+/* ── Film grain ─────────────────────────────────────────────────── */
+.atmo-grain{
+  top:-140px;left:-140px;
+  width:calc(100% + 280px);
+  height:calc(100% + 280px);
+  z-index:40;
+  background-image:url("../images/grain.webp");
+  background-repeat:repeat;
+  opacity:.05;
+  will-change:transform;
+  animation:atmoGrain 1.05s steps(5) infinite;
+}
+@keyframes atmoGrain{
+  0%  {transform:translate3d(0,0,0)}
+  20% {transform:translate3d(-1.2%,.9%,0)}
+  40% {transform:translate3d(.8%,-1.4%,0)}
+  60% {transform:translate3d(-1.6%,-.5%,0)}
+  80% {transform:translate3d(.7%,1.2%,0)}
+  100%{transform:translate3d(0,0,0)}
+}
+
+/* ── Vignette ───────────────────────────────────────────────────── */
+.atmo-vignette{
+  inset:0;
+  z-index:35;
+  background:radial-gradient(ellipse 84% 76% at 50% 44%,
+    transparent 46%,
+    rgba(4,10,16,.07) 68%,
+    rgba(4,10,16,.22) 100%);
+}
+
+/* ── Global heat haze (opacity driven by scroll velocity) ───────── */
+.atmo-heat{
+  inset:0;
+  z-index:30;
+  opacity:0;
+  will-change:opacity;
+  background:
+    radial-gradient(ellipse 88% 52% at 50% 108%,rgba(255,118,0,.55),transparent 68%),
+    radial-gradient(ellipse 52% 34% at 50% 112%,rgba(255,74,0,.4),transparent 72%);
+}
+
+/* ── Hero: embers + rising heat behind the title ────────────────── */
+.s-hero .s__embers{
+  position:absolute;inset:0;
+  z-index:1;
+  width:100%;height:100%;
+  pointer-events:none;
+}
+.s-hero .s__heat{
+  position:absolute;left:0;right:0;bottom:0;
+  height:76%;
+  z-index:1;
+  opacity:0;
+  pointer-events:none;
+  will-change:opacity;
+  background:radial-gradient(ellipse 58% 100% at 50% 100%,
+    rgba(255,140,0,.6),
+    rgba(255,92,0,.26) 42%,
+    transparent 74%);
+}
+.s-hero .s__content{z-index:2}
+
+/* ── Fallbacks ──────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  .atmo-grain{animation:none}
+  .atmo-heat,
+  .s-hero .s__heat,
+  .s-hero .s__embers{display:none}
+}
+@media only screen and (max-width: 767px){
+  .atmo-grain{opacity:.042;animation-duration:1.4s}
+}
