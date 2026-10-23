@@ -733,6 +733,44 @@
   color: var(--prj-ink-faint);
 }
 
+.prj__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.prj__repo-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--prj-line-darker);
+  color: var(--prj-navy);
+  font-family: var(--prj-mono);
+  font-size: 9px;
+  line-height: 1.2;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.prj__repo-link:hover {
+  border-color: var(--prj-navy);
+  background: var(--prj-navy);
+  color: var(--prj-paper);
+}
+
+.prj__repo-link:focus-visible {
+  outline: 2px solid var(--prj-navy);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .prj__repo-link { transition: none; }
+}
+
 /* ------------------------------------------------------------
    Archive folder
    ------------------------------------------------------------ */

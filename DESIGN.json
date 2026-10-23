@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-24T00:08:18+05:30",
+  "title": "Design System: HacksonAloysis",
+  "extensions": {
+    "colorMeta": {
+      "archive-carbon": {
+        "role": "neutral",
+        "displayName": "Archive Carbon",
+        "canonical": "#0b0b0a",
+        "tonalRamp": ["#010101", "#030302", "#060605", "#080807", "#0b0b0a", "#2d2c29", "#79766e", "#d0cabd"]
+      },
+      "archive-amber": {
+        "role": "primary",
+        "displayName": "Archive Amber",
+        "canonical": "#ffce1b",
+        "tonalRamp": ["#614300", "#8f6500", "#bd8800", "#e5a900", "#ffce1b", "#ffd84e", "#ffe180", "#ffedb7"]
+      },
+      "archive-paper": {
+        "role": "neutral",
+        "displayName": "Archive Paper",
+        "canonical": "#f2ede2",
+        "tonalRamp": ["#25231f", "#49463f", "#6e6a60", "#aaa598", "#d1ccbf", "#e0dbcf", "#ece7dc", "#f2ede2"]
+      },
+      "hazard-carbon": {
+        "role": "neutral",
+        "displayName": "Hazard Carbon",
+        "canonical": "#0a0a09",
+        "tonalRamp": ["#010101", "#030302", "#050504", "#080807", "#0a0a09", "#2c2a28", "#77716d", "#ccc5bd"]
+      },
+      "hazard-orange": {
+        "role": "primary",
+        "displayName": "Hazard Orange",
+        "canonical": "#f05a28",
+        "tonalRamp": ["#5f1b0b", "#88260f", "#b33317", "#d94320", "#f05a28", "#f47d55", "#f8a082", "#fbc7b5"]
+      },
+      "hazard-paper": {
+        "role": "neutral",
+        "displayName": "Hazard Paper",
+        "canonical": "#f1ebdd",
+        "tonalRamp": ["#25221c", "#49453b", "#6e695d", "#a9a394", "#d0cabc", "#dfd9ca", "#ebe5d6", "#f1ebdd"]
+      },
+      "blueprint-ink": {
+        "role": "neutral",
+        "displayName": "Blueprint Ink",
+        "canonical": "#06111e",
+        "tonalRamp": ["#01040a", "#020812", "#040d18", "#05101c", "#06111e", "#283342", "#71808f", "#c6d0d8"]
+      },
+      "blueprint-ice": {
+        "role": "primary",
+        "displayName": "Blueprint Ice",
+        "canonical": "#8fd8f2",
+        "tonalRamp": ["#10313f", "#164656", "#1c5c73", "#247691", "#8fd8f2", "#a6e0f4", "#c0e9f8", "#def5fb"]
+      },
+      "blueprint-paper": {
+        "role": "neutral",
+        "displayName": "Blueprint Paper",
+        "canonical": "#e6eef1",
+        "tonalRamp": ["#1d272b", "#3e4d53", "#62747a", "#9eafb5", "#c7d4d9", "#d4dfe3", "#e0e9ec", "#e6eef1"]
+      },
+      "paper-white": {
+        "role": "neutral",
+        "displayName": "Report Paper",
+        "canonical": "#f8fbff",
+        "tonalRamp": ["#17191c", "#3d4248", "#646d76", "#a6afb8", "#cfd6dd", "#dfe5eb", "#edf1f6", "#f8fbff"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Bigger Display", "purpose": "Oversized project covers and section headlines." },
+      "body": { "displayName": "Editorial New", "purpose": "Readable narrative and project case notes." },
+      "label": { "displayName": "Fraktion Mono", "purpose": "Technical metadata, indices, captions, and compact controls." }
+    },
+    "shadows": [
+      { "name": "evidence-sheet", "value": "clamp(6px, 0.7vw, 10px) clamp(6px, 0.7vw, 10px) 0 var(--prj-yellow)", "purpose": "Hard offset that makes a report or index feel like a physical sheet." },
+      { "name": "evidence-ambient", "value": "0 1.2rem 2.2rem rgba(0, 0, 0, 0.24)", "purpose": "Subtle separation beneath a large evidence plate." }
+    ],
+    "motion": [
+      { "name": "control-state", "value": "200ms ease", "purpose": "Small color and border state changes on controls." },
+      { "name": "report-lift", "value": "550ms cubic-bezier(0.2, 0.7, 0.2, 1)", "purpose": "Quiet, eased lift for evidence plates." },
+      { "name": "reduced-motion", "value": "prefers-reduced-motion: reduce", "purpose": "Remove nonessential motion while retaining content and control affordances." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "576px" },
+      { "name": "mobile", "value": "767px" },
+      { "name": "tablet", "value": "987px" },
+      { "name": "wide", "value": "1280px" }
+    ],
+    "narrative": {
+      "northStar": "The White Room",
+      "overview": "Forensic clarity, not a white-first theme. Arrange evidence deliberately and make it easy to examine while retaining the Archive, Hazard, and Blueprint palette system.",
+      "keyCharacteristics": [
+        "Evidence-led editorial archive",
+        "Large display typography with mono technical labels",
+        "Structural paper layers and atmospheric depth",
+        "Responsive, keyboard-operable, reduced-motion capable"
+      ],
+      "rules": [
+        { "name": "The Three-Mode Rule", "body": "Keep Archive as the default and cycle Archive → Hazard → Blueprint → Archive.", "section": "colors" },
+        { "name": "The Physical-Evidence Rule", "body": "A shadow must communicate a physical layer or scene depth; remove decorative floating-card shadows.", "section": "elevation" }
+      ],
+      "dos": [
+        "Do show evidence before claims and label public, private, and withheld material accurately.",
+        "Do keep all core content usable at phone widths, with keyboard access, focus visibility, readable contrast, and reduced-motion support."
+      ],
+      "donts": [
+        "Don't use generic neon hacker styling or stock cyber imagery.",
+        "Don't use template-like SaaS dashboards or repetitive card grids.",
+        "Don't publish private commercial work, repositories, or evidence without approval."
+      ]
+    }
+  },
+  "components": [
+    {
+      "name": "Footer Audio Toggle",
+      "kind": "button",
+      "refersTo": "audio-toggle",
+      "description": "Explicit user-controlled soundtrack play/mute toggle at the end of the page.",
+      "html": "<button class=\"ds-audio-toggle\" type=\"button\" aria-label=\"Play soundtrack\" aria-pressed=\"false\"><span aria-hidden=\"true\">◖</span><span>Sound off</span></button>",
+      "css": ".ds-audio-toggle{display:inline-flex;align-items:center;gap:.55rem;min-height:2.75rem;padding:0 .85rem;border:1px solid color-mix(in srgb,var(--color-secondary) 38%,transparent);background:transparent;color:var(--color-secondary);font:400 9px/1 var(--font-family-fraktion);letter-spacing:.14em;text-transform:uppercase}.ds-audio-toggle:hover,.ds-audio-toggle:focus-visible{border-color:var(--color-secondary);outline:1px solid var(--color-secondary);outline-offset:3px}"
+    },
+    {
+      "name": "Evidence Plate",
+      "kind": "custom",
+      "refersTo": "evidence-plate",
+      "description": "A fixed-ratio exhibit surface for diagrams, original documents, and project evidence.",
+      "html": "<figure class=\"ds-evidence-plate\"><div class=\"ds-evidence-plate__surface\">Evidence</div><figcaption>Original evidence</figcaption></figure>",
+      "css": ".ds-evidence-plate{margin:0}.ds-evidence-plate__surface{aspect-ratio:4/3;overflow:hidden;border:1px solid rgba(var(--color-primary-rgb),.24);background:var(--color-primary);box-shadow:8px 8px 0 var(--color-secondary)}.ds-evidence-plate figcaption{margin-top:.85rem;color:var(--color-white);font:400 8px/1.4 var(--font-family-fraktion);letter-spacing:.12em;text-transform:uppercase}"
+    },
+    {
+      "name": "Report Index Item",
+      "kind": "nav",
+      "refersTo": "report-index-item",
+      "description": "A numbered case-file link with project type and year metadata.",
+      "html": "<a class=\"ds-report-index\" href=\"#case\"><span>01</span><strong>BYOVD</strong><small>Kernel / Research / 2025</small></a>",
+      "css": ".ds-report-index{display:grid;grid-template-columns:2rem minmax(0,1fr) auto;align-items:baseline;gap:.65rem;padding:.62rem .5rem;border-top:1px solid rgba(var(--color-primary-rgb),.12);color:var(--color-primary);text-decoration:none}.ds-report-index:hover,.ds-report-index:focus-visible{background:color-mix(in srgb,var(--color-secondary) 12%,transparent);outline:1px solid var(--color-secondary)}.ds-report-index small{font:400 8px/1.4 var(--font-family-fraktion);letter-spacing:.1em;text-transform:uppercase}"
+    }
+  ]
+}

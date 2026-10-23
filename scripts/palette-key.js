@@ -24,7 +24,7 @@
     if (keyEl) {
       keyEl.textContent = labels[id];
       keyEl.setAttribute("data-palette", id);
-      keyEl.setAttribute("aria-label", "Current palette: " + labels[id] + ". Click to cycle.");
+       keyEl.setAttribute("aria-label", "Current palette: " + labels[id] + ". Activate to cycle.");
     }
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
@@ -50,12 +50,6 @@
       applyPalette(next);
     });
 
-    keyEl.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        keyEl.click();
-      }
-    });
   }
 
   if (document.readyState === "loading") {

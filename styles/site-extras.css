@@ -46,6 +46,48 @@
 .foot-audio.is-playing .foot-audio__waves{display:block}
 .foot-audio:not(.is-playing) .foot-audio__muted{display:block}
 .foot-audio__label{white-space:nowrap}
+
+/* Responsive navigation replaces the hidden desktop row with an explicit menu control. */
+.sb-menu-toggle{display:none}
+.sb-menu__socials{display:none}
+@media (max-width:987px){
+  .site-head__container{position:relative}
+  .sb-menu-toggle{
+    display:inline-flex;align-items:center;justify-content:center;order:4;gap:.45rem;
+    min-width:48px;min-height:48px;padding:0 .6rem;border:0;
+    border-left:1px solid var(--color-secondary);background:transparent;color:var(--color-secondary);
+    cursor:pointer;font:400 9px/1 var(--font-family-fraktion);letter-spacing:.12em;text-transform:uppercase;
+  }
+  .sb-menu-toggle:focus-visible,.sb-menu__socials a:focus-visible{
+    outline:2px solid var(--color-secondary);outline-offset:-3px;
+  }
+  .sb-menu-toggle__icon{display:grid;width:16px;gap:4px}
+  .sb-menu-toggle__icon span{display:block;width:16px;height:1px;background:currentColor;transition:transform 180ms ease}
+  .sb-menu-toggle[aria-expanded="true"] .sb-menu-toggle__icon span:first-child{transform:translateY(2.5px) rotate(45deg)}
+  .sb-menu-toggle[aria-expanded="true"] .sb-menu-toggle__icon span:last-child{transform:translateY(-2.5px) rotate(-45deg)}
+  .site-head .sb-menu{
+    display:none!important;position:absolute;top:100%;right:0;z-index:30;
+    width:min(22rem,calc(100vw - 1rem));max-height:calc(100dvh - 5rem);overflow:auto;
+    padding:.4rem 1rem 1rem;border:1px solid color-mix(in srgb,var(--color-secondary) 48%,transparent);
+    background:var(--color-primary);box-shadow:0 1rem 2.5rem rgba(0,0,0,.38);
+  }
+  .site-head .sb-menu.is-open{display:block!important}
+  .site-head .sb-menu .sb__list{display:flex;flex-direction:column;align-items:stretch;height:auto}
+  .site-head .sb-menu .sb__item{border-bottom:1px solid color-mix(in srgb,var(--color-secondary) 18%,transparent)}
+  .site-head .sb-menu a{display:flex;align-items:center;min-height:48px;padding:0 .6rem;color:var(--color-secondary)}
+  .sb-menu__socials{
+    display:flex;gap:.5rem;margin:.75rem 0 0;padding:.75rem 0 0;
+    border-top:1px solid color-mix(in srgb,var(--color-secondary) 30%,transparent);list-style:none;
+  }
+  .sb-menu__socials a{
+    display:inline-flex;align-items:center;min-height:44px;padding:0 .65rem;color:var(--color-white);
+    font:400 9px/1 var(--font-family-fraktion);letter-spacing:.12em;text-decoration:none;text-transform:uppercase;
+  }
+  .sb-menu__socials a:hover{color:var(--color-secondary)}
+}
+@media (max-width:987px){.site-head.astro-5qrshpxv .sb-socials.astro-5qrshpxv{display:none}}
+@media (prefers-reduced-motion:reduce){.sb-menu-toggle__icon span{transition:none}}
+
 @media only screen and (max-width: 767px) and (orientation: landscape),
        only screen and (max-width: 576px){
   .site-foot.astro-75cegwoc{gap:.5rem}
@@ -82,6 +124,7 @@
    PALETTE KEY — stealth cycler (left of About in header)
    ============================================================ */
 .palette-key{
+  appearance:none;
   --pk-bg: transparent;
   --pk-ink: var(--color-secondary);
   --pk-muted: color-mix(in srgb, var(--color-secondary) 38%, transparent);
@@ -99,6 +142,8 @@
   white-space: nowrap;
   opacity: 0.68;
   transition: opacity 200ms ease, color 200ms ease, letter-spacing 200ms ease;
+  border:0;
+  background:transparent;
   border-bottom: 1px solid transparent;
 }
 .palette-key:hover,
@@ -108,8 +153,8 @@
   border-bottom-color: var(--pk-line);
 }
 .palette-key:focus-visible{
-  outline: none;
-  outline-offset: 2px;
+  outline:2px solid currentColor;
+  outline-offset:2px;
 }
 .palette-key::after{
   content: "";
@@ -125,6 +170,15 @@
 .palette-key:hover::after{
   transform: rotate(90deg);
   opacity: 0.85;
+}
+
+.site-head .sb-menu a:focus-visible,
+.site-head .sb-socials a:focus-visible,
+.site-foot__logo a:focus-visible,
+.prj-index__item:focus-visible,
+.foot-top:focus-visible{
+  outline:2px solid var(--color-secondary);
+  outline-offset:3px;
 }
 
 /* Palette-specific accent colors for the key text */

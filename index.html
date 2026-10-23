@@ -89,10 +89,19 @@
 <!-- .sb-logo --> <div class="sb-console astro-5qrshpxv" role="presentation"> <div class="sb-console__inner js-console astro-5qrshpxv">
 </div>
 <!-- .sb-console__inner --> </div>
-<!-- .sb-console --> <span class="palette-key js-palette-key" data-palette="archive" aria-label="Current palette: Archive. Click to cycle." title="Current palette">Archive</span> <nav class="sb-menu astro-5qrshpxv"> <ul class="sb__list astro-5qrshpxv"> <li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#about"> <span class="sb__text astro-5qrshpxv">About</span> </a> </li>
+<!-- .sb-console --> <button class="palette-key js-palette-key" type="button" data-palette="archive" aria-label="Current palette: Archive. Activate to cycle." title="Current palette">Archive</button> <nav class="sb-menu astro-5qrshpxv" id="site-navigation" aria-label="Primary"> <ul class="sb__list astro-5qrshpxv"> <li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#about"> <span class="sb__text astro-5qrshpxv">About</span> </a> </li>
 <li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#work"> <span class="sb__text astro-5qrshpxv">Work</span> </a> </li>
 <li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#journey"> <span class="sb__text astro-5qrshpxv">Journey</span> </a> </li>
-<li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#contact"> <span class="sb__text astro-5qrshpxv">Contact</span> </a> </li> </ul> </nav>
+<li class="sb__item js-menu-item astro-5qrshpxv"> <a class="js-menu-link astro-5qrshpxv" href="#contact"> <span class="sb__text astro-5qrshpxv">Contact</span> </a> </li> </ul>
+<ul class="sb-menu__socials" aria-label="Social profiles">
+  <li><a href="https://github.com/noSkcaHdat" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+  <li><a href="https://www.linkedin.com/in/karthikr-cybersecurity/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+</ul>
+</nav>
+<button class="sb-menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Open site navigation">
+  <span class="sb-menu-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+  <span class="sb-menu-toggle__label" aria-hidden="true">Menu</span>
+</button>
 <!-- .sb-menu --> <ul class="sb-socials astro-5qrshpxv"> <li class="sb__item astro-5qrshpxv"> <a class="astro-5qrshpxv" href="https://github.com/noSkcaHdat" rel="noopener" target="_blank"> <span class="sb__icon sb__icon--github astro-5qrshpxv" style="width:20px;height:20px;--path: path('M10 0C4.477 0 0 4.477 0 10c0 4.42 2.865 8.166 6.839 9.49.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z');">
 </span> <span class="u-sr-only astro-5qrshpxv">Follow me on Github</span> </a> </li> <li class="sb__item astro-5qrshpxv"> <a class="astro-5qrshpxv" href="https://www.linkedin.com/in/karthikr-cybersecurity/" rel="noopener" target="_blank"> <span class="sb__icon sb__icon--linkedin astro-5qrshpxv" style="--path: path('M1.13025 14.9839H3.93671V4.6H1.13025V14.9839ZM2.53348 0.0161285C1.598 0.0161285 0.849609 0.764516 0.849609 1.7C0.849609 2.63548 1.598 3.38387 2.53348 3.38387C3.46896 3.38387 4.21735 2.63548 4.21735 1.7C4.21735 0.764516 3.46896 0.0161285 2.53348 0.0161285ZM8.70767 6.19032V4.6H5.90122V14.9839H8.70767V9.65161C8.70767 6.65806 12.5432 6.47097 12.5432 9.65161V14.9839H15.3496V8.62258C15.3496 3.57097 10.0174 3.75806 8.70767 6.19032Z');">
 </span> <span class="u-sr-only astro-5qrshpxv">Follow me on LinkedIn</span> </a> </li> </ul>
@@ -669,6 +678,9 @@
           <ul class="prj__stack" aria-label="Stack">
             <li>C</li><li>WDM</li><li>Minifilter</li><li>C# / .NET</li><li>SHA-256</li><li>LOLDrivers</li>
           </ul>
+          <div class="prj__links">
+            <a class="prj__repo-link" href="https://github.com/noSkcaHdat/BYOVD-AGENT" target="_blank" rel="noopener noreferrer" aria-label="View BYOVD Agent source on GitHub (opens in a new tab)">View repository</a>
+          </div>
           </div>
         </div>
       </article>
@@ -786,6 +798,9 @@
           <ul class="prj__stack" aria-label="Stack">
             <li>Python</li><li>FastAPI</li><li>MySQL 8</li><li>REST</li><li>JSONL audit</li>
           </ul>
+          <div class="prj__links">
+            <a class="prj__repo-link" href="https://github.com/noSkcaHdat/myOnsite-Healthcare-EDRops" target="_blank" rel="noopener noreferrer" aria-label="View My Onsite Healthcare EDRops source on GitHub (opens in a new tab)">View repository</a>
+          </div>
           </div>
         </div>
       </article>
@@ -986,172 +1001,172 @@
 <span class="s__title__letter js-letter astro-doefkd43">R</span>
 <span class="s__title__letter js-letter astro-doefkd43">C</span>
 <span class="s__title__letter js-letter astro-doefkd43">H</span>
-</span> </h2> <div class="s__scene js-scene astro-doefkd43"> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/KarthikNewDp.png" preload="none" width="1082">
+</span> </h2> <div class="s__scene js-scene astro-doefkd43"> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/KarthikNewDp.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Generous Branding</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#3vva-0000/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Hunter Farmer</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#dbq8-0001/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam1.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam1.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Generous Branding</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#ny2d-0002/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam2.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam2.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Nod Coding Bootcamp</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#87va-0003/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam3.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/LinkedinSairam3.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Rudl und Schwarm</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#t44q-0004/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/SairamGroupPic.jpg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/SairamGroupPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">24/7 Artists</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#3g5d-0005/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/SairamGroupPic1.jpg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/SairamGroupPic1.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Nod Coding Bootcamp</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#wksl-0006/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/SairamMementoKarthik(Final).jpg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/SairamMementoKarthik(Final).webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Duten</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#0qh5-0007/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/DX-EDGE-Certificate.png" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/DX-EDGE-Certificate.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Vanguart</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#y15t-0008/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/KioskPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/KioskPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Generous Branding</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#a24d-0009/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/GrpPic2.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/GrpPic2.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Nod Coding Bootcamp</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#1j4c-0010/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/GrpPic1.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/GrpPic1.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Pantoufle Hotel</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#m2my-0011/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ConfoPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ConfoPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Vanguart</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#d6fu-0012/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/GrpPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/GrpPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">24/7 Artists</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#oqga-0013/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/Allcollage.jpg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/Allcollage.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Rudl und Schwarm</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#sxvc-0014/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ITCMainGateSelfie.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ITCMainGateSelfie.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Vanguart</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#wfll-0015/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ITCFrontView.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ITCFrontView.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">CodePen</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#5w0n-0016/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/MirrorPic2.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/MirrorPic2.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Duten</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#emwy-0017/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ConferencePic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ConferencePic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">24/7 Artists</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#cul2-0018/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/Selfie.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/Selfie.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Duten</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#0ngv-0019/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ReferalCard.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/ReferalCard.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Vanguart</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#kqon-0020/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/MirrorPic1.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/MirrorPic1.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">24/7 Artists</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#frnh-0021/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GenCysImage.jpg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GenCysImage.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">GenCys Image</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#z0bj-0022/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycGrpPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycGrpPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Group Pic</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#s8nw-0023/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycIDPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycIDPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc ID Pic</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#yhcw-0024/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Pic</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#ppxm-0025/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycRankPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycRankPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Rank Pic</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#ffo8-0026/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSoloPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSoloPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Solo Pic</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#mxe3-0027/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo1Pic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo1Pic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Solo 1</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#suav-0028/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo2Pic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo2Pic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Solo 2</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#7vol-0029/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo3Pic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo3Pic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Solo 3</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#i1er-0030/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo4Pic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencycSolo4Pic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencyc Solo 4</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#kive-0031/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencysGrpPic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencysGrpPic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencys Group Pic</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#t7cu-0032/34</div>
 <!-- .a__caption__key --> </div>
 <!-- .a__caption --> </div>
-<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencysID1Pic.jpeg" preload="none" width="1082">
+<!-- .a__inner --> </a-work> <a-work class="s__scene__work s__scene__work--video js-work astro-meqjtcea" data-media-type="image"> <div class="a__inner astro-meqjtcea">  <video class="a__video js-video astro-meqjtcea" data-media-type="image" data-src="" height="636" loop="" muted="" playsinline="" poster="images/CTF events/GencysID1Pic.webp" preload="none" width="1082">
 </video> <div class="a__caption astro-meqjtcea"> <div class="a__caption__text astro-meqjtcea">Gencys ID 1 Pic</div>
 <!-- .a__caption__text --> <div class="a__caption__key astro-meqjtcea">#508u-0033/34</div>
 <!-- .a__caption__key --> </div>
@@ -1374,52 +1389,52 @@
 </span> </a-separator>
 <section class="s-my-way astro-fiibiggq" data-intersect=""> <svg class="s__smiley js-smiley astro-fiibiggq" viewbox="0 0 77.8 77.8" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"> <circle class="astro-fiibiggq" cx="38.9" cy="38.9" r="38.9">
 </circle> <path class="astro-fiibiggq" d="M38.9 77.8c-2 0-4.1-.2-6.2-.5C11.6 73.9-2.9 53.9.5 32.8 2.1 22.5 7.7 13.5 16.1 7.4c8.4-6.1 18.7-8.5 29-6.9 10.3 1.6 19.3 7.2 25.4 15.6 6.1 8.4 8.5 18.7 6.9 29-3.1 19.1-19.7 32.7-38.5 32.7zM38.8 1c-7.9 0-15.6 2.5-22.1 7.2C8.5 14.1 3.1 22.9 1.5 32.9-1.8 53.5 12.3 73 32.9 76.3 53.5 79.6 73 65.5 76.3 44.9l.5.1-.5-.1c1.6-10-.8-20-6.7-28.2S54.9 3.1 44.9 1.5c-2-.3-4.1-.5-6.1-.5zM25.5 23.1c-1.9 0-3.5 2-4.1 5.1l-.1.3 3 2.2-2.9 2.2.1.3c.6 2.5 1.5 5.1 4.1 5.1 2.4 0 4.2-3.3 4.2-7.6s-2.4-7.6-4.3-7.6zm26.6 0c-1.9 0-3.5 2-4.1 5.1v.3l3 2.2-3 2.2.1.3c.6 2.5 1.5 5.1 4.1 5.1 2.4 0 4.2-3.3 4.2-7.6s-2.3-7.6-4.3-7.6zM62 39c0-.3-.2-.5-.5-.5s-.5.2-.5.5c0 12.2-9.9 22.1-22.1 22.1-12.2 0-22.1-9.9-22.1-22.1 0-.3-.2-.5-.5-.5s-.5.2-.5.5c0 12.7 10.4 23.1 23.1 23.1S62 51.7 62 39z">
-</path> </svg> <div class="s__objects js-objects astro-fiibiggq"> <div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 01" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-01.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 01</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+</path> </svg> <div class="s__objects js-objects astro-fiibiggq"> <div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Group photo of event attendees standing outside a venue." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-01.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Event group, outdoor venue</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 02" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-02.webp" width="563"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 02</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="A person in a GenCys shirt looks out over the ocean at sunset." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-02.webp" width="563"/> <figcaption class="a__caption astro-fiibiggq">GenCys sunset</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 03" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-03.webp" width="595"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 03</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Close-up of an event badge and lanyard held in one hand." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-03.webp" width="595"/> <figcaption class="a__caption astro-fiibiggq">Event badge</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 04" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-04.webp" width="569"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 04</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Event participants stand together on a stage beneath a GenCys display." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-04.webp" width="569"/> <figcaption class="a__caption astro-fiibiggq">GenCys stage</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 05" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-05.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 05</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="A competition leaderboard is shown on a computer monitor." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-05.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Competition leaderboard</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 06" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-06.webp" width="569"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 06</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Large group photo of attendees at a technology event." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-06.webp" width="569"/> <figcaption class="a__caption astro-fiibiggq">Event group photo</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 07" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-07.webp" width="427"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 07</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Three participants pose on stage at a GenCys event." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-07.webp" width="427"/> <figcaption class="a__caption astro-fiibiggq">GenCys stage recognition</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 08" class="a__img astro-fiibiggq" decoding="async" height="570" loading="lazy" src="images/gallery/gallery-08.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 08</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Certificates and award items are arranged on a table." class="a__img astro-fiibiggq" decoding="async" height="570" loading="lazy" src="images/gallery/gallery-08.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Certificates and awards</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 09" class="a__img astro-fiibiggq" decoding="async" height="427" loading="lazy" src="images/gallery/gallery-09.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 09</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Stage at the CII Chennai Zone Annual Summit 2025." class="a__img astro-fiibiggq" decoding="async" height="427" loading="lazy" src="images/gallery/gallery-09.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">CII Chennai Zone Summit 2025</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 10" class="a__img astro-fiibiggq" decoding="async" height="427" loading="lazy" src="images/gallery/gallery-10.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 10</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="A person stands beside a blue event display." class="a__img astro-fiibiggq" decoding="async" height="427" loading="lazy" src="images/gallery/gallery-10.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Event display</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 11" class="a__img astro-fiibiggq" decoding="async" height="728" loading="lazy" src="images/gallery/gallery-11.webp" width="728"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 11</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Three attendees pose in front of a DX-EDGE event backdrop." class="a__img astro-fiibiggq" decoding="async" height="728" loading="lazy" src="images/gallery/gallery-11.webp" width="728"/> <figcaption class="a__caption astro-fiibiggq">DX-EDGE event team</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 12" class="a__img astro-fiibiggq" decoding="async" height="537" loading="lazy" src="images/gallery/gallery-12.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 12</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="DX-EDGE certificate recognizing Karthik Raja." class="a__img astro-fiibiggq" decoding="async" height="537" loading="lazy" src="images/gallery/gallery-12.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">DX-EDGE certificate</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 13" class="a__img astro-fiibiggq" decoding="async" height="569" loading="lazy" src="images/gallery/gallery-13.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 13</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="A person stands beside an illuminated Tamil sign." class="a__img astro-fiibiggq" decoding="async" height="569" loading="lazy" src="images/gallery/gallery-13.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Illuminated Tamil sign</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 14" class="a__img astro-fiibiggq" decoding="async" height="570" loading="lazy" src="images/gallery/gallery-14.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 14</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Group photo at a technology event display." class="a__img astro-fiibiggq" decoding="async" height="570" loading="lazy" src="images/gallery/gallery-14.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Technology event team</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 15" class="a__img astro-fiibiggq" decoding="async" height="570" loading="lazy" src="images/gallery/gallery-15.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 15</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="An exhibition display with project materials and awards." class="a__img astro-fiibiggq" decoding="async" height="570" loading="lazy" src="images/gallery/gallery-15.webp" width="760"/> <figcaption class="a__caption astro-fiibiggq">Project exhibition</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div>
-<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="Personal archive 16" class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-16.webp" width="570"/> <figcaption class="a__caption astro-fiibiggq">Personal archive 16</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
+<div class="a-object a-object--frame astro-fiibiggq"> <figure class="a__inner astro-fiibiggq"> <img alt="A multi-storey building and event entrance at night." class="a__img astro-fiibiggq" decoding="async" height="760" loading="lazy" src="images/gallery/gallery-16.webp" width="570"/> <figcaption class="a__caption astro-fiibiggq">Evening venue</figcaption> </figure> <div class="a__side a__side--vertical astro-fiibiggq">
 </div> <div class="a__side a__side--horizontal astro-fiibiggq">
 </div> </div> <div class="a-object a-object--star astro-fiibiggq"> <div class="a__side a__side--top-left astro-fiibiggq">
 </div> <div class="a__side a__side--top-right astro-fiibiggq">
@@ -1582,6 +1597,7 @@
 </div> <div class="site-scrollbar astro-yxqriywh"> <div class="site-scrollbar__track astro-yxqriywh">
 </div> <div class="site-scrollbar__thumb js-thumb astro-yxqriywh">
 </div> </div> <script src="scripts/projects.js"></script>
+<script src="scripts/mobile-nav.js"></script>
 <script src="scripts/audio.js"></script>
 <script src="scripts/atmosphere.js"></script>
 <script src="scripts/palette-key.js"></script>
