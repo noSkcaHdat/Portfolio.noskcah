@@ -1,0 +1,536 @@
+{
+  "meta": {
+    "title": "HacksonAloysis | Security Engineer and Cybersecurity Portfolio",
+    "description": "HacksonAloysis is a security engineer sharing cybersecurity work, projects, CTF event highlights, and contact information at portfolio.hacksonaloysis.me.",
+    "site_name": "HacksonAloysis",
+    "og_title": "HacksonAloysis | Security Engineer and Cybersecurity Portfolio",
+    "og_description": "HacksonAloysis is a security engineer sharing cybersecurity work, projects, CTF event highlights, and contact information at portfolio.hacksonaloysis.me.",
+    "og_url": "https://hacksonaloysis.me/",
+    "og_image": "https://hacksonaloysis.me/images/og-cover.jpg",
+    "twitter_image": "https://hacksonaloysis.me/images/og-cover.jpg",
+    "apple_mobile_web_app_title": "HA Dev",
+    "theme_color": "#08111c"
+  },
+  "branding": {
+    "name": "HacksonAloysis",
+    "menu": [
+      "About",
+      "Work",
+      "Journey",
+      "Contact"
+    ],
+    "social_links": [
+      {
+        "label": "Follow me on Github",
+        "href": "https://github.com/noSkcaHdat"
+      },
+      {
+        "label": "Follow me on LinkedIn",
+        "href": "https://www.linkedin.com/in/karthikr-cybersecurity/"
+      }
+    ],
+    "availability": {
+      "lines": [
+        {
+          "text": "Coding globally from INDIA."
+        },
+        {
+          "text": "Available for freelance work",
+          "cta_label": "Hire me",
+          "cta_href": "mailto:karthikraja.connect@gmail.com"
+        }
+      ],
+      "qr_code": {
+        "href": "mailto:karthikraja.connect@gmail.com",
+        "title": "Contact me!",
+        "src": "images/direct_to_mail_QR.png",
+        "alt": "QR Code"
+      }
+    },
+    "footer_name": "HacksonAloysis HacksonAloysis"
+  },
+  "hero": {
+    "words": [
+      "Security",
+      "Engineer"
+    ]
+  },
+  "about": {
+    "title": "About",
+    "paragraphs_html": [
+      "I'm a security engineer who hunts vulnerabilities, competes in CTFs, and builds tools that make systems harder to break.",
+      "I started with curiosity, dived into web security and network exploitation, competed in international CTF events, secured real-world systems, earned recognition from the Latvian Government, won a few awards, and keep on learning."
+    ],
+    "awards_title": "Awards",
+    "awards": [
+      {
+        "type": "counter",
+        "name": "tryhackme",
+        "name_text": "TryHackMe",
+        "counters": [
+          "(WOF x 1)",
+          "(Honors x 1)"
+        ]
+      },
+      {
+        "type": "counter",
+        "name": "cii",
+        "name_text": "CII",
+        "counters": [
+          "(ITC x 2)",
+          ""
+        ]
+      },
+      {
+        "type": "counter",
+        "name": "uipathsdc",
+        "name_text": "UiPath SDC",
+        "counters": [
+          "2026",
+          ""
+        ]
+      },
+      {
+        "type": "text",
+        "name": "ustgencys",
+        "text_html": "2025 UST GenCys CTF <br/>Finalist &amp; Special Winner"
+      },
+      {
+        "type": "text",
+        "name": "iitmisea",
+        "text_html": "2026 IITM ISEA-ISAP CTF Finalist/Top 5 Teams"
+      },
+      {
+        "type": "text",
+        "name": "yukti",
+        "text_html": "YUKTI CTF"
+      },
+      {
+        "type": "text",
+        "name": "latvia",
+        "text_html": "Latvian Government LOA 2025"
+      },
+      {
+        "type": "text",
+        "name": "latvijas",
+        "text_html": "Secured Latvijas Banka"
+      },
+      {
+        "type": "text",
+        "name": "sdcchampion",
+        "text_html": "UiPath Student Developer <br/>Champion 2026"
+      },
+      {
+        "type": "text",
+        "name": "blank",
+        "text_html": ""
+      }
+    ]
+  },
+  "work": {
+    "title": "WORK",
+    "items": [
+      {
+        "title": "GenCys CTF 2025",
+        "key": "#3vva-0000/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/KarthikNewDp.webp"
+      },
+      {
+        "title": "UiPath SDC 2026",
+        "key": "#dbq8-0001/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam.webp"
+      },
+      {
+        "title": "UiPath SDC 2026",
+        "key": "#ny2d-0002/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam1.webp"
+      },
+      {
+        "title": "UiPath SDC 2026",
+        "key": "#87va-0003/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam2.webp"
+      },
+      {
+        "title": "UiPath SDC 2026",
+        "key": "#t44q-0004/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/LinkedinSairam3.webp"
+      },
+      {
+        "title": "Sai Ram Awards",
+        "key": "#3g5d-0005/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/SairamGroupPic.webp"
+      },
+      {
+        "title": "Sai Ram Campus",
+        "key": "#wksl-0006/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/SairamGroupPic1.webp"
+      },
+      {
+        "title": "Sai Ram Memento",
+        "key": "#0qh5-0007/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/SairamMementoKarthik(Final).webp"
+      },
+      {
+        "title": "Dx-EDGE 2026",
+        "key": "#y15t-0008/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/DX-EDGE-Certificate.webp"
+      },
+      {
+        "title": "Digital Twin 2026",
+        "key": "#a24d-0009/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/KioskPic.webp"
+      },
+      {
+        "title": "Rajalakshmi Expo",
+        "key": "#1j4c-0010/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/GrpPic2.webp"
+      },
+      {
+        "title": "Rajalakshmi Expo",
+        "key": "#m2my-0011/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/GrpPic1.webp"
+      },
+      {
+        "title": "CII Chennai 2026",
+        "key": "#d6fu-0012/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ConfoPic.webp"
+      },
+      {
+        "title": "Dx-EDGE Summit",
+        "key": "#oqga-0013/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/GrpPic.webp"
+      },
+      {
+        "title": "CII Summit Recap",
+        "key": "#sxvc-0014/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/Allcollage.webp"
+      },
+      {
+        "title": "ITC Grand Chola",
+        "key": "#wfll-0015/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ITCMainGateSelfie.webp"
+      },
+      {
+        "title": "ITC Grand Chola",
+        "key": "#5w0n-0016/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ITCFrontView.webp"
+      },
+      {
+        "title": "Summit Selfie",
+        "key": "#emwy-0017/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/MirrorPic2.webp"
+      },
+      {
+        "title": "CII Chennai 2026",
+        "key": "#cul2-0018/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ConferencePic.webp"
+      },
+      {
+        "title": "Dx-EDGE Summit",
+        "key": "#0ngv-0019/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/Selfie.webp"
+      },
+      {
+        "title": "CII Networking",
+        "key": "#kqon-0020/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/ReferalCard.webp"
+      },
+      {
+        "title": "Summit Selfie",
+        "key": "#frnh-0021/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/MirrorPic1.webp"
+      },
+      {
+        "title": "GenCys Finale",
+        "key": "#z0bj-0022/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GenCysImage.webp"
+      },
+      {
+        "title": "GenCys CTF 2025",
+        "key": "#s8nw-0023/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycGrpPic.webp"
+      },
+      {
+        "title": "UST Visitor Pass",
+        "key": "#yhcw-0024/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycIDPic.webp"
+      },
+      {
+        "title": "UST Campus",
+        "key": "#ppxm-0025/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycPic.webp"
+      },
+      {
+        "title": "GenCys Scoreboard",
+        "key": "#ffo8-0026/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycRankPic.webp"
+      },
+      {
+        "title": "GenCys Finale",
+        "key": "#mxe3-0027/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSoloPic.webp"
+      },
+      {
+        "title": "GenCys Finale",
+        "key": "#suav-0028/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo1Pic.webp"
+      },
+      {
+        "title": "GenCys Finale",
+        "key": "#7vol-0029/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo2Pic.webp"
+      },
+      {
+        "title": "GenCys Finale",
+        "key": "#i1er-0030/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo3Pic.webp"
+      },
+      {
+        "title": "GenCys CTF 2025",
+        "key": "#kive-0031/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencycSolo4Pic.webp"
+      },
+      {
+        "title": "GenCys CTF 2025",
+        "key": "#t7cu-0032/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencysGrpPic.webp"
+      },
+      {
+        "title": "UST Visitor Pass",
+        "key": "#508u-0033/34",
+        "href": "",
+        "media_type": "image",
+        "video_src": "",
+        "poster_image": "images/CTF events/GencysID1Pic.webp"
+      }
+    ]
+  },
+  "gallery": {
+    "frames": [
+      {
+        "src": "images/gallery/gallery-01.webp",
+        "alt": "Sai Ram Engineering College",
+        "width": "760",
+        "height": "760",
+        "caption_html": "Sai Ram Engineering College"
+      },
+      {
+        "src": "images/gallery/gallery-02.webp",
+        "alt": "GenCys 2025",
+        "width": "563",
+        "height": "760",
+        "caption_html": "GenCys 2025"
+      },
+      {
+        "src": "images/gallery/gallery-03.webp",
+        "alt": "UST Visitor Pass",
+        "width": "595",
+        "height": "760",
+        "caption_html": "UST Visitor Pass"
+      },
+      {
+        "src": "images/gallery/gallery-04.webp",
+        "alt": "GenCys CTF Finale",
+        "width": "569",
+        "height": "760",
+        "caption_html": "GenCys CTF Finale"
+      },
+      {
+        "src": "images/gallery/gallery-05.webp",
+        "alt": "Top 10 Teams",
+        "width": "760",
+        "height": "760",
+        "caption_html": "Top 10 Teams"
+      },
+      {
+        "src": "images/gallery/gallery-06.webp",
+        "alt": "GenCys Group Photo",
+        "width": "569",
+        "height": "760",
+        "caption_html": "GenCys Group Photo"
+      },
+      {
+        "src": "images/gallery/gallery-07.webp",
+        "alt": "GenCys Finale Stage",
+        "width": "427",
+        "height": "760",
+        "caption_html": "GenCys Finale Stage"
+      },
+      {
+        "src": "images/gallery/gallery-08.webp",
+        "alt": "CII Networking",
+        "width": "760",
+        "height": "570",
+        "caption_html": "CII Networking"
+      },
+      {
+        "src": "images/gallery/gallery-09.webp",
+        "alt": "CII Chennai Zone 2026",
+        "width": "760",
+        "height": "427",
+        "caption_html": "CII Chennai Zone 2026"
+      },
+      {
+        "src": "images/gallery/gallery-10.webp",
+        "alt": "Digital Twin Conference",
+        "width": "760",
+        "height": "427",
+        "caption_html": "Digital Twin Conference"
+      },
+      {
+        "src": "images/gallery/gallery-11.webp",
+        "alt": "Dx-EDGE Summit",
+        "width": "728",
+        "height": "728",
+        "caption_html": "Dx-EDGE Summit"
+      },
+      {
+        "src": "images/gallery/gallery-12.webp",
+        "alt": "Dx-EDGE Certificate",
+        "width": "760",
+        "height": "537",
+        "caption_html": "Dx-EDGE Certificate"
+      },
+      {
+        "src": "images/gallery/gallery-13.webp",
+        "alt": "ITC Grand Chola",
+        "width": "760",
+        "height": "569",
+        "caption_html": "ITC Grand Chola"
+      },
+      {
+        "src": "images/gallery/gallery-14.webp",
+        "alt": "Rajalakshmi Engineering College",
+        "width": "760",
+        "height": "570",
+        "caption_html": "Rajalakshmi Engineering College"
+      },
+      {
+        "src": "images/gallery/gallery-15.webp",
+        "alt": "UiPath SDC 2026",
+        "width": "760",
+        "height": "570",
+        "caption_html": "UiPath SDC 2026"
+      },
+      {
+        "src": "images/gallery/gallery-16.webp",
+        "alt": "ITC Grand Chola, Chennai",
+        "width": "570",
+        "height": "760",
+        "caption_html": "ITC Grand Chola, Chennai"
+      }
+    ],
+    "catcher_lines": [
+      "Coding",
+      "my way",
+      "since",
+      "2023"
+    ]
+  },
+  "contact": {
+    "button_text": "GO",
+    "headline_top": "Let's",
+    "headline_bottom": "Rock",
+    "email_label": "karthikraja.connect@gmail.com",
+    "email_href": "mailto:karthikraja.connect@gmail.com"
+  }
+}
