@@ -274,3 +274,12 @@ html[data-palette="blueprint"] .s-journey{
 }
 
 /* The chronicle journey reads the palette tokens directly from journey.css. */
+
+/* Personal photo archive marker inside the animated gallery title */
+.s-my-way .s__arch-label{
+  display:block;
+  margin:0;
+  color:var(--color-secondary);
+  font:inherit;
+  letter-spacing:.12em;
+}
